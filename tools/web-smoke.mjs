@@ -112,6 +112,21 @@ if (electron === 'electron') {
 }
 console.log('Trình duyệt thử:', electron);
 
+// Chế độ kiểm tra một địa chỉ ĐÃ TRIỂN KHAI (ví dụ GitHub Pages):
+//   node tools/web-smoke.mjs --url https://gnodluong.github.io/hocbaingoannhe/
+// Không tự dựng máy chủ, chỉ chạy pha "đầy đủ" và pha "điện thoại".
+const remoteArg = process.argv.indexOf('--url');
+if (remoteArg > 0 && process.argv[remoteArg + 1]) {
+  const remoteUrl = process.argv[remoteArg + 1];
+  console.log('Địa chỉ cần kiểm tra:', remoteUrl);
+  const remoteFull = await runPhase(electron, remoteUrl, 'full');
+  const codeFull = report('full', remoteFull);
+  const remoteMobile = await runPhase(electron, remoteUrl, 'mobile');
+  const codeMobileRemote = report('mobile', remoteMobile);
+  try { fs.rmSync(PROFILE_DIR, { recursive: true, force: true }); } catch (err) { /* bỏ qua */ }
+  process.exit(codeFull || codeMobileRemote ? 1 : 0);
+}
+
 // Cổng cố định để pha offline mở lại ĐÚNG địa chỉ đã lưu trong service worker.
 const PORT = Number(process.env.TN_SMOKE_PORT || 5180);
 const server = createServer();
