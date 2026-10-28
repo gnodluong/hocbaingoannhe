@@ -17,7 +17,7 @@ async function renderStage(root, App, session) {
   root.style.padding = '0';
   const wrap = el('div', { style: { display: 'flex', flexDirection: 'column', height: '100%' } });
 
-  const head = el('div', { class: 'stage-head', style: { padding: '18px 26px 0' } });
+  const head = el('div', { class: 'stage-head' });
   const counter = el('span', { class: 'counter' });
   const subject = el('span', { class: 'subject' });
   const scoreOk = el('span', { class: 'score-ok' });
@@ -26,14 +26,13 @@ async function renderStage(root, App, session) {
     btn('Thoát', () => confirmExit(), { kind: 'ghost', small: true, iconName: 'close' }));
   wrap.appendChild(head);
 
-  const progress = el('div', { class: 'progress-track', style: { margin: '14px 26px 0' } }, [el('div', { class: 'progress-fill' })]);
+  const progress = el('div', { class: 'progress-track' }, [el('div', { class: 'progress-fill' })]);
   wrap.appendChild(progress);
 
-  const qPanel = panel([], { classes: 'stage-question', });
-  qPanel.style.margin = '16px 26px 0';
+  const qPanel = panel([], { classes: 'stage-question' });
   wrap.appendChild(qPanel);
 
-  const optionArea = el('div', { class: 'stage-options', style: { flex: '1', padding: '16px 26px' } });
+  const optionArea = el('div', { class: 'stage-options' });
   wrap.appendChild(optionArea);
 
   const foot = el('div', { class: 'stage-foot' });

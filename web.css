@@ -151,6 +151,88 @@ body { overflow: hidden; }
   .theme-choice { min-width: 32px; padding: 0 5px; }
 }
 
+/* ==========================================================================
+   ĐIỆN THOẠI — CHẾ ĐỘ GIẢNG ĐƯỜNG VÀ CÁC MÀN LÀM BÀI
+   Chế độ giảng đường phải giữ ĐÚNG 4 ô (2×2) như trên máy tính; trước đây có
+   luật `@media (max-width:1040px){ .stage-options{grid-template-columns:1fr} }`
+   làm 4 đáp án xếp dọc, chiếm hết màn hình điện thoại. Luật đó đã bị bỏ.
+   ========================================================================== */
+@media (max-width: 860px) {
+  /* Làm bài toàn màn hình: lề hẹp lại (bộ chọn cũ vẫn để 24px mỗi bên). */
+  #app-container.chromeless .screen-layer { padding: 8px 10px 12px; }
+
+  /* --- khung chung của màn giảng đường --- */
+  .stage-head { padding: 8px 10px 0; gap: 6px; flex-wrap: wrap; }
+  .stage-head .counter { font-size: 14px; }
+  .stage-head .subject { font-size: 11px; margin-left: 0; }
+  .stage-head .score-ok,
+  .stage-head .score-bad { font-size: 12px; margin-right: 4px; }
+  .progress-track { margin: 8px 10px 0; height: 6px; }
+
+  .stage-question {
+    font-size: clamp(17px, 4.6vw, 24px);
+    padding: 14px;
+    margin: 10px 10px 0;
+    line-height: 1.4;
+  }
+
+  /* 4 đáp án: LUÔN 2 cột × 2 hàng */
+  .stage-options { grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px; }
+  .big-option {
+    min-height: 0;
+    padding: 10px;
+    gap: 8px;
+    border-radius: 12px;
+    align-items: flex-start;
+  }
+  .big-option .badge { width: 32px; height: 32px; border-radius: 9px; font-size: 14px; }
+  .big-option .text { font-size: clamp(12px, 3.4vw, 15px); line-height: 1.35; }
+  .big-option .mark { font-size: 16px; }
+
+  .stage-foot { padding: 0 10px 8px; gap: 6px; flex-wrap: wrap; }
+  .stage-foot .hint { display: none; }  /* gợi ý phím tắt không dùng trên điện thoại */
+  .stage-foot .credit { display: none; }
+  .stage-foot .btn { flex: 1 1 0; }
+
+  /* --- làm bài cá nhân --- */
+  .q-text { font-size: 15px; line-height: 1.55; }
+  .option-row { padding: 10px 12px; gap: 10px; }
+  .result-hero .big-score { font-size: 40px; }
+  .dot-grid { grid-template-columns: repeat(5, 1fr); gap: 3px; }
+  .dot { height: 30px; font-size: 10px; }
+
+  /* --- thiết lập bài: 3 mục chọn --- */
+  .choice-grid { gap: 6px; }
+  .count-card { padding: 12px 6px; }
+  .count-card .num { font-size: 20px; }
+  .count-card .cap { font-size: 10px; line-height: 1.25; }
+
+  /* --- bảng điểm / lịch sử cuộn trong khung, không đẩy cả trang --- */
+  .history-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .history-table { font-size: 12px; }
+  .history-table th { padding: 10px 10px; }
+  .history-table td { padding: 10px 10px; }
+  .history-filter-field { min-width: 0; }
+
+  /* --- bảng điểm: 6 cột, giảm khoảng đệm để vừa hơn --- */
+  .panel > table.history-table th,
+  .panel > table.history-table td { padding: 10px 8px; }
+}
+
+@media (max-width: 560px) {
+  /* Ô chọn số câu: 4 ô trên một hàng thì mỗi ô quá hẹp → 2 × 2 */
+  .choice-grid { grid-template-columns: 1fr 1fr !important; }
+  /* Danh sách môn / bộ đề: 1 cột cho dễ đọc */
+  .card-grid { grid-template-columns: 1fr !important; }
+  .stat-grid { grid-template-columns: 1fr 1fr !important; }
+  .stage-question { font-size: clamp(16px, 4.8vw, 21px); padding: 12px; }
+  .big-option .text { font-size: 13px; }
+  .big-option .badge { width: 28px; height: 28px; font-size: 13px; }
+  .stage-options { gap: 6px; padding: 8px; }
+  .mode-hub-grid .mode-card { min-height: 0; }
+}
+
+
 /* ---------------------------------------------------------- không có JS --- */
 #app-noscript {
   position: fixed;

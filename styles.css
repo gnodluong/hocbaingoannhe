@@ -290,20 +290,19 @@ input, textarea { user-select: text; }
 .toggle.on .knob { left: 26px; background: var(--white); }
 
 /* ------------------------------------------------------------------- stage */
-.stage-head { display: flex; align-items: center; padding: 0 4px; }
+.stage-head { display: flex; align-items: center; gap: 10px; padding: 18px 26px 0; }
 .stage-head .counter { font-size: 17px; font-weight: 700; }
 .stage-head .subject { font-size: 9px; color: var(--muted); margin-left: 14px; }
 .stage-head .spacer { flex: 1; }
 .stage-head .score-ok { color: var(--ok-text); font-weight: 700; font-size: 13px; margin-right: 14px; }
 .stage-head .score-bad { color: var(--bad-text); font-weight: 700; font-size: 13px; margin-right: 16px; }
-.progress-track { height: 8px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--border); margin: 14px 4px 0; overflow: hidden; }
+.progress-track { height: 8px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--border); margin: 14px 26px 0; overflow: hidden; }
 .progress-fill {
   height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius: 4px;
   transition: width .25s ease; box-shadow: 0 0 10px 0 rgba(108,125,255,.6);
 }
-.stage-question { font-size: 30px; font-weight: 800; padding: 26px 28px; margin: 16px 4px 0; line-height: 1.45; }
-.stage-options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 16px 4px; flex: 1; }
-@media (max-width: 1040px) { .stage-options { grid-template-columns: 1fr; } }
+.stage-question { font-size: 30px; font-weight: 800; padding: 26px 28px; margin: 16px 26px 0; line-height: 1.45; }
+.stage-options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 16px 26px; flex: 1; min-height: 0; }
 .big-option {
   display: flex; align-items: center; gap: 20px; padding: 18px 24px; border-radius: 20px; cursor: pointer;
   background: var(--surface-2); border: 2.4px solid var(--border); transition: all .1s; min-height: 96px;
@@ -322,7 +321,7 @@ input, textarea { user-select: text; }
 .big-option.wrong .badge { background: var(--bad); color: #2B0410; }
 .big-option.wrong .mark { color: var(--bad); }
 .big-option.dim { background: var(--surface); border-color: var(--border); cursor: default; opacity: .55; }
-.stage-foot { display: flex; align-items: center; gap: 10px; padding: 0 4px 14px; }
+.stage-foot { display: flex; align-items: center; gap: 10px; padding: 0 26px 14px; }
 .stage-foot .hint { font-size: 9px; color: var(--muted); flex: 1; }
 .stage-foot .credit { font-size: 8px; color: var(--border-2); }
 

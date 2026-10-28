@@ -193,6 +193,18 @@ const TEST_SCRIPT = `
   // ------------------------------------------------------- 13. không lỗi hiển thị
   ok('không có lỗi hiển thị', !window.__lastRenderError, window.__lastRenderError || '');
 
+  // Chế độ giảng đường trên máy tính: vẫn đúng 4 ô (2 × 2)
+  await App.startQuiz(bank.id, 4, 'stage', false, false, { id: 'free', name: 'ZZ Desktop' });
+  await wait(160);
+  {
+    const opts = [...document.querySelectorAll('.stage-options .big-option')].map((o) => o.getBoundingClientRect());
+    const cols2 = getComputedStyle(document.querySelector('.stage-options')).gridTemplateColumns.split(' ').filter(Boolean);
+    const tops = [...new Set(opts.map((r) => Math.round(r.top)))];
+    ok('giảng đường (máy tính) 4 ô 2 × 2', opts.length === 4 && cols2.length === 2 && tops.length === 2,
+      cols2.length + ' cột, ' + tops.length + ' hàng');
+  }
+  await App.navigate('start');
+
   return results;
 })()
 `;
@@ -201,32 +213,141 @@ const MOBILE_SCRIPT = `
 (async () => {
   const results = [];
   const ok = (name, pass, extra) => results.push({ name, pass: !!pass, extra: extra === undefined ? '' : String(extra) });
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  const vw = () => innerWidth;
+  const vh = () => innerHeight;
+  const screenEl = () => document.querySelector('.screen-layer.visible');
+  const screenText = () => (screenEl() ? screenEl().textContent.trim() : '');
+  const noPageOverflow = () => document.documentElement.scrollWidth <= vw() + 1;
+
   await window.__appReady;
   await document.fonts.ready;
-  await App.navigate('start');
-  await new Promise((r) => setTimeout(r, 80));
+  const banks = await api.allBanks();
 
-  const vw = innerWidth;
+  // ------------------------------------------------------- 1. màn hình cơ bản
+  ok('bề rộng đúng khổ điện thoại', vw() <= 420, vw());
+  await App.navigate('start');
+  await wait(80);
   const header = document.querySelector('#app-header').getBoundingClientRect();
   const tools = document.querySelector('#web-tools').getBoundingClientRect();
   const nav = document.querySelector('#app-nav').getBoundingClientRect();
-  const screen = document.querySelector('.screen-layer.visible');
-
-  ok('bề rộng đúng khổ điện thoại', vw <= 420, vw);
-  ok('header không tràn ngang', header.right <= vw + 1, Math.round(header.right) + '/' + vw);
-  ok('công cụ web nằm trong màn hình', tools.right <= vw + 1 && tools.width > 40, Math.round(tools.right));
-  ok('menu chuyển xuống hàng riêng', nav.top >= tools.bottom - 2 || nav.width > vw * 0.8, Math.round(nav.top) + ' / ' + Math.round(tools.bottom));
+  ok('header không tràn ngang', header.right <= vw() + 1, Math.round(header.right) + '/' + vw());
+  ok('công cụ web nằm trong màn hình', tools.right <= vw() + 1 && tools.width > 40, Math.round(tools.right));
+  ok('menu chuyển xuống hàng riêng', nav.top >= tools.bottom - 2, Math.round(nav.top) + ' / ' + Math.round(tools.bottom));
   ok('menu cuộn ngang được thay vì tràn', getComputedStyle(document.querySelector('#app-nav')).overflowX !== 'visible');
-  ok('không tràn ngang toàn trang', document.documentElement.scrollWidth <= vw + 1, document.documentElement.scrollWidth + '/' + vw);
-  ok('nội dung chính đọc được', !!screen && screen.textContent.trim().length > 20, screen ? screen.textContent.trim().length : 0);
+  ok('không tràn ngang toàn trang', noPageOverflow(), document.documentElement.scrollWidth + '/' + vw());
+  ok('nội dung chính đọc được', screenText().length > 20, screenText().length);
   ok('nút đủ to để bấm bằng ngón tay', [...document.querySelectorAll('#app-nav .nav-btn, #theme-switcher .theme-choice, #desktop-menu')]
     .every((b) => { const r = b.getBoundingClientRect(); return r.height >= 28 && r.width >= 28; }));
-  ok('chữ không tràn ra ngoài thẻ', [...document.querySelectorAll('.screen-layer.visible .panel, .screen-layer.visible .mode-card')]
-    .every((n) => n.scrollWidth <= n.clientWidth + 2));
 
-  await App.navigate('banks');
-  await new Promise((r) => setTimeout(r, 120));
-  ok('màn ngân hàng đề không tràn ngang', document.documentElement.scrollWidth <= vw + 1, document.documentElement.scrollWidth + '/' + vw);
+  // ------------------------------------- 2. CHẾ ĐỘ GIẢNG ĐƯỜNG: 4 ô, 2 × 2
+  await App.startQuiz(banks[0].id, 4, 'stage', true, false, { id: 'free', name: 'ZZ Mobile' });
+  await wait(220);
+  const opts = [...document.querySelectorAll('.stage-options .big-option')];
+  ok('giảng đường đủ 4 đáp án', opts.length === 4, opts.length);
+  const cols = getComputedStyle(document.querySelector('.stage-options')).gridTemplateColumns.split(' ').filter(Boolean);
+  ok('giảng đường dùng 2 cột (không xếp dọc)', cols.length === 2, cols.join(' | '));
+  const rects = opts.map((o) => o.getBoundingClientRect());
+  const rows = [...new Set(rects.map((r) => Math.round(r.top)))].sort((a, b) => a - b);
+  ok('4 đáp án thành 2 hàng × 2 cột', rows.length === 2 && rects.filter((r) => Math.round(r.top) === rows[0]).length === 2,
+    JSON.stringify(rects.map((r) => [Math.round(r.left), Math.round(r.top)])));
+  ok('cả 4 đáp án nằm trong màn hình', rects.every((r) => r.right <= vw() + 1 && r.left >= -1 && r.bottom <= vh() + 1),
+    JSON.stringify(rects.map((r) => [Math.round(r.bottom), vh()])));
+  ok('giảng đường không phải cuộn dọc', document.documentElement.scrollHeight <= vh() + 2,
+    document.documentElement.scrollHeight + '/' + vh());
+  ok('ô đáp án đủ to để bấm', rects.every((r) => r.height >= 44 && r.width >= 60),
+    JSON.stringify(rects.map((r) => Math.round(r.height) + 'x' + Math.round(r.width))));
+  ok('chữ câu hỏi không tràn', document.querySelector('.stage-question').scrollWidth <= document.querySelector('.stage-question').clientWidth + 2);
+  ok('không tràn ngang ở chế độ giảng đường', noPageOverflow(), document.documentElement.scrollWidth + '/' + vw());
+
+  // bấm một đáp án rồi sang câu tiếp — kiểm tra vẫn 2 cột
+  opts[0].click();
+  await wait(120);
+  ok('bấm đáp án không làm vỡ bố cục', [...document.querySelectorAll('.big-option')].length === 4);
+  const nextBtn = [...document.querySelectorAll('.stage-foot .btn')].find((b) => /Câu tiếp|Xem kết quả/i.test(b.textContent));
+  if (nextBtn && !nextBtn.disabled) { nextBtn.click(); await wait(160); }
+  ok('sau khi sang câu vẫn 2 cột', getComputedStyle(document.querySelector('.stage-options')).gridTemplateColumns.split(' ').filter(Boolean).length === 2);
+
+  // Câu hỏi + đáp án DÀI: cho phép cuộn dọc, nhưng không được cắt chữ hay tràn ngang
+  document.querySelector('.stage-question').textContent =
+    'Câu hỏi rất dài để kiểm tra bố cục trên điện thoại: bệnh nhân nam 65 tuổi, tiền sử tăng huyết áp và đái tháo đường type 2, nhập viện vì khó thở khi gắng sức, phù hai chân, ran ẩm hai đáy phổi. Hãy chọn chẩn đoán phù hợp nhất.';
+  document.querySelectorAll('.stage-options .big-option .text').forEach((node) => {
+    node.textContent = 'Suy tim sung huyết mất bù kèm theo biến chứng thận mạn tính giai đoạn 3b';
+  });
+  await wait(140);
+  const longOpts = [...document.querySelectorAll('.stage-options .big-option')];
+  ok('câu dài: chữ trong đáp án không bị cắt',
+    longOpts.every((o) => { const x = o.querySelector('.text'); return x.scrollHeight <= x.clientHeight + 2; }));
+  ok('câu dài: vẫn 2 cột', getComputedStyle(document.querySelector('.stage-options')).gridTemplateColumns.split(' ').filter(Boolean).length === 2);
+  ok('câu dài: không tràn ngang', noPageOverflow(), document.documentElement.scrollWidth + '/' + vw());
+
+  // ------------------------------------------------ 3. LÀM BÀI CÁ NHÂN
+  await App.navigate('start');
+  await App.startQuiz(banks[0].id, 3, 'personal', false, false, { id: 'free', name: 'ZZ Mobile' });
+  await wait(200);
+  ok('cá nhân: có câu hỏi', !!document.querySelector('.q-text'), document.querySelectorAll('.option-row').length + ' lựa chọn');
+  ok('cá nhân: không tràn ngang', noPageOverflow(), document.documentElement.scrollWidth + '/' + vw());
+  ok('cá nhân: hai cột xếp dọc', getComputedStyle(document.querySelector('.personal-layout')).flexDirection === 'column',
+    getComputedStyle(document.querySelector('.personal-layout')).flexDirection);
+  const rowsOpt = [...document.querySelectorAll('.option-row')].map((o) => o.getBoundingClientRect());
+  ok('cá nhân: lựa chọn đủ to', rowsOpt.every((r) => r.height >= 40), JSON.stringify(rowsOpt.map((r) => Math.round(r.height))));
+
+  // ------------------------------------------------- 4. HỘP NHẬP TÊN
+  const pending = promptCandidateName(App);
+  await wait(200);
+  const card = document.querySelector('.modal-card');
+  const cr = card.getBoundingClientRect();
+  ok('hộp nhập tên vừa màn hình', cr.left >= -1 && cr.right <= vw() + 1 && cr.width >= 240,
+    Math.round(cr.left) + '..' + Math.round(cr.right) + ' / ' + vw());
+  ok('ô nhập tên đủ to', document.querySelector('#candidate-name').getBoundingClientRect().height >= 38);
+  document.querySelectorAll('.modal-footer .btn')[0].click();
+  await pending;
+  await wait(80);
+  ok('huỷ hộp nhập tên không lỗi', true);
+
+  // ------------------------------------------------- 5. MỌI MÀN HÌNH
+  // Rà từng màn như bộ audit: tràn ngang, chữ bị cắt, nút quá nhỏ.
+  function auditScreen() {
+    const layer = screenEl();
+    if (!layer) return { clipped: ['không có màn'], small: [] };
+    const clipped = [];
+    [...layer.querySelectorAll('*')].forEach((node) => {
+      if (!node.textContent.trim()) return;
+      if (node.children.length && ![...node.childNodes].some((c) => c.nodeType === 3 && c.textContent.trim())) return;
+      const cs = getComputedStyle(node);
+      if (cs.display === 'none' || cs.visibility === 'hidden') return;
+      if (cs.textOverflow === 'ellipsis') return;
+      if (cs.overflowX === 'auto' || cs.overflowX === 'scroll') return;
+      if (node.closest('.history-table-wrap') || node.closest('.stage-options') || node.closest('.stage-question')) return;
+      if (node.scrollWidth > node.clientWidth + 2 && node.clientWidth > 0) {
+        clipped.push(node.tagName.toLowerCase() + '.' + (String(node.className).split(' ')[0] || '') + ' "' + node.textContent.trim().slice(0, 24) + '"');
+      }
+    });
+    const small = [...layer.querySelectorAll('button.btn, .nav-btn, .theme-choice')]
+      .filter((b) => { const r = b.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.height < 30; })
+      .map((b) => (b.textContent.trim().slice(0, 20) || 'icon') + ':' + Math.round(b.getBoundingClientRect().height));
+    return { clipped: [...new Set(clipped)], small: [...new Set(small)] };
+  }
+
+  const screens = ['start', 'hub', 'fillhub', 'gradehub', 'banks', 'history', 'sync', 'guide'];
+  for (const name of screens) {
+    await App.navigate(name);
+    await wait(90);
+    ok('màn ' + name + ' không tràn ngang', noPageOverflow(), document.documentElement.scrollWidth + '/' + vw());
+    ok('màn ' + name + ' có nội dung', screenText().length > 15, screenText().length);
+    const audit = auditScreen();
+    ok('màn ' + name + ': không cắt chữ', audit.clipped.length === 0, audit.clipped.slice(0, 3).join(' | '));
+    ok('màn ' + name + ': nút đủ cao', audit.small.length === 0, audit.small.slice(0, 3).join(' | '));
+  }
+
+  // --------------------------------------- 6. THIẾT LẬP BÀI (chọn số câu)
+  await App.navigate('setup', { bankId: banks[0].id });
+  await wait(140);
+  const countCards = [...document.querySelectorAll('.count-card')];
+  ok('thiết lập: đủ các lựa chọn số câu', countCards.length >= 4, countCards.length);
+  ok('thiết lập: không tràn ngang', noPageOverflow(), document.documentElement.scrollWidth + '/' + vw());
+  const cc = countCards[0].getBoundingClientRect();
+  ok('thiết lập: ô chọn số câu đủ to', cc.width >= 100 && cc.height >= 56, Math.round(cc.width) + 'x' + Math.round(cc.height));
 
   return results;
 })()
