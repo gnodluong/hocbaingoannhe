@@ -1,5 +1,6 @@
 HƯỚNG DẪN SỬ DỤNG — TRẮC NGHIỆM THỬ (BẢN WEB)
-Đại Đội 5 · Lớp NVQYc43.A9–A10
+Dành cho THÍ SINH TỰ DO — không cần đơn vị, không cần lớp
+Đại Đội 5
 Thực hiện bởi: Đại Đội 5
 =====================================================
 
@@ -22,14 +23,18 @@ Lần đầu mở, app tự nạp sẵn 7 môn học từ các file .txt của �
 
 II. BẮT ĐẦU LÀM BÀI
 -------------------
-Bước 1. Chọn vai trò: HỌC VIÊN hay GIẢNG VIÊN.
-Bước 2. Chọn lần lượt Tiểu đoàn → Đại đội → Lớp.
-        Ở các màn sau có chip "Đổi lớp" để đổi mà không mất vai trò.
-Bước 3. Học viên vào Trang chủ chọn Trắc nghiệm / Điền chỗ trống.
-        Giảng viên vào thẳng Quản lý điểm.
+Không có Tiểu đoàn / Đại đội / Lớp và không có danh sách học viên. Ai muốn ôn
+thì vào làm, kết quả lưu theo tên tự gõ.
+
+Bước 1. Ở Trang chủ chọn TRẮC NGHIỆM hoặc ĐIỀN VÀO CHỖ TRỐNG.
+Bước 2. Chọn môn học → chọn số câu → chọn chế độ.
+Bước 3. Bấm BẮT ĐẦU LÀM BÀI → app hỏi TÊN CỦA BẠN:
+          gõ tên rồi bấm "Vào làm bài" (hoặc Enter).
+        Tên được nhớ cho lần sau; lần sau chỉ cần bấm Enter.
+        Muốn đổi tên: bấm chip "Thí sinh: …" ở Trang chủ.
 
 Thanh điều hướng luôn có sẵn: Trang chủ · Trắc nghiệm · Điền chỗ trống ·
-Quản lý điểm · Ngân hàng đề · Học viên · Lịch sử · Đồng bộ · Hướng dẫn.
+Bảng điểm · Ngân hàng đề · Lịch sử · Đồng bộ · Hướng dẫn.
 
 
 III. LÀM BÀI TRẮC NGHIỆM
@@ -42,8 +47,7 @@ Chọn một môn → chọn số câu (50 / 70 / 90 / toàn bộ) → chọn ch
 
    CÁ NHÂN — 10 câu mỗi trang, có đồng hồ bấm giờ, nộp bài rồi mới chấm điểm.
 
-Trước khi bắt đầu, app bắt CHỌN ĐÚNG TÊN trong danh sách học viên của lớp đang
-chọn — gõ để lọc hoặc bấm chọn thẳng, không nhập được tên lạ.
+Trước khi bắt đầu, app hỏi TÊN CỦA BẠN để ghi vào lịch sử (xem mục II).
 Đề được xáo ngẫu nhiên và không lặp câu trong cùng một lượt làm.
 
 
@@ -55,6 +59,7 @@ Chọn bộ đề (lọc được theo môn) → chọn số câu → chọn cá
 Chấm không phân biệt chữ hoa/thường, chỉ cần đúng từ.
 Câu không đánh dấu từ sẽ được app tự bốc ngẫu nhiên 1–3 từ làm chỗ trống, nên
 mỗi lượt làm có thể ra từ khác nhau.
+Trước khi bắt đầu, app cũng hỏi TÊN CỦA BẠN giống bên trắc nghiệm.
 
 
 V. SOẠN VÀ TẢI ĐỀ LÊN
@@ -80,32 +85,27 @@ C. Soạn trực tiếp trong app: "Tạo bộ đề mới" → thêm/sửa/xoá
    khôi phục về đúng nội dung file gốc nếu đã lỡ sửa nhầm.
 
 
-VI. HỌC VIÊN VÀ QUẢN LÝ ĐIỂM
-----------------------------
-Mục "Học viên": quản lý theo cây Tiểu đoàn → Đại đội → Lớp.
-   Thêm tay từng người, hoặc "Tải danh sách lên" để nhập hàng loạt.
-   File mẫu mỗi dòng 4 phần cách nhau bằng dấu |:
-      Tiểu đoàn | Đại đội | Lớp | Họ và tên
-   Lớp phải có học viên trong danh sách thì mới làm bài được.
-
-Mục "Quản lý điểm": chọn một môn trắc nghiệm hoặc bộ đề điền chỗ trống.
-   Bảng hiện đủ học viên của lớp (kể cả người chưa làm lần nào): số lần làm,
-   điểm gần nhất, điểm cao nhất, xu hướng (tiến bộ ↑ / giảm ↓).
-   Bấm kính lúp để xem chi tiết từng lượt của một người.
-   Chip "Tất cả các lớp" để xem gộp mọi lớp.
+VI. BẢNG ĐIỂM — KHÔNG CẦN NHẬP DANH SÁCH
+----------------------------------------
+Mục "Bảng điểm": chọn một môn trắc nghiệm hoặc bộ đề điền chỗ trống.
+   Bảng tự gom theo TÊN đã gõ khi làm bài — không cần nhập danh sách trước.
+   Mỗi dòng: số lần làm, điểm gần nhất, điểm cao nhất, xu hướng (tiến bộ ↑ /
+   giảm ↓ so lần đầu với lần gần nhất).
+   Bấm kính lúp để xem chi tiết từng lượt của thí sinh đó.
+   Chỉ những ai đã làm đề đó mới xuất hiện trong bảng.
 
 
-VII. DỮ LIỆU VÀ SAO LƯU — QUAN TRỌNG
+VII. LỊCH SỬ VÀ DỮ LIỆU — QUAN TRỌNG
 ------------------------------------
-· Bản web lưu TOÀN BỘ đề, học viên, lịch sử và tuỳ chọn ngay trong trình duyệt
+· Bản web lưu TOÀN BỘ đề, lịch sử làm bài và tuỳ chọn ngay trong trình duyệt
   trên máy bạn. Không có tài khoản, không gửi dữ liệu lên mạng.
 · Bấm nút "Dữ liệu" ở góc phải thanh trên cùng để xem dung lượng đang dùng,
   nạp lại đề mẫu, hoặc xoá toàn bộ dữ liệu.
 · SAO LƯU / MANG SANG MÁY KHÁC: vào mục "Đồng bộ" → "Xuất toàn bộ dữ liệu ra
   file .txt" → chép file sang máy kia → vào "Đồng bộ" ở máy đó → "Chọn file
   .txt để nhập".
-  Dữ liệu được GỘP chứ không xoá: đề trùng mã sẽ cập nhật mới nhất, học viên
-  trùng tên/lớp bị bỏ qua, lịch sử không lặp lại.
+  Dữ liệu được GỘP chứ không xoá: đề trùng mã sẽ cập nhật mới nhất, lịch sử
+  không lặp lại.
 · Xoá dữ liệu trình duyệt (cookie / dữ liệu trang web) cũng làm mất dữ liệu
   app — hãy xuất file .txt để sao lưu định kỳ.
 · Mỗi máy lưu riêng. Muốn gộp điểm từ nhiều máy: mỗi máy xuất một file .txt rồi

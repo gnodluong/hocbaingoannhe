@@ -53,20 +53,44 @@ const TEST_SCRIPT = `
   ok('giao diện được lưu', (await api.prefs()).desktopTheme === 'ocean');
   await api.theme.set('dark');
 
-  // ------------------------------------------------------------ 4. mọi màn hình
-  App.role = 'student';
-  App.org = { battalion: 'Tiểu Đoàn 2', company: 'Đại Đội 5', className: 'NVQYc43.A9' };
-  const screens = ['start', 'hub', 'fillhub', 'gradehub', 'banks', 'roster', 'history', 'sync', 'guide'];
+  // ------------------------------------------- 4. thí sinh tự do + mọi màn hình
+  ok('không còn màn chọn vai trò / đơn vị', typeof renderRolePick === 'undefined' && typeof renderOrgPicker === 'undefined' && typeof renderRosterManage === 'undefined');
+  ok('có hộp nhập tên thí sinh', typeof promptCandidateName === 'function');
+  ok('không còn danh sách học viên trên thanh menu', !document.querySelector('#app-nav [data-key="roster"]'));
+  const screens = ['start', 'hub', 'fillhub', 'gradehub', 'banks', 'history', 'sync', 'guide'];
   for (const name of screens) {
     await App.navigate(name);
     await wait(30);
     ok('màn ' + name, screenText().length > 20, screenText().length);
   }
-
-  // --------------------------------------------------- 5. làm bài trắc nghiệm
-  const bank = banks[0];
   await App.navigate('start');
-  await App.startQuiz(bank.id, 5, 'personal', true, false, { name: 'ZZ Web Test', id: 's-zz-web' });
+  ok('trang chủ ghi "thí sinh tự do"', /thí sinh tự do/i.test(screenText()), screenText().slice(0, 60));
+
+  // ---------------------------------- 5. hộp nhập tên + làm bài trắc nghiệm
+  const bank = banks[0];
+  await App.navigate('setup', { bankId: bank.id });
+  await wait(80);
+  const startBtn = [...document.querySelectorAll('.screen-layer.visible .btn')].find((b) => /BẮT ĐẦU LÀM BÀI/i.test(b.textContent));
+  ok('có nút bắt đầu làm bài', !!startBtn);
+  startBtn.click();
+  await wait(200);
+  const nameInput = document.querySelector('#candidate-name');
+  ok('bấm bắt đầu thì hỏi tên', !!nameInput);
+  nameInput.value = 'ZZ Thí Sinh Web';
+  nameInput.dispatchEvent(new Event('input', { bubbles: true }));
+  const goBtn = [...document.querySelectorAll('.modal-footer .btn')].find((b) => /Vào làm bài/i.test(b.textContent));
+  ok('hộp nhập tên có nút xác nhận', !!goBtn);
+  goBtn.click();
+  await wait(400);
+  ok('tên được ghi nhớ', App.candidateName === 'ZZ Thí Sinh Web' && (await api.prefs()).studentName === 'ZZ Thí Sinh Web', App.candidateName);
+  const realSession = App.session;
+  ok('vào làm bài ngay sau khi nhập tên', !!realSession && realSession.questions.length > 0, realSession ? realSession.questions.length : 0);
+  if (realSession) {
+    realSession.questions.forEach((q, i) => { realSession.answers[i] = q.answer; });
+    await App.finishQuiz(realSession);
+    await wait(80);
+  }
+  await App.navigate('start');
   await wait(60);
   const session = App.session;
   ok('tạo được phiên làm bài', !!session && session.questions.length > 0, session ? session.questions.length : 0);
@@ -77,7 +101,12 @@ const TEST_SCRIPT = `
     ok('màn kết quả trắc nghiệm', /kết quả/i.test(screenText()), screenText().slice(0, 60));
   }
   const history = await api.history();
-  ok('ghi lịch sử bài trắc nghiệm', history.length >= 1 && history[0].studentName === 'ZZ Web Test', history.length && history[0].studentName);
+  ok('lịch sử lưu đúng tên đã gõ', history.length >= 1 && history[0].studentName === 'ZZ Thí Sinh Web', history.length && history[0].studentName);
+  ok('lịch sử không còn lớp/đơn vị', history.every((h) => !h.className && !h.battalion && !h.company));
+  await App.navigate('history');
+  await wait(60);
+  ok('màn lịch sử hiện tên thí sinh', screenText().includes('ZZ Thí Sinh Web'));
+  ok('màn lịch sử không có cột lớp', !/LỚP/.test(document.querySelector('.screen-layer.visible table') ? document.querySelector('.screen-layer.visible table').textContent : ''));
 
   // ------------------------------------------------------ 6. điền vào chỗ trống
   const fillBank = await api.upsertFillBank({
@@ -108,14 +137,12 @@ const TEST_SCRIPT = `
   await api.removeBank(made.id);
   ok('xoá đề', !(await api.getBank(made.id)));
 
-  // ------------------------------------------------------------ 8. học viên
-  const parsed = await api.parseRoster('Tiểu Đoàn 2 | Đại Đội 5 | ZZ.Lop | Học viên Web');
-  const addedStudents = await api.importStudents(parsed.students);
-  ok('nhập danh sách học viên', addedStudents === 1, addedStudents);
-  const inClass = await api.studentsIn('Tiểu Đoàn 2', 'Đại Đội 5', 'ZZ.Lop');
-  ok('lọc học viên theo lớp', inClass.length === 1, inClass.length);
-  const again = await api.importStudents(parsed.students);
-  ok('nhập trùng không nhân bản', again === 0, again);
+  // ------------------------------------------- 8. bảng điểm theo tên thí sinh
+  await App.navigate('gradeboard', { kind: 'mcq', bankId: bank.id });
+  await wait(120);
+  ok('mở được bảng điểm theo tên', /bảng điểm/i.test(screenText()), screenText().slice(0, 50));
+  ok('bảng điểm có tên thí sinh đã làm bài', screenText().includes('ZZ Thí Sinh Web'));
+  ok('bảng điểm không có cột lớp', !/LỚP/.test(document.querySelector('.screen-layer.visible table') ? document.querySelector('.screen-layer.visible table').textContent : ''));
 
   // ------------------------------------------------- 9. xuất / nhập toàn bộ dữ liệu
   const dump = await api.exportAll();
@@ -147,7 +174,7 @@ const TEST_SCRIPT = `
   const tools = document.querySelector('#web-tools').getBoundingClientRect();
   const navButtons = [...document.querySelectorAll('#app-nav .nav-btn')];
   ok('không còn thanh tiêu đề giả', !document.querySelector('#desktop-titlebar'));
-  ok('đủ 9 nút điều hướng', navButtons.length >= 9, navButtons.length);
+  ok('đủ 8 nút điều hướng', navButtons.length === 8, navButtons.length);
   ok('nút điều hướng nằm trong khung nhìn', navButtons.every((b) => {
     const r = b.getBoundingClientRect();
     return r.width > 0 && r.left >= 0 && r.right <= innerWidth + 0.5;
@@ -176,8 +203,6 @@ const MOBILE_SCRIPT = `
   const ok = (name, pass, extra) => results.push({ name, pass: !!pass, extra: extra === undefined ? '' : String(extra) });
   await window.__appReady;
   await document.fonts.ready;
-  App.role = 'student';
-  App.org = { battalion: 'Tiểu Đoàn 2', company: 'Đại Đội 5', className: 'NVQYc43.A9' };
   await App.navigate('start');
   await new Promise((r) => setTimeout(r, 80));
 
@@ -216,10 +241,11 @@ const OFFLINE_SCRIPT = `
   ok('mở được khi KHÔNG có mạng', true);
   const banks = await api.allBanks();
   ok('đề vẫn còn trong máy', banks.length >= 7, 'banks=' + banks.length);
-  ok('giao diện vẫn dựng đủ', document.querySelectorAll('#app-nav .nav-btn').length >= 9, document.querySelectorAll('#app-nav .nav-btn').length);
+  ok('giao diện vẫn dựng đủ', document.querySelectorAll('#app-nav .nav-btn').length >= 8, document.querySelectorAll('#app-nav .nav-btn').length);
   ok('font Fraunces vẫn nạp', document.fonts.check('600 32px Fraunces', 'Học viên'));
   ok('service worker đang điều khiển trang', !!navigator.serviceWorker.controller);
-  const cached = await caches.open('tracnghiem-web-v1.1.3');
+  const cacheNames = await caches.keys();
+  const cached = await caches.open(cacheNames.find((n) => n.startsWith('tracnghiem-web-')) || cacheNames[0]);
   const keys = await cached.keys();
   ok('cache offline có vỏ app', keys.some((r) => r.url.endsWith('index.html')));
   ok('cache offline có đề mẫu', keys.some((r) => r.url.includes('/samples/') && r.url.endsWith('.txt')), keys.filter((r) => r.url.includes('/samples/')).length);
@@ -310,14 +336,14 @@ async function captureScreens(win) {
     ['03-trang-chu', `App.navigate('start')`],
     ['04-trac-nghiem', `App.navigate('hub')`],
     ['05-ngan-hang-de', `App.navigate('banks')`],
-    ['06-hoc-vien', `App.navigate('roster')`],
+    ['06-bang-diem', `App.navigate('gradehub')`],
     ['07-lich-su', `App.navigate('history')`],
     ['08-dong-bo', `App.navigate('sync')`],
     ['09-huong-dan', `App.navigate('guide')`],
   ];
   for (const [name, code] of steps) {
     try {
-      await js(`(async()=>{ if(!App.role) App.role='student'; if(!App.org) App.org={battalion:'Tiểu Đoàn 2',company:'Đại Đội 5',className:'NVQYc43.A9'}; await ${code}; })()`);
+      await js(`(async()=>{ await ${code}; })()`);
       await shot(name);
     } catch (err) {
       console.log('SHOT_ERROR ' + name + ' ' + String((err && err.message) || err));

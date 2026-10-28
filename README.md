@@ -1,15 +1,15 @@
 # Trắc Nghiệm Thử · Đại Đội 5 — bản WEB
 
-Ứng dụng ôn luyện **trắc nghiệm** và **điền vào chỗ trống** của Đại Đội 5 (lớp
-NVQYc43.A9–A10), chuyển từ bản desktop Electron 1.1.3 sang **chạy trực tiếp trong
+Ứng dụng ôn luyện **trắc nghiệm** và **điền vào chỗ trống** dành cho **thí sinh tự
+do**, chuyển từ bản desktop Electron 1.1.3 của Đại Đội 5 sang **chạy trực tiếp trong
 trình duyệt** — không cần cài đặt, không cần máy chủ, không cần Internet.
 
-- **Dùng ngay:** mở trang, chọn vai trò → chọn Tiểu đoàn / Đại đội / Lớp → làm bài.
+- **Thí sinh tự do:** mở trang → chọn môn → gõ tên của bạn → làm bài. Không có Tiểu đoàn, Đại đội, Lớp hay danh sách học viên; tên được nhớ cho lần sau và lịch sử lưu riêng theo từng tên.
 - **Cài như ứng dụng:** bấm “Cài đặt app” trên thanh trên cùng (Chrome / Edge) để có
   biểu tượng riêng, mở toàn màn hình như app thật.
 - **Chạy offline:** service worker lưu sẵn toàn bộ giao diện, font và 7 bộ đề mẫu —
   rút mạng vẫn mở và làm bài bình thường.
-- **Dữ liệu riêng tư:** đề, học viên, lịch sử nằm trong IndexedDB **của trình duyệt
+- **Dữ liệu riêng tư:** đề và lịch sử làm bài nằm trong IndexedDB **của trình duyệt
   trên máy bạn**. Không có tài khoản, không có máy chủ nào nhận dữ liệu.
 - **7 bộ đề có sẵn:** Bệnh Nội Khoa, Bệnh Ngoại Khoa, Điều Dưỡng Cơ Bản, Thuốc Thông
   Thường, Tổ Chức Chiến Thuật Quân Y, Vệ Sinh Phòng Dịch, Y Học Cổ Truyền
@@ -24,9 +24,8 @@ trình duyệt** — không cần cài đặt, không cần máy chủ, không c
 | Ôn trắc nghiệm | chế độ **bảng lớn giảng đường** (trình chiếu) và **cá nhân** (có đồng hồ, nộp bài mới chấm) |
 | Điền vào chỗ trống | gõ đáp án hoặc kéo thả; câu không đánh dấu sẽ tự bốc từ ngẫu nhiên mỗi lượt |
 | Ngân hàng đề | thêm / sửa / xoá câu hỏi, đổi tên môn, xuất `.txt`, khôi phục về bản gốc |
-| Học viên | cây Tiểu đoàn → Đại đội → Lớp, nhập hàng loạt từ `.txt`, lọc theo lớp |
-| Quản lý điểm | số lần làm, điểm gần nhất, điểm cao nhất, xu hướng tiến bộ / giảm |
-| Lịch sử | từng lượt làm bài, lọc theo lớp / môn / thời gian |
+| Bảng điểm | gom theo tên thí sinh: số lần làm, điểm gần nhất, điểm cao nhất, xu hướng tiến bộ / giảm |
+| Lịch sử | từng lượt làm bài, lọc theo tên thí sinh hoặc môn học |
 | Đồng bộ | xuất **một file `.txt`** chứa toàn bộ dữ liệu, nhập lại ở máy khác (gộp, không ghi đè) |
 | Giao diện | 7 bảng màu (sáng, tối, tím, xanh biển, xanh ngọc, hổ phách, hồng mận) |
 | Dùng trên điện thoại | bố cục responsive, nút đủ lớn để bấm bằng ngón tay |
@@ -46,6 +45,14 @@ Mở trình duyệt tại địa chỉ in ra. (Mở thẳng `index.html` bằng 
 nhưng **service worker và IndexedDB bị chặn** ở một số trình duyệt — hãy chạy qua
 `tools/serve.mjs` hoặc một máy chủ tĩnh bất kỳ.)
 
+### Thí sinh tự do
+
+Bản web không có khái niệm đơn vị/lớp: `candidate.js` hỏi tên đúng một lần khi
+bắt đầu làm bài (nhớ lại qua `prefs.studentName`), còn lịch sử chỉ gồm
+`studentName`, `bankId`, `bankName`, `mode`, `total`, `correct`, `seconds`, `at`.
+`App.candidateName` là nguồn duy nhất cho "bạn đang làm với tên gì"; đổi tên ở
+chip *Thí sinh* trên Trang chủ.
+
 ### Kiểm thử tự động
 
 ```bash
@@ -55,8 +62,9 @@ node tools/web-smoke.mjs
 Mở app bằng một trình duyệt Chromium thật (Electron chạy ở chế độ **không** bật Node
 cho trang, đúng như Chrome/Edge) và chạy **3 pha**:
 
-1. **đầy đủ** — 46 phép kiểm tra: nạp đề mẫu, mọi màn hình, làm bài trắc nghiệm và
-   điền chỗ trống, CRUD ngân hàng đề, nhập học viên, xuất/nhập dữ liệu, bố cục header.
+1. **đầy đủ** — 57 phép kiểm tra: nạp đề mẫu, mọi màn hình, hộp nhập tên thí sinh,
+   chặn màn đơn vị/lớp, làm bài trắc nghiệm và điền chỗ trống, lịch sử theo tên,
+   bảng điểm theo thí sinh, CRUD ngân hàng đề, xuất/nhập dữ liệu, bố cục header.
 2. **điện thoại 390×844** — 10 phép kiểm tra bố cục: không tràn ngang, menu xuống hàng
    riêng và cuộn được, nút đủ to, chữ không tràn thẻ.
 3. **offline** — tắt hẳn máy chủ rồi mở lại đúng địa chỉ cũ: 8 phép kiểm tra chứng minh
@@ -86,7 +94,8 @@ quiz-core.js          đọc đề .txt, xuất đề, bốc từ ngẫu nhiên 
 store.js              lưu trữ IndexedDB — port 1:1 luật của storage.js
 api.js                dựng window.api giống hệt preload.js của Electron
 desktop-web.js        chrome của web (thay desktop.js): công cụ, dữ liệu, PWA
-screens.*.js          các màn hình (giữ nguyên từ bản desktop)
+screens.*.js          các màn hình (giữ nguyên, đã bỏ màn chọn vai trò/đơn vị)
+candidate.js          hộp nhập tên thí sinh tự do + nhớ tên cho lần sau
 app.js                điều phối màn hình và phiên làm bài
 samples/              7 bộ đề .txt + manifest.json
 sw.js, manifest.webmanifest, icons/   PWA để cài app và chạy offline
@@ -117,7 +126,9 @@ Ba điểm phải khác vì môi trường trình duyệt:
 ## 4. Dữ liệu & sao lưu
 
 - Toàn bộ dữ liệu nằm trong **IndexedDB** của trình duyệt, cơ sở dữ liệu
-  `tracnghiem-dd5`, khoá `kv`.
+  `tracnghiem-dd5`, khoá `kv` (đề, đề điền chỗ trống, lịch sử, tuỳ chọn).
+  Không có khoá `roster` được dùng trên giao diện — bản web dành cho thí sinh tự do,
+  nhưng vẫn đọc được `roster` trong file sao lưu cũ của bản desktop.
 - Nút **“Dữ liệu”** (góc phải header) hiện dung lượng đang dùng và có: xuất/nhập dữ
   liệu, nạp lại đề mẫu, **xoá toàn bộ dữ liệu**.
 - Sao lưu: mục **Đồng bộ** → “Xuất toàn bộ dữ liệu ra file `.txt`”. File này mang sang

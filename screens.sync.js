@@ -5,15 +5,14 @@
 async function renderSyncScreen(root, App) {
   root.appendChild(pageTitle({
     eyebrow: '🔄 Đồng bộ', title: 'Xuất / nhập', hl: 'toàn bộ dữ liệu',
-    subtitle: 'Gom tất cả đề trắc nghiệm, đề điền chỗ trống, danh sách học viên và lịch sử làm bài vào MỘT file .txt duy nhất — copy file này sang máy khác rồi nhập lại là đồng bộ xong, không cần mạng.',
+    subtitle: 'Gom tất cả đề trắc nghiệm, đề điền chỗ trống và lịch sử làm bài vào MỘT file .txt duy nhất — chép file này sang máy khác rồi nhập lại là đồng bộ xong, không cần mạng.',
   }));
 
   const stats = await gatherStats(App);
-  const statGrid = el('div', { class: 'stat-grid', style: { gridTemplateColumns: 'repeat(4, 1fr)' } });
+  const statGrid = el('div', { class: 'stat-grid', style: { gridTemplateColumns: 'repeat(3, 1fr)' } });
   [
     [String(stats.banks), 'Môn trắc nghiệm', 'var(--accent)'],
     [String(stats.fillBanks), 'Bộ đề điền chỗ trống', 'var(--accent-2)'],
-    [String(stats.roster), 'Học viên', 'var(--accent-3)'],
     [String(stats.history), 'Lượt làm bài', 'var(--accent)'],
   ].forEach(([v, l, c]) => statGrid.appendChild(statCard(v, l, c)));
   root.appendChild(statGrid);
@@ -36,13 +35,13 @@ async function renderSyncScreen(root, App) {
   importPanel.classList.add('mt14');
   importPanel.appendChild(el('div', { style: { fontSize: '13px', fontWeight: 800 }, text: '2 · Nhập dữ liệu vào máy này' }));
   importPanel.appendChild(el('div', { class: 'muted-line mt8',
-    text: 'Chọn file .txt đã xuất từ máy kia. Dữ liệu sẽ được GỘP vào (đề trùng id sẽ ghi đè, học viên trùng tên/lớp sẽ bỏ qua, lịch sử không lặp lại) — không xoá mất dữ liệu sẵn có trên máy này.' }));
+    text: 'Chọn file .txt đã xuất từ máy kia. Dữ liệu được GỘP vào (đề trùng id sẽ ghi đè, lịch sử không lặp lại) — không xoá mất dữ liệu sẵn có trên máy này.' }));
   const importBtn = btn('Chọn file .txt để nhập', async () => {
     const files = await App.api.openTxtFiles();
     if (!files.length) return;
     const result = await App.api.importAll(files[0].content);
     if (!result.ok) { toast(result.error, 'err'); return; }
-    toast(`Đã nhập: +${result.banksAdded} môn trắc nghiệm, +${result.fillAdded} bộ điền chỗ trống, +${result.studentsAdded} học viên mới, +${result.historyAdded} lượt làm bài`, 'ok');
+    toast(`Đã nhập: +${result.banksAdded} môn trắc nghiệm, +${result.fillAdded} bộ điền chỗ trống, +${result.historyAdded} lượt làm bài`, 'ok');
     App.navigate('sync');
   }, { kind: 'accent', iconName: 'upload' });
   importBtn.style.marginTop = '14px';
@@ -53,8 +52,8 @@ async function renderSyncScreen(root, App) {
 }
 
 async function gatherStats(App) {
-  const [banks, fillBanks, roster, history] = await Promise.all([
-    App.api.allBanks(), App.api.allFillBanks(), App.api.allStudents(), App.api.history(),
+  const [banks, fillBanks, history] = await Promise.all([
+    App.api.allBanks(), App.api.allFillBanks(), App.api.history(),
   ]);
-  return { banks: banks.length, fillBanks: fillBanks.length, roster: roster.length, history: history.length };
+  return { banks: banks.length, fillBanks: fillBanks.length, history: history.length };
 }

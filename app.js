@@ -8,9 +8,8 @@ const NAV_ITEMS = [
   { key: 'start', label: 'Trang chủ', icon: 'home' },
   { key: 'hub', label: 'Trắc nghiệm', icon: 'check' },
   { key: 'fillhub', label: 'Điền chỗ trống', icon: 'pencil' },
-  { key: 'gradehub', label: 'Quản lý điểm', icon: 'chart' },
+  { key: 'gradehub', label: 'Bảng điểm', icon: 'chart' },
   { key: 'banks', label: 'Ngân hàng đề', icon: 'book' },
-  { key: 'roster', label: 'Học viên', icon: 'notes' },
   { key: 'history', label: 'Lịch sử', icon: 'clock' },
   { key: 'sync', label: 'Đồng bộ', icon: 'upload' },
   { key: 'guide', label: 'Hướng dẫn', icon: 'notes' },
@@ -52,8 +51,8 @@ const App = {
   toast,
   session: null,
   fillSession: null,
-  role: null,     // 'student' | 'teacher'
-  org: null,      // { battalion, company, className }
+  // Bản web: thí sinh tự do — chỉ có TÊN, không có đơn vị/lớp.
+  candidateName: '',
 
   setChrome(visible) {
     document.getElementById('app-shell').classList.toggle('chromeless', !visible);
@@ -65,21 +64,11 @@ const App = {
   },
 
   async navigate(name, params = {}) {
-    // Resolve prerequisite navigation before mounting. A renderer cannot await
-    // another mount queued behind itself (role/class redirects would deadlock).
-    if (name === 'orgpick' && !this.role) name = 'role';
-    if (['start','hub','setup','fillhub','fillsetup','gradehub','gradeboard'].includes(name)) {
-      if (!this.role) { name='role'; params={}; }
-      else if (!this.org?.className) { name='orgpick'; params={}; }
-    }
     this.screen = name;
     updateDesktopContext(this,name);
     this.setChrome(true);
     this.setActiveNav(name);
     const renderers = {
-      role: (c) => renderRolePick(c, App),
-      orgpick: (c) => renderOrgPicker(c, App),
-      roster: (c) => renderRosterManage(c, App),
       start: (c) => renderModeHub(c, App),
       hub: (c) => renderMcqHub(c, App),
       setup: (c) => renderMcqSetup(c, App, params.bankId),
@@ -103,8 +92,7 @@ const App = {
     const bank = await this.api.getBank(bankId);
     if (!bank || !bank.questions.length) { toast('Môn học này chưa có câu hỏi nào', 'err'); return; }
     const session = createMcqSession(bank, count, mode, shuffleOptions, autoNext, student.name);
-    session.org = { ...this.org };
-    session.studentId = student.id;
+    session.studentId = student.id || 'free';
     this.session = session;
     this.setActiveNav(null);
     if (mode === 'stage') {
@@ -127,8 +115,7 @@ const App = {
     const bank = await this.api.getFillBank(bankId);
     if (!bank || !bank.questions.length) { toast('Bộ đề này chưa có câu hỏi nào', 'err'); return; }
     const session = await createFillSession(this.api, bank, count, fillMode, student.name);
-    session.org = { ...this.org };
-    session.studentId = student.id;
+    session.studentId = student.id || 'free';
     this.fillSession = session;
     this.setActiveNav(null);
     this.setChrome(true);
@@ -141,14 +128,6 @@ const App = {
     await mountScreen((c) => renderFillResult(c, App, session));
   },
 };
-
-// Man hinh can Lop da chon (ModeHub, Trac nghiem, Dien cho trong, Quan ly diem)
-// goi ham nay dau tien; neu chua du thi tu dieu huong ve dung buoc con thieu.
-async function requireOrg(App) {
-  if (!App.role) { App.navigate('role'); return false; }
-  if (!App.org || !App.org.className) { App.navigate('orgpick'); return false; }
-  return true;
-}
 
 // ---------------------------------------------------------------- phien MCQ
 function shuffleArray(arr) {
@@ -197,10 +176,9 @@ function createMcqSession(bank, count, mode, shuffleOptions, autoNext, studentNa
 async function saveMcqResult(api, session) {
   const seconds = session.mode === 'personal' ? session.seconds : Math.round((Date.now() - session.startedAt) / 1000);
   session.seconds = seconds;
-  const org = session.org || {};
   await api.addHistory({
     bankId: session.bank.id, bankName: session.bank.name, mode: session.mode, studentName: session.studentName,
-    studentId: session.studentId, battalion: org.battalion, company: org.company, className: org.className,
+    studentId: session.studentId || 'free',
     total: session.total, correct: session.correct(), seconds, at: Date.now(),
   });
 }
@@ -232,10 +210,9 @@ async function createFillSession(api, bank, count, fillMode, studentName) {
 async function saveFillResult(api, session) {
   const seconds = Math.round((Date.now() - session.startedAt) / 1000);
   session.seconds = seconds;
-  const org = session.org || {};
   await api.addHistory({
     bankId: session.bank.id, bankName: session.bank.name, mode: 'fill', studentName: session.studentName,
-    studentId: session.studentId, battalion: org.battalion, company: org.company, className: org.className,
+    studentId: session.studentId || 'free',
     total: session.total, correct: session.correct(), seconds, at: Date.now(),
   });
 }
@@ -273,7 +250,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   } catch (err) {
     console.error(err);
   }
-  await App.navigate('role');
+  try {
+    const prefs = await App.api.prefs();
+    App.candidateName = String(prefs.studentName || '').trim();
+  } catch (err) { /* chưa có tuỳ chọn */ }
+  await App.navigate('start');
   if (seedResult.added) toast(`Đã nạp ${seedResult.added} môn học từ file .txt trong thư mục`, 'ok');
   if (seedResult.issues && seedResult.issues.length) {
     App.api.log('Câu hỏi bị bỏ qua (thiếu đáp án hoặc thiếu lựa chọn):', seedResult.issues.join(' | '));

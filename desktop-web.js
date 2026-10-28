@@ -65,7 +65,7 @@ function fitHeaderNav() {
   buttons.forEach((b) => b.classList.remove('nav-compact'));
   const gap = parseFloat(getComputedStyle(nav).gap) || 0;
   const width = () => buttons.reduce((sum, b) => sum + b.getBoundingClientRect().width, 0) + gap * Math.max(0, buttons.length - 1);
-  for (const key of ['guide', 'sync', 'roster', 'start', 'banks', 'gradehub', 'fillhub', 'hub', 'history']) {
+  for (const key of ['guide', 'sync', 'start', 'banks', 'gradehub', 'fillhub', 'hub', 'history']) {
     if (width() <= nav.clientWidth) break;
     nav.querySelector(`[data-key="${key}"]`)?.classList.add('nav-compact');
   }
@@ -73,13 +73,14 @@ function fitHeaderNav() {
 
 function updateDesktopContext(App, name) {
   const label = {
-    role: 'Bắt đầu', orgpick: 'Chọn lớp', start: 'Ôn luyện', hub: 'Trắc nghiệm', setup: 'Thiết lập bài',
+    start: 'Ôn luyện', hub: 'Trắc nghiệm', setup: 'Thiết lập bài',
     fillhub: 'Điền chỗ trống', fillsetup: 'Thiết lập bài', banks: 'Ngân hàng đề', filleditor: 'Biên soạn đề',
-    roster: 'Học viên', history: 'Lịch sử', gradehub: 'Quản lý điểm', gradeboard: 'Bảng điểm',
+    history: 'Lịch sử', gradehub: 'Bảng điểm', gradeboard: 'Bảng điểm',
     sync: 'Đồng bộ', guide: 'Hướng dẫn',
   };
   const node = document.getElementById('desktop-context');
-  if (node) node.textContent = [App.org?.className, label[name] || 'Làm bài'].filter(Boolean).join(' / ');
+  // Bản web: chỉ có tên thí sinh, không có lớp/đơn vị.
+  if (node) node.textContent = [App.candidateName || '', label[name] || 'Làm bài'].filter(Boolean).join(' / ');
 }
 
 /* ------------------------------------------------------------- menu dữ liệu */

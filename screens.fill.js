@@ -230,10 +230,9 @@ async function renderFillSetup(root, App, bankId) {
   root.appendChild(p2);
 
   const startBtn = btn('BẮT ĐẦU LÀM BÀI', async () => {
-    if (!(await requireOrg(App))) return;
-    const student = await promptStudentPicker(App);
-    if (!student) return;
-    await App.startFillQuiz(bank.id, state.count, state.fillMode, student);
+    const who = await promptCandidateName(App);
+    if (!who) return;
+    await App.startFillQuiz(bank.id, state.count, state.fillMode, who);
   }, { kind: 'primary', block: true });
   startBtn.style.height = '52px'; startBtn.style.fontSize = '13px'; startBtn.style.marginTop = '18px';
   root.appendChild(startBtn);

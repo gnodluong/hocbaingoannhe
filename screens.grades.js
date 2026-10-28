@@ -1,13 +1,22 @@
 'use strict';
-/** Giang vien chon mon -> xem bang diem/so lan lam bai/tien bo cua tung hoc vien. */
+/**
+ * screens.grades.js (bản web) — BẢNG ĐIỂM THEO THÍ SINH.
+ *
+ * Bản desktop lấy danh sách học viên theo Tiểu đoàn/Đại đội/Lớp. Bản web dùng
+ * cho thí sinh tự do nên bảng điểm được gom theo TÊN đã gõ khi làm bài: ai đã
+ * làm đề này thì có một dòng, kèm số lần làm, điểm gần nhất, điểm cao nhất và
+ * xu hướng tiến bộ.
+ */
 
 async function renderGradeHub(root, App) {
-  if (!App.org || !App.org.className) { App.navigate('orgpick'); return; }
-  const { battalion, company, className } = App.org;
+  const history = await App.api.history();
+  const names = new Set(history.map((h) => (h.studentName || '').trim()).filter(Boolean));
 
   root.appendChild(pageTitle({
-    eyebrow: '📊 Giảng viên', title: 'Quản lý', hl: 'điểm theo môn',
-    subtitle: `Đang xem: ${battalion} · ${company} · ${className}. Chọn một môn hoặc bộ đề để xem điểm.`,
+    eyebrow: '📊 Bảng điểm', title: 'Điểm theo', hl: 'từng thí sinh',
+    subtitle: names.size
+      ? `Đã có ${names.size} thí sinh làm bài. Chọn một môn hoặc bộ đề để xem bảng điểm chi tiết.`
+      : 'Chưa có ai làm bài. Bảng điểm sẽ tự tổng hợp theo tên mà thí sinh gõ khi làm bài.',
   }));
 
   const banks = await App.api.allBanks();
@@ -46,100 +55,77 @@ function gradeSubjectCard(App, name, color, caption, onClick) {
 }
 
 async function renderGradeBoard(root, App, { kind, bankId }) {
-  if (!App.org || !App.org.className) { App.navigate('orgpick'); return; }
-  const state = { onlyClass: true };
   const bank = kind === 'mcq' ? await App.api.getBank(bankId) : await App.api.getFillBank(bankId);
   if (!bank) { App.navigate('gradehub'); return; }
 
-  await build();
+  const allHistory = await App.api.history();
+  const relevant = allHistory.filter((h) => h.bankId === bankId && (kind === 'mcq' ? h.mode !== 'fill' : h.mode === 'fill'));
 
-  async function build() {
-    root.innerHTML = '';
-    root.appendChild(el('div', { class: 'mt8' }, [btn('Chọn môn khác', () => App.navigate('gradehub'), { kind: 'ghost', small: true, iconName: 'arrowLeft' })]));
-    root.appendChild(pageTitle({
-      eyebrow: `📘 ${bank.name}`, title: 'Bảng điểm', hl: kind === 'mcq' ? 'trắc nghiệm' : 'điền chỗ trống',
-    }));
+  root.appendChild(el('div', { class: 'mt8' }, [btn('Chọn môn khác', () => App.navigate('gradehub'), { kind: 'ghost', small: true, iconName: 'arrowLeft' })]));
+  root.appendChild(pageTitle({
+    eyebrow: `📘 ${bank.name}`, title: 'Bảng điểm', hl: kind === 'mcq' ? 'trắc nghiệm' : 'điền chỗ trống',
+    subtitle: `${relevant.length} lượt làm bài của ${new Set(relevant.map((h) => h.studentName)).size} thí sinh.`,
+  }));
 
-    const { battalion, company, className } = App.org;
-    const toggleRow = el('div', { class: 'row gap8 mt8', style: { marginBottom: '14px' } });
-    toggleRow.append(
-      chipEl(`Lớp hiện tại: ${className}`, { tone: state.onlyClass ? 'active' : '', onClick: () => { state.onlyClass = true; build(); } }),
-      chipEl('Tất cả các lớp', { tone: !state.onlyClass ? 'active' : '', onClick: () => { state.onlyClass = false; build(); } }),
-    );
-    toggleRow.querySelectorAll('.chip').forEach((c) => c.classList.add('clickable'));
-    root.appendChild(toggleRow);
+  const rows = new Map();
+  relevant.forEach((h) => {
+    const name = (h.studentName || '').trim();
+    if (!name) return;
+    if (!rows.has(name)) rows.set(name, { name, attempts: [] });
+    rows.get(name).attempts.push(h);
+  });
 
-    const allHistory = await App.api.history();
-    const relevant = allHistory.filter((h) => h.bankId === bankId && (kind === 'mcq' ? h.mode !== 'fill' : h.mode === 'fill'));
-
-    const roster = state.onlyClass ? await App.api.studentsIn(battalion, company, className) : await App.api.allStudents();
-    const rosterKey = (s) => `${s.battalion}|${s.company}|${s.className}|${s.name}`.toLowerCase();
-    const rows = new Map();
-    roster.forEach((s) => rows.set(rosterKey(s), {
-      name: s.name, battalion: s.battalion, company: s.company, className: s.className, attempts: [],
-    }));
-
-    relevant.forEach((h) => {
-      if (!h.studentName) return;
-      const key = `${h.battalion || ''}|${h.company || ''}|${h.className || ''}|${h.studentName}`.toLowerCase();
-      if (!rows.has(key)) {
-        if (state.onlyClass && !(h.battalion === battalion && h.company === company && h.className === className)) return;
-        rows.set(key, { name: h.studentName, battalion: h.battalion, company: h.company, className: h.className, attempts: [] });
-      }
-      rows.get(key).attempts.push(h);
-    });
-
-    const list = [...rows.values()].sort((a, b) => a.name.localeCompare(b.name, 'vi'));
-    if (!list.length) {
-      root.appendChild(emptyState('folder', 'Chưa có học viên hoặc lượt làm bài nào', 'Thêm học viên vào danh sách hoặc đợi có người làm đề này.'));
-      return;
-    }
-
-    const table = el('table', { class: 'history-table' });
-    table.appendChild(el('tr', {}, ['HỌ VÀ TÊN', 'LỚP', 'SỐ LẦN LÀM', 'ĐIỂM GẦN NHẤT', 'ĐIỂM CAO NHẤT', 'XU HƯỚNG', ''].map((h) => el('th', { text: h }))));
-
-    list.forEach((row) => {
-      const sorted = row.attempts.slice().sort((a, b) => a.at - b.at);
-      const pct = (h) => Math.round((h.correct / h.total) * 100);
-      const latest = sorted.length ? pct(sorted[sorted.length - 1]) : null;
-      const best = sorted.length ? Math.max(...sorted.map(pct)) : null;
-      let trend = '—'; let trendColor = 'var(--muted)';
-      if (sorted.length >= 2) {
-        const diff = pct(sorted[sorted.length - 1]) - pct(sorted[0]);
-        if (diff > 0) { trend = `↑ +${diff}%`; trendColor = 'var(--ok-text)'; }
-        else if (diff < 0) { trend = `↓ ${diff}%`; trendColor = 'var(--bad-text)'; }
-        else { trend = '→ 0%'; trendColor = 'var(--dim)'; }
-      }
-      const tr = el('tr', {}, [
-        el('td', { text: row.name, style: { fontWeight: 800 } }),
-        el('td', { text: row.className || '—' }),
-        el('td', { text: String(sorted.length) }),
-        el('td', { text: latest === null ? '—' : `${latest}%` }),
-        el('td', { text: best === null ? '—' : `${best}%` }),
-        el('td', { text: trend, style: { color: trendColor, fontWeight: 800 } }),
-      ]);
-      const actionTd = el('td', {});
-      if (sorted.length) actionTd.appendChild(btn('', () => showAttemptsDialog(row, sorted), { kind: 'ghost', small: true, iconName: 'search' }));
-      tr.appendChild(actionTd);
-      table.appendChild(tr);
-    });
-    root.appendChild(el('div', { class: 'panel', style: { padding: '4px 8px' } }, [table]));
-    root.appendChild(el('div', { style: { height: '20px' } }));
+  const list = [...rows.values()].sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+  if (!list.length) {
+    root.appendChild(emptyState('chart', 'Chưa có ai làm đề này', 'Khi có thí sinh làm bài, bảng điểm sẽ tự hiện ở đây — không cần nhập danh sách trước.'));
+    return;
   }
 
+  const table = el('table', { class: 'history-table' });
+  table.appendChild(el('tr', {}, ['THÍ SINH', 'SỐ LẦN LÀM', 'ĐIỂM GẦN NHẤT', 'ĐIỂM CAO NHẤT', 'XU HƯỚNG', ''].map((h) => el('th', { text: h }))));
+
+  list.forEach((row) => {
+    const sorted = row.attempts.slice().sort((a, b) => a.at - b.at);
+    const pct = (h) => Math.round((h.correct / h.total) * 100);
+    const latest = sorted.length ? pct(sorted[sorted.length - 1]) : null;
+    const best = sorted.length ? Math.max(...sorted.map(pct)) : null;
+    let trend = '—';
+    let trendColor = 'var(--muted)';
+    if (sorted.length >= 2) {
+      const diff = pct(sorted[sorted.length - 1]) - pct(sorted[0]);
+      if (diff > 0) { trend = `↑ +${diff}%`; trendColor = 'var(--ok-text)'; }
+      else if (diff < 0) { trend = `↓ ${diff}%`; trendColor = 'var(--bad-text)'; }
+      else { trend = '→ 0%'; trendColor = 'var(--dim)'; }
+    }
+    const tr = el('tr', {}, [
+      el('td', { text: row.name, style: { fontWeight: 800 } }),
+      el('td', { text: String(sorted.length) }),
+      el('td', { text: latest === null ? '—' : `${latest}%` }),
+      el('td', { text: best === null ? '—' : `${best}%` }),
+      el('td', { text: trend, style: { color: trendColor, fontWeight: 800 } }),
+    ]);
+    const actionTd = el('td', {});
+    if (sorted.length) actionTd.appendChild(btn('', () => showAttemptsDialog(row, sorted), { kind: 'ghost', small: true, iconName: 'search' }));
+    tr.appendChild(actionTd);
+    table.appendChild(tr);
+  });
+  root.appendChild(el('div', { class: 'panel', style: { padding: '4px 8px' } }, [table]));
+  root.appendChild(el('div', { style: { height: '20px' } }));
+
   function showAttemptsDialog(row, sorted) {
-    const list = el('div', { class: 'panel-grid' });
+    const listEl = el('div', { class: 'panel-grid' });
     sorted.slice().reverse().forEach((h) => {
-      const pct = Math.round((h.correct / h.total) * 100);
-      list.appendChild(el('div', { class: 'row gap10', style: { padding: '8px 0', borderTop: '1px solid var(--border)' } }, [
+      const percent = Math.round((h.correct / h.total) * 100);
+      listEl.appendChild(el('div', { class: 'row gap10', style: { padding: '8px 0', borderTop: '1px solid var(--border)' } }, [
         el('span', { class: 'muted-line', text: fmtDate(h.at) }),
-        el('span', { style: { fontWeight: 800 }, text: `${h.correct}/${h.total} (${pct}%)` }),
+        el('span', { style: { fontWeight: 800 }, text: `${h.correct}/${h.total} (${percent}%)` }),
         el('span', { class: 'muted-line', text: fmtTime(h.seconds) }),
       ]));
     });
     openModal({
-      title: `Lịch sử làm bài — ${row.name}`, subtitle: `${row.battalion || ''} · ${row.company || ''} · ${row.className || ''}`,
-      body: list, width: 520,
+      title: `Lịch sử làm bài — ${row.name}`,
+      subtitle: `${sorted.length} lượt · ${bank.name}`,
+      body: listEl, width: 520,
       footer: (footer, close) => footer.appendChild(btn('Đóng', close, { kind: 'ghost' })),
     });
   }

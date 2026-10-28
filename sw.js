@@ -11,7 +11,7 @@
  */
 'use strict';
 
-const VERSION = '1.1.3';
+const VERSION = '1.1.3-web2';
 const CACHE = `tracnghiem-web-v${VERSION}`;
 
 const SHELL = [
@@ -22,19 +22,18 @@ const SHELL = [
   'desktop-theme.css',
   'theme-init.js',
   'quiz-core.js',
+  'candidate.js',
   'store.js',
   'api.js',
   'desktop-web.js',
   'icons.js',
   'ui.js',
   'theme-switcher.js',
-  'history-filter.js',
   'screens.mcq.js',
   'screens.fill.js',
   'screens.banks.js',
   'screens.hub.js',
   'screens.guide.js',
-  'screens.org.js',
   'screens.grades.js',
   'screens.sync.js',
   'app.js',

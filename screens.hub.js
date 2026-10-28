@@ -5,25 +5,25 @@ const COUNT_CHOICES = [50, 70, 90];
 
 // ================================================================= MODE HUB
 async function renderModeHub(root, App) {
-  if (!(await requireOrg(App))) return;
   const banks = await App.api.allBanks();
   const fillBanks = await App.api.allFillBanks();
   const history = await App.api.history();
 
-  const { battalion, company, className } = App.org;
   const crumbs = el('div', { class: 'row gap8 wrap mt8', style: { marginBottom: '4px' } });
-  const changeChip = chipEl('Đổi lớp', { onClick: () => App.navigate('orgpick') });
-  changeChip.classList.add('clickable');
-  crumbs.append(
-    chipEl(App.role === 'student' ? 'Học viên' : 'Giảng viên', { tone: 'active' }),
-    chipEl(`${battalion} · ${company} · ${className}`),
-    changeChip,
-  );
+  const nameChip = chipEl(`Thí sinh: ${candidateLabel(App)}`, {
+    onClick: async () => {
+      const who = await promptCandidateName(App);
+      if (who) App.navigate('start');
+    },
+  });
+  nameChip.classList.add('clickable');
+  nameChip.title = 'Bấm để đổi tên';
+  crumbs.append(chipEl('Thí sinh tự do', { tone: 'active' }), nameChip);
   root.appendChild(crumbs);
 
   root.appendChild(pageTitle({
-    eyebrow: '🩺 Ôn luyện quân y · NVQYc43', title: 'Chọn', hl: 'hình thức ôn luyện',
-    subtitle: 'Chọn một trong hai hình thức bên dưới. Toàn bộ dữ liệu lưu ngay trong thư mục app, không cần Internet.',
+    eyebrow: '🩺 Ôn luyện quân y', title: 'Chọn', hl: 'hình thức ôn luyện',
+    subtitle: 'Không cần chọn đơn vị hay lớp — chỉ cần gõ tên khi bắt đầu làm bài. Kết quả được lưu vào lịch sử của chính bạn.',
   }));
 
   const grid = el('div', { class: 'mode-hub-grid' });
@@ -40,6 +40,23 @@ async function renderModeHub(root, App) {
   stats.appendChild(statCard(String(banks.length + fillBanks.length), 'Tổng số môn / bộ đề', 'var(--accent)'));
   stats.appendChild(statCard(String(history.length), 'Lượt làm bài đã lưu', 'var(--accent-2)'));
   root.appendChild(stats);
+
+  if (App.candidateName) {
+    const mine = history.filter((h) => h.studentName === App.candidateName);
+    if (mine.length) {
+      root.appendChild(sectionHead('Lượt làm gần đây của bạn', App.candidateName));
+      const list = panel([], { classes: 'panel-grid' });
+      mine.slice(0, 4).forEach((h) => {
+        const pct = h.total ? Math.round((h.correct / h.total) * 100) : 0;
+        list.appendChild(el('div', { class: 'row gap10', style: { padding: '8px 0', borderTop: '1px solid var(--border)' } }, [
+          el('span', { style: { fontWeight: 800 }, text: h.bankName }),
+          el('span', { class: 'muted-line', text: fmtDate(h.at) }),
+          el('span', { style: { marginLeft: 'auto', fontWeight: 800 }, text: `${h.correct}/${h.total} · ${pct}%` }),
+        ]));
+      });
+      root.appendChild(list);
+    }
+  }
 }
 
 function modeCard(iconName, color, title, subtitle, desc, onClick) {
@@ -222,11 +239,10 @@ async function renderMcqSetup(root, App, bankId) {
   root.appendChild(p3);
 
   const startBtn = btn('BẮT ĐẦU LÀM BÀI', async () => {
-    if (!(await requireOrg(App))) return;
-    const student = await promptStudentPicker(App);
-    if (!student) return;
+    const who = await promptCandidateName(App);
+    if (!who) return;
     await App.api.setPrefs({ count: state.count, mode: state.mode, shuffleOptions: state.shuffleOptions, autoNext: state.autoNext });
-    await App.startQuiz(bank.id, state.count, state.mode, state.shuffleOptions, state.autoNext, student);
+    await App.startQuiz(bank.id, state.count, state.mode, state.shuffleOptions, state.autoNext, who);
   }, { kind: 'primary', block: true });
   startBtn.style.height = '52px';
   startBtn.style.fontSize = '13px';
@@ -244,9 +260,23 @@ function redrawChecks(gridEl) {
 }
 
 // ================================================================== HISTORY
+// Bản web: chỉ có TÊN thí sinh (không lớp, không đơn vị), nên bộ lọc gồm chọn
+// tên và gõ tìm — đủ dùng và gọn hơn bản desktop.
+function noAccent(text) {
+  return String(text || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/Đ/g, 'D')
+    .toLowerCase();
+}
+
 async function renderHistory(root, App) {
-  const [items, roster] = await Promise.all([App.api.history(), App.api.allStudents()]);
-  root.appendChild(pageTitle({ title: 'Lịch sử', hl: 'làm bài', subtitle: `${items.length} lượt làm gần nhất được lưu trong thư mục data của app.` }));
+  const items = await App.api.history();
+  root.appendChild(pageTitle({
+    title: 'Lịch sử', hl: 'làm bài',
+    subtitle: `${items.length} lượt làm gần nhất, lưu ngay trong trình duyệt của bạn.`,
+  }));
 
   if (!items.length) {
     root.appendChild(emptyState('chart', 'Chưa có lượt làm bài nào', 'Hãy chọn một môn học ở trang chủ và làm thử một đề.',
@@ -254,42 +284,35 @@ async function renderHistory(root, App) {
     return;
   }
 
-  const index = HistoryFilter.buildHistoryIndex(items, roster);
-  const filters = { classKey: '', studentKey: '', query: '' };
+  const names = [];
+  items.forEach((h) => {
+    const name = (h.studentName || '').trim();
+    if (name && !names.includes(name)) names.push(name);
+  });
+  names.sort((a, b) => a.localeCompare(b, 'vi'));
+
+  const filters = { studentKey: '', query: '' };
   const filterPanel = panel([], { classes: 'history-filters' });
-  filterPanel.appendChild(el('div', { class: 'muted-line', text: 'Chọn lớp rồi chọn học viên, hoặc gõ tên để tìm lượt làm bài. Có thể tìm tên không dấu.' }));
+  filterPanel.appendChild(el('div', { class: 'muted-line', text: 'Chọn tên thí sinh hoặc gõ tên / môn học để tìm. Gõ không dấu vẫn tìm được.' }));
   const fields = el('div', { class: 'history-filter-fields' });
-  const classSelect = el('select', { class: 'text-input history-class', attrs: { id: 'history-class' } });
-  const studentSelect = el('select', { class: 'text-input history-student', attrs: { id: 'history-student' } });
+  const nameSelect = el('select', { class: 'text-input history-student', attrs: { id: 'history-student' } });
+  nameSelect.appendChild(el('option', { text: 'Tất cả thí sinh', attrs: { value: '' } }));
+  names.forEach((name) => nameSelect.appendChild(el('option', { text: name, attrs: { value: name } })));
   const searchInput = el('input', { class: 'text-input history-search', attrs: {
-    id: 'history-search', type: 'search', placeholder: 'Ví dụ: Nguyễn Văn An', autocomplete: 'off',
+    id: 'history-search', type: 'search', placeholder: 'Ví dụ: Nguyễn Văn An hoặc Bệnh Nội Khoa', autocomplete: 'off',
   } });
   [
-    ['Lớp', 'history-class', classSelect],
-    ['Học viên', 'history-student', studentSelect],
-    ['Tìm theo tên', 'history-search', searchInput],
+    ['Thí sinh', 'history-student', nameSelect],
+    ['Tìm theo tên / môn', 'history-search', searchInput],
   ].forEach(([label, id, input]) => fields.appendChild(el('div', { class: 'history-filter-field' }, [
     el('label', { class: 'field-label', text: label, attrs: { for: id } }), input,
   ])));
-  classSelect.appendChild(el('option', { text: 'Tất cả lớp', attrs: { value: '' } }));
-  index.classes.forEach(cls => classSelect.appendChild(el('option', { text: cls.label, attrs: { value: cls.key } })));
-
-  function updateStudentOptions() {
-    studentSelect.replaceChildren(el('option', { text: 'Tất cả học viên', attrs: { value: '' } }));
-    HistoryFilter.studentOptions(index, filters.classKey).forEach(student => studentSelect.appendChild(
-      el('option', { text: student.label, attrs: { value: student.key } }),
-    ));
-    studentSelect.value = filters.studentKey;
-  }
-  updateStudentOptions();
   filterPanel.appendChild(fields);
   const resetFilters = btn('Xoá bộ lọc', () => {
-    filters.classKey = '';
     filters.studentKey = '';
     filters.query = '';
-    classSelect.value = '';
+    nameSelect.value = '';
     searchInput.value = '';
-    updateStudentOptions();
     renderResults();
   }, { kind: 'ghost', small: true });
   resetFilters.classList.add('history-clear-filters');
@@ -300,7 +323,7 @@ async function renderHistory(root, App) {
   const tools = el('div', { class: 'row history-tools', style: { justifyContent: 'space-between', marginTop: '14px', marginBottom: '12px' } });
   tools.appendChild(count);
   tools.appendChild(btn('Xoá lịch sử', async () => {
-    if (await confirmDialog('Xoá toàn bộ lịch sử?', 'Các kết quả đã lưu trong thư mục data sẽ bị xoá.', { confirmLabel: 'Xoá', danger: true })) {
+    if (await confirmDialog('Xoá toàn bộ lịch sử?', 'Toàn bộ kết quả đã lưu sẽ bị xoá khỏi trình duyệt này. Đề và tuỳ chọn vẫn giữ nguyên.', { confirmLabel: 'Xoá', danger: true })) {
       await App.api.clearHistory();
       toast('Đã xoá lịch sử', 'ok');
       App.navigate('history');
@@ -311,46 +334,47 @@ async function renderHistory(root, App) {
   const results = el('div', { class: 'history-results', attrs: { id: 'history-results', 'aria-label': 'Kết quả lịch sử làm bài' } });
   root.appendChild(results);
 
+  function filteredItems() {
+    const q = noAccent(filters.query).trim();
+    return items.filter((h) => {
+      if (filters.studentKey && (h.studentName || '') !== filters.studentKey) return false;
+      if (!q) return true;
+      return noAccent(`${h.studentName || ''} ${h.bankName || ''}`).includes(q);
+    });
+  }
+
   function renderResults() {
-    const filtered = HistoryFilter.filterHistory(index, filters);
+    const filtered = filteredItems();
     count.textContent = `Hiển thị ${filtered.length} / ${items.length} lượt làm bài`;
-    resetFilters.disabled = !filters.classKey && !filters.studentKey && !filters.query;
+    resetFilters.disabled = !filters.studentKey && !filters.query;
     results.replaceChildren();
     if (!filtered.length) {
-      results.appendChild(emptyState('chart', 'Không có lượt làm bài phù hợp', 'Thử đổi lớp, học viên hoặc tên tìm kiếm. Chọn Xoá bộ lọc để xem toàn bộ lịch sử.'));
+      results.appendChild(emptyState('chart', 'Không có lượt làm bài phù hợp', 'Thử đổi tên thí sinh hoặc từ khoá tìm kiếm. Chọn Xoá bộ lọc để xem toàn bộ lịch sử.'));
       return;
     }
     const table = el('table', { class: 'history-table' });
-    table.appendChild(el('thead', {}, [el('tr', {}, ['THỜI GIAN', 'HỌC VIÊN', 'LỚP', 'MÔN HỌC', 'CHẾ ĐỘ', 'KẾT QUẢ', 'TỈ LỆ', 'THỜI LƯỢNG'].map((h) => el('th', { text: h, attrs: { scope: 'col' } })))]));
+    table.appendChild(el('thead', {}, [el('tr', {}, ['THỜI GIAN', 'THÍ SINH', 'MÔN HỌC', 'CHẾ ĐỘ', 'KẾT QUẢ', 'TỈ LỆ', 'THỜI LƯỢNG'].map((h) => el('th', { text: h, attrs: { scope: 'col' } })))]));
     const body = el('tbody');
     const modeLabel = { stage: 'Giảng đường', personal: 'Cá nhân', fill: 'Điền chỗ trống' };
     filtered.forEach((item) => {
       const percent = item.total ? Math.round((item.correct / item.total) * 100) : 0;
       const color = percent >= 75 ? 'var(--ok)' : percent >= 50 ? 'var(--warn)' : 'var(--bad)';
-      const tr = el('tr', {}, [
+      body.appendChild(el('tr', {}, [
         el('td', { text: fmtDate(item.at) }),
         el('td', { class: 'history-row-name', text: item.studentName || '—' }),
-        el('td', { text: item.className || '—', attrs: { title: [item.battalion, item.company, item.className].filter(Boolean).join(' · ') } }),
         el('td', { text: item.bankName, style: { fontWeight: 700 } }),
         el('td', { text: modeLabel[item.mode] || item.mode }),
         el('td', { text: `${item.correct} / ${item.total}` }),
         el('td', { text: `${percent}%`, style: { color, fontWeight: 700 } }),
         el('td', { text: fmtTime(item.seconds) }),
-      ]);
-      body.appendChild(tr);
+      ]));
     });
     table.appendChild(body);
     results.appendChild(el('div', { class: 'panel history-table-wrap', style: { padding: '4px 8px' } }, [table]));
   }
 
-  classSelect.addEventListener('change', () => {
-    filters.classKey = classSelect.value;
-    filters.studentKey = '';
-    updateStudentOptions();
-    renderResults();
-  });
-  studentSelect.addEventListener('change', () => {
-    filters.studentKey = studentSelect.value;
+  nameSelect.addEventListener('change', () => {
+    filters.studentKey = nameSelect.value;
     renderResults();
   });
   searchInput.addEventListener('input', () => {
