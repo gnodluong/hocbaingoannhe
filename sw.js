@@ -11,7 +11,7 @@
  */
 'use strict';
 
-const VERSION = '1.1.3-web2';
+const VERSION = '1.1.3-web3';
 const CACHE = `tracnghiem-web-v${VERSION}`;
 
 const SHELL = [

@@ -1,7 +1,7 @@
 {
   "name": "Trắc Nghiệm · Đại Đội 5",
   "short_name": "Trắc Nghiệm",
-  "description": "Ôn luyện trắc nghiệm và điền chỗ trống cho Đại Đội 5 — chạy trên trình duyệt, dùng được khi không có mạng.",
+  "description": "Ôn luyện trắc nghiệm và điền chỗ trống dành cho thí sinh tự do — chạy trên trình duyệt, dùng được khi không có mạng, chỉ cần gõ tên.",
   "lang": "vi",
   "dir": "ltr",
   "start_url": "./",
