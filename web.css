@@ -1,0 +1,169 @@
+/* ============================================================================
+   web.css — phần riêng của BẢN WEB (bản desktop không nạp tệp này).
+
+   Bản desktop có thanh tiêu đề của Windows (thu nhỏ / phóng to / đóng) nên đặt
+   công tắc giao diện trên đó. Trình duyệt không có thanh ấy, nên bản web:
+     · bỏ hẳn thanh tiêu đề giả,
+     · gộp công tắc giao diện + nút "Dữ liệu" + nút "Cài đặt app" vào header,
+     · chỉnh chiều cao cho đúng trình duyệt (kể cả điện thoại),
+     · tăng độ rõ của viền ở giao diện sáng.
+   ========================================================================== */
+
+/* ------------------------------------------------------ chiều cao cho web --- */
+/* 100vh trên điện thoại bị thanh địa chỉ che mất một phần → dùng dvh. */
+#app-shell {
+  height: 100vh;
+  height: 100dvh;
+}
+body { overflow: hidden; }
+#app-container { -webkit-tap-highlight-color: transparent; }
+
+/* ------------------------------------------- công cụ web trên header --- */
+#web-tools {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  margin-left: 14px;
+  padding-left: 14px;
+  border-left: 1px solid var(--border);
+}
+#web-tools #theme-switcher {
+  margin-left: 0;
+  -webkit-app-region: no-drag;
+}
+#web-tools .titlebar-menu { display: grid; }
+#window-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: auto;
+  padding: 0;
+}
+/* Bản desktop có 3 nút điều khiển cửa sổ; bản web không có nên ẩn. */
+.window-control { display: none !important; }
+
+.web-install {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 11px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.web-install:hover { background: var(--surface-3); color: var(--text); }
+.web-install svg { width: 14px; height: 14px; }
+.web-install[hidden] { display: none !important; }
+
+/* ---------------------------------------------------- bảng "Dữ liệu app" --- */
+.data-meter {
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-soft);
+}
+.data-meter-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.data-meter-value { font-size: 22px; font-weight: 800; color: var(--accent-2); margin-top: 4px; }
+.data-meter-hint { font-size: 12px; color: var(--dim); line-height: 1.55; margin-top: 6px; }
+.data-actions { display: flex; flex-direction: column; gap: 8px; }
+.data-note {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--dim);
+  padding: 10px 12px;
+  border-left: 3px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-bg, rgba(245, 158, 11, .12));
+}
+.data-note b { color: var(--text); }
+
+/* ------------------------------------------- giao diện sáng: viền rõ hơn --- */
+/* WCAG 1.4.11 khuyến nghị ≥3:1 cho ranh giới ô nhập / nút. Bảng sáng gốc để
+   viền hơi nhạt (1,37:1) nên trên màn hình ngoài trời khó thấy khung ô nhập. */
+:root[data-theme="light"] {
+  --border: #c7d1e0;
+  --border-2: #9fb0c6;
+}
+
+/* ------------------------------------------------------------ màn nhỏ --- */
+@media (max-width: 1120px) {
+  #web-tools { margin-left: 8px; padding-left: 8px; gap: 4px; }
+  .theme-choice { min-width: 38px; padding: 0 7px; }
+}
+
+@media (max-width: 860px) {
+  #app-header {
+    height: auto;
+    min-height: 60px;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    padding: 9px 12px;
+  }
+  #brand-mark { width: 36px; height: 36px; border-radius: 11px; }
+  .brand-title { font-size: 13px; }
+  .brand-sub { display: none; }
+
+  #web-tools {
+    order: 2;
+    margin-left: auto;
+    padding-left: 0;
+    border-left: 0;
+    gap: 4px;
+  }
+  #web-tools .titlebar-menu { width: 34px; height: 34px; }
+
+  #app-nav {
+    order: 3;
+    /* flex:0 0 100% để menu LUÔN xuống hàng riêng; chỉ width:100% thì flex
+       vẫn co menu vào hàng trên vì flex-basis của .nav-btn là 0. */
+    flex: 0 0 100%;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+  #app-nav::-webkit-scrollbar { display: none; }
+  .nav-btn { flex: none; height: 34px; padding: 0 12px; }
+
+  .theme-choice { height: 30px; min-width: 34px; padding: 0 6px; font-size: 11px; }
+  .theme-more { display: none; } /* popover rộng, trên điện thoại dễ che nút khác */
+  .web-install span { display: none; }
+  .web-install { padding: 0 9px; height: 32px; }
+
+  .screen-layer { padding: 16px 14px 24px; }
+  #app-footer { height: 40px; gap: 10px; padding: 0 12px; }
+  #app-footer .footer-sep { height: 18px; }
+}
+
+@media (max-width: 560px) {
+  #app-footer { display: none; }
+  .screen-layer { padding: 12px 12px 20px; }
+  .page-title h1 { font-size: 22px; }
+  .theme-choice { min-width: 32px; padding: 0 5px; }
+}
+
+/* ---------------------------------------------------------- không có JS --- */
+#app-noscript {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  text-align: center;
+  background: var(--bg, #080c18);
+  color: var(--text, #eaf0ff);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  z-index: 999;
+}
+#app-noscript .box { max-width: 460px; }
+#app-noscript h1 { font-size: 22px; margin: 0 0 10px; }
+#app-noscript p { font-size: 14px; line-height: 1.65; color: #a9b6d6; margin: 0; }

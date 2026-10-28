@@ -1,0 +1,134 @@
+HƯỚNG DẪN SỬ DỤNG — TRẮC NGHIỆM THỬ (BẢN WEB)
+Đại Đội 5 · Lớp NVQYc43.A9–A10
+Thực hiện bởi: Đại Đội 5
+=====================================================
+
+I. MỞ APP
+---------
+Cách 1 — mở ngay trên trình duyệt:
+   Mở đường dẫn của app bằng Chrome, Edge hoặc Cốc Cốc bản mới.
+   Không cần cài đặt gì, không cần Internet sau lần mở đầu tiên.
+
+Cách 2 — cài thành ứng dụng (KHUYÊN DÙNG):
+   Bấm nút "Cài đặt app" ở góc phải thanh trên cùng → chọn "Cài đặt".
+   App có biểu tượng riêng trên màn hình, mở ra chạy toàn màn hình như ứng
+   dụng thật và mở được cả khi không có mạng.
+   (Trên điện thoại: menu trình duyệt → "Thêm vào màn hình chính".)
+
+Lần đầu mở, app tự nạp sẵn 7 môn học từ các file .txt của đơn vị:
+   Bệnh Nội Khoa, Bệnh Ngoại Khoa, Điều Dưỡng Cơ Bản, Thuốc Thông Thường,
+   Tổ Chức Chiến Thuật Quân Y, Vệ Sinh Phòng Dịch, Y Học Cổ Truyền.
+
+
+II. BẮT ĐẦU LÀM BÀI
+-------------------
+Bước 1. Chọn vai trò: HỌC VIÊN hay GIẢNG VIÊN.
+Bước 2. Chọn lần lượt Tiểu đoàn → Đại đội → Lớp.
+        Ở các màn sau có chip "Đổi lớp" để đổi mà không mất vai trò.
+Bước 3. Học viên vào Trang chủ chọn Trắc nghiệm / Điền chỗ trống.
+        Giảng viên vào thẳng Quản lý điểm.
+
+Thanh điều hướng luôn có sẵn: Trang chủ · Trắc nghiệm · Điền chỗ trống ·
+Quản lý điểm · Ngân hàng đề · Học viên · Lịch sử · Đồng bộ · Hướng dẫn.
+
+
+III. LÀM BÀI TRẮC NGHIỆM
+------------------------
+Chọn một môn → chọn số câu (50 / 70 / 90 / toàn bộ) → chọn chế độ:
+
+   BẢNG LỚN GIẢNG ĐƯỜNG — mỗi màn hình một câu chữ rất to để trình chiếu cả
+   lớp. Bấm A/B/C/D hoặc phím 1–4, Enter sang câu tiếp; chọn xong hiện ngay
+   đúng/sai.
+
+   CÁ NHÂN — 10 câu mỗi trang, có đồng hồ bấm giờ, nộp bài rồi mới chấm điểm.
+
+Trước khi bắt đầu, app bắt CHỌN ĐÚNG TÊN trong danh sách học viên của lớp đang
+chọn — gõ để lọc hoặc bấm chọn thẳng, không nhập được tên lạ.
+Đề được xáo ngẫu nhiên và không lặp câu trong cùng một lượt làm.
+
+
+IV. LÀM BÀI ĐIỀN VÀO CHỖ TRỐNG
+------------------------------
+Chọn bộ đề (lọc được theo môn) → chọn số câu → chọn cách trả lời:
+   GÕ ĐÁP ÁN   — gõ bằng bàn phím.
+   KÉO THẢ TỪ  — giữ chuột kéo từ đúng thả vào ô trống.
+Chấm không phân biệt chữ hoa/thường, chỉ cần đúng từ.
+Câu không đánh dấu từ sẽ được app tự bốc ngẫu nhiên 1–3 từ làm chỗ trống, nên
+mỗi lượt làm có thể ra từ khác nhau.
+
+
+V. SOẠN VÀ TẢI ĐỀ LÊN
+---------------------
+A. ĐỀ TRẮC NGHIỆM (file .txt) — mỗi câu gồm:
+      Dòng câu hỏi
+      A) đáp án 1
+      B) đáp án 2
+      C) đáp án 3
+      D) đáp án 4
+      ANSWER: A          ← chữ cái của đáp án đúng
+   Vào "Ngân hàng đề" → "Tải đề lên" → chọn file .txt (chọn được nhiều file).
+
+B. ĐỀ ĐIỀN CHỖ TRỐNG (file .txt) — MỖI DÒNG là một câu:
+      Tim người bình thường có 4 ngăn.
+      Huyết áp bình thường là {{120}}/{{80}} mmHg.
+   Dòng không có {{...}} sẽ tự bốc từ ngẫu nhiên; dòng có {{...}} luôn hỏi
+   đúng từ đã đánh dấu. Dòng bắt đầu bằng dấu # là ghi chú, app bỏ qua.
+   Có thể dán thẳng nội dung vào ô dán đề thay vì chọn file.
+
+C. Soạn trực tiếp trong app: "Tạo bộ đề mới" → thêm/sửa/xoá từng câu.
+   Mỗi câu đều sửa và xoá được; đổi được tên môn; xuất lại ra .txt để chia sẻ;
+   khôi phục về đúng nội dung file gốc nếu đã lỡ sửa nhầm.
+
+
+VI. HỌC VIÊN VÀ QUẢN LÝ ĐIỂM
+----------------------------
+Mục "Học viên": quản lý theo cây Tiểu đoàn → Đại đội → Lớp.
+   Thêm tay từng người, hoặc "Tải danh sách lên" để nhập hàng loạt.
+   File mẫu mỗi dòng 4 phần cách nhau bằng dấu |:
+      Tiểu đoàn | Đại đội | Lớp | Họ và tên
+   Lớp phải có học viên trong danh sách thì mới làm bài được.
+
+Mục "Quản lý điểm": chọn một môn trắc nghiệm hoặc bộ đề điền chỗ trống.
+   Bảng hiện đủ học viên của lớp (kể cả người chưa làm lần nào): số lần làm,
+   điểm gần nhất, điểm cao nhất, xu hướng (tiến bộ ↑ / giảm ↓).
+   Bấm kính lúp để xem chi tiết từng lượt của một người.
+   Chip "Tất cả các lớp" để xem gộp mọi lớp.
+
+
+VII. DỮ LIỆU VÀ SAO LƯU — QUAN TRỌNG
+------------------------------------
+· Bản web lưu TOÀN BỘ đề, học viên, lịch sử và tuỳ chọn ngay trong trình duyệt
+  trên máy bạn. Không có tài khoản, không gửi dữ liệu lên mạng.
+· Bấm nút "Dữ liệu" ở góc phải thanh trên cùng để xem dung lượng đang dùng,
+  nạp lại đề mẫu, hoặc xoá toàn bộ dữ liệu.
+· SAO LƯU / MANG SANG MÁY KHÁC: vào mục "Đồng bộ" → "Xuất toàn bộ dữ liệu ra
+  file .txt" → chép file sang máy kia → vào "Đồng bộ" ở máy đó → "Chọn file
+  .txt để nhập".
+  Dữ liệu được GỘP chứ không xoá: đề trùng mã sẽ cập nhật mới nhất, học viên
+  trùng tên/lớp bị bỏ qua, lịch sử không lặp lại.
+· Xoá dữ liệu trình duyệt (cookie / dữ liệu trang web) cũng làm mất dữ liệu
+  app — hãy xuất file .txt để sao lưu định kỳ.
+· Mỗi máy lưu riêng. Muốn gộp điểm từ nhiều máy: mỗi máy xuất một file .txt rồi
+  nhập lần lượt vào máy chính.
+
+
+VIII. GIAO DIỆN
+---------------
+Bấm công tắc ở góc phải thanh trên cùng để đổi: Sáng · Tối · Tím.
+Nút "Mở rộng" có thêm: Xanh biển, Xanh ngọc, Hổ phách, Hồng mận.
+Lựa chọn được ghi nhớ cho lần mở sau.
+
+Trên điện thoại: menu tự xuống một hàng riêng và vuốt ngang để xem hết;
+nút được làm to hơn để bấm bằng ngón tay.
+
+
+IX. CHẠY KHÔNG CÓ MẠNG
+----------------------
+Sau lần mở đầu tiên, app đã lưu sẵn giao diện và 7 bộ đề vào máy. Rút mạng vẫn
+mở app, làm bài, xem điểm và xuất dữ liệu bình thường.
+Chỉ khi cần NHẬP file từ máy khác hoặc mở bằng máy chưa từng dùng thì mới cần
+mạng (hoặc chép sẵn file cần nhập).
+
+=====================================================
+Gặp lỗi hiển thị: tải lại trang (Ctrl + F5). Nếu vẫn lỗi, mở nút "Dữ liệu",
+xuất dữ liệu ra file .txt trước, rồi mới xoá dữ liệu và nhập lại.

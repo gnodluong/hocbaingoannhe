@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#101722" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+  />
+  <meta name="description" content="Ôn luyện trắc nghiệm và điền chỗ trống cho Đại Đội 5 — chạy được trên trình duyệt, dùng offline." />
+  <title>Trắc Nghiệm Thử · Đại Đội 5</title>
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/favicon.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+
+  <script src="theme-init.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="desktop-theme.css" />
+  <link rel="stylesheet" href="web.css" />
+</head>
+<body>
+  <noscript>
+    <div id="app-noscript">
+      <div class="box">
+        <h1>Cần bật JavaScript</h1>
+        <p>Trang này là một ứng dụng chạy ngay trong trình duyệt. Hãy bật JavaScript (hoặc dùng Chrome / Edge / Cốc Cốc bản mới) rồi tải lại trang.</p>
+      </div>
+    </div>
+  </noscript>
+
+  <div id="app-shell">
+    <header id="app-header" aria-label="Điều hướng chính">
+      <div id="brand" class="clickable">
+        <div id="brand-mark"><img id="brand-logo" src="logo.png" alt="logo" /></div>
+        <div id="brand-text">
+          <div class="brand-title">Trắc Nghiệm Thử</div>
+          <div class="brand-sub">Ôn luyện · Giảng đường · Cá nhân</div>
+        </div>
+      </div>
+
+      <nav id="app-nav"></nav>
+
+      <!-- Công cụ của bản web: đổi giao diện, dữ liệu, cài app.
+           Bản desktop đặt những thứ này trên thanh tiêu đề của Windows; trong
+           trình duyệt không có thanh đó nên gộp thẳng vào header. -->
+      <div id="web-tools">
+        <div id="theme-switcher" role="group" aria-label="Giao diện"></div>
+        <button id="desktop-menu" class="titlebar-menu" type="button" title="Dữ liệu của app" aria-label="Dữ liệu của app"></button>
+        <div id="window-controls"></div>
+      </div>
+    </header>
+
+    <div id="app-container"><div id="screen-a" class="screen-layer"></div><div id="screen-b" class="screen-layer"></div></div>
+
+    <footer id="app-footer">
+      <span id="header-version" class="footer-version"></span>
+      <div class="footer-block" style="flex-direction:row;align-items:center;gap:6px;">
+        <div class="footer-label" style="font-size:11px;">Thực hiện bởi</div>
+        <div class="footer-value accent2" style="font-size:13px;font-weight:800;">Đại Đội 5</div>
+      </div>
+      <div class="footer-sep"></div>
+      <div class="footer-block">
+        <div class="footer-label">LỚP</div>
+        <div class="footer-value accent3">NVQYc43.A9-A10</div>
+      </div>
+    </footer>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+
+  <script src="quiz-core.js"></script>
+  <script src="store.js"></script>
+  <script src="api.js"></script>
+  <script src="icons.js"></script>
+  <script src="history-filter.js"></script>
+  <script src="ui.js"></script>
+  <script src="theme-switcher.js"></script>
+  <script src="desktop-web.js"></script>
+  <script src="screens.mcq.js"></script>
+  <script src="screens.fill.js"></script>
+  <script src="screens.banks.js"></script>
+  <script src="screens.hub.js"></script>
+  <script src="screens.guide.js"></script>
+  <script src="screens.org.js"></script>
+  <script src="screens.grades.js"></script>
+  <script src="screens.sync.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

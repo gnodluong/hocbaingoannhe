@@ -1,0 +1,11 @@
+# Ảnh chụp khi chạy kiểm thử
+tools/shots/
+
+# Hồ sơ trình duyệt / thư mục tạm
+node_modules/
+*.log
+
+# Tệp hệ điều hành
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,20 @@
+{
+  "name": "Trắc Nghiệm · Đại Đội 5",
+  "short_name": "Trắc Nghiệm",
+  "description": "Ôn luyện trắc nghiệm và điền chỗ trống cho Đại Đội 5 — chạy trên trình duyệt, dùng được khi không có mạng.",
+  "lang": "vi",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#101722",
+  "theme_color": "#101722",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
