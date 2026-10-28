@@ -183,11 +183,18 @@ body { overflow: hidden; }
     padding: 10px;
     gap: 8px;
     border-radius: 12px;
-    align-items: flex-start;
+    /* Chữ nằm GIỮA ô: trước đây canh lên trên nên ô cao mà chữ dồn góc trái. */
+    align-items: center;
+    justify-content: center;
   }
-  .big-option .badge { width: 32px; height: 32px; border-radius: 9px; font-size: 14px; }
-  .big-option .text { font-size: clamp(12px, 3.4vw, 15px); line-height: 1.35; }
-  .big-option .mark { font-size: 16px; }
+  .big-option .badge { width: 34px; height: 34px; border-radius: 10px; font-size: 15px; }
+  .big-option .text {
+    font-size: clamp(16px, 5vw, 21px);
+    line-height: 1.35;
+    text-align: center;      /* canh giữa chữ trong phần còn lại của ô */
+    font-weight: 600;
+  }
+  .big-option .mark { font-size: 18px; }
 
   .stage-foot { padding: 0 10px 8px; gap: 6px; flex-wrap: wrap; }
   .stage-foot .hint { display: none; }  /* gợi ý phím tắt không dùng trên điện thoại */
@@ -196,7 +203,9 @@ body { overflow: hidden; }
 
   /* --- làm bài cá nhân --- */
   .q-text { font-size: 15px; line-height: 1.55; }
-  .option-row { padding: 10px 12px; gap: 10px; }
+  .option-row { padding: 12px; gap: 10px; font-size: 15.5px; align-items: center; }
+  .option-row .text { line-height: 1.45; }
+  .option-row .letter { width: 28px; height: 28px; font-size: 14px; }
   .result-hero .big-score { font-size: 40px; }
   .dot-grid { grid-template-columns: repeat(5, 1fr); gap: 3px; }
   .dot { height: 30px; font-size: 10px; }
@@ -226,8 +235,8 @@ body { overflow: hidden; }
   .card-grid { grid-template-columns: 1fr !important; }
   .stat-grid { grid-template-columns: 1fr 1fr !important; }
   .stage-question { font-size: clamp(16px, 4.8vw, 21px); padding: 12px; }
-  .big-option .text { font-size: 13px; }
-  .big-option .badge { width: 28px; height: 28px; font-size: 13px; }
+  .big-option .text { font-size: clamp(15px, 5.4vw, 19px); }
+  .big-option .badge { width: 30px; height: 30px; font-size: 14px; }
   .stage-options { gap: 6px; padding: 8px; }
   .mode-hub-grid .mode-card { min-height: 0; }
 }

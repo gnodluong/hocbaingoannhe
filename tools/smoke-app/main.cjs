@@ -258,6 +258,21 @@ const MOBILE_SCRIPT = `
   ok('ô đáp án đủ to để bấm', rects.every((r) => r.height >= 44 && r.width >= 60),
     JSON.stringify(rects.map((r) => Math.round(r.height) + 'x' + Math.round(r.width))));
   ok('chữ câu hỏi không tràn', document.querySelector('.stage-question').scrollWidth <= document.querySelector('.stage-question').clientWidth + 2);
+
+  // Chữ đáp án: đủ lớn và nằm GIỮA ô (đúng yêu cầu người dùng)
+  const textNodes = [...document.querySelectorAll('.stage-options .big-option .text')];
+  const fontPx = parseFloat(getComputedStyle(textNodes[0]).fontSize);
+  ok('chữ đáp án đủ lớn trên điện thoại', fontPx >= 16, fontPx + 'px');
+  ok('chữ đáp án canh giữa', textNodes.every((n) => getComputedStyle(n).textAlign === 'center'));
+  ok('chữ đáp án nằm giữa ô theo chiều dọc', textNodes.every((n, i) => {
+    const tile = n.closest('.big-option').getBoundingClientRect();
+    const box = n.getBoundingClientRect();
+    return Math.abs((box.top + box.height / 2) - (tile.top + tile.height / 2)) <= 14;
+  }), textNodes.map((n, i) => {
+    const tile = n.closest('.big-option').getBoundingClientRect();
+    const box = n.getBoundingClientRect();
+    return Math.round(Math.abs((box.top + box.height / 2) - (tile.top + tile.height / 2)));
+  }).join(','));
   ok('không tràn ngang ở chế độ giảng đường', noPageOverflow(), document.documentElement.scrollWidth + '/' + vw());
 
   // bấm một đáp án rồi sang câu tiếp — kiểm tra vẫn 2 cột
@@ -291,6 +306,11 @@ const MOBILE_SCRIPT = `
     getComputedStyle(document.querySelector('.personal-layout')).flexDirection);
   const rowsOpt = [...document.querySelectorAll('.option-row')].map((o) => o.getBoundingClientRect());
   ok('cá nhân: lựa chọn đủ to', rowsOpt.every((r) => r.height >= 40), JSON.stringify(rowsOpt.map((r) => Math.round(r.height))));
+  {
+    const rowText = document.querySelector('.option-row .text');
+    const rowFont = parseFloat(getComputedStyle(rowText).fontSize);
+    ok('cá nhân: chữ đáp án đủ lớn', rowFont >= 15, rowFont + 'px');
+  }
 
   // ------------------------------------------------- 4. HỘP NHẬP TÊN
   const pending = promptCandidateName(App);
