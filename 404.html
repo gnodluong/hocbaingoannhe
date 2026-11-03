@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8" /><title>Trắc Nghiệm Thử</title>
+<script>
+  // GitHub Pages khong co /admin that: chuyen /…/admin ve trang chu kem #/admin.
+  var p = location.pathname;
+  if (/\/admin\/?$/.test(p)) location.replace(p.replace(/admin\/?$/, '') + '#/admin');
+  else location.replace(p.replace(/[^\/]*$/, ''));
+</script></head>
+<body>Đang chuyển hướng…</body></html>

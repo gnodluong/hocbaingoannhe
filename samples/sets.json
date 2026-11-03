@@ -1,0 +1,7 @@
+{
+ "default": "goc",
+ "sets": [
+  { "id": "goc", "name": "Bộ đề gốc", "dir": "", "desc": "Bộ đề đang dùng từ trước tới nay." },
+  { "id": "de400", "name": "Bộ đề 400 câu", "dir": "de400/", "desc": "Mỗi môn 400 câu (Tổ chức chiến thuật quân y: 1000 câu)." }
+ ]
+}

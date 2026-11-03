@@ -1,0 +1,2799 @@
+Hình thể xoắn của vi khuẩn được gọi là:
+A) Hình sợi
+B) Hình que
+C) Hình cầu
+D) Hình xoắn
+ANSWER: D
+
+Bộ phận giúp vi khuẩn di chuyển là:
+A) Vỏ
+B) Lông
+C) Thành tế bào
+D) Pili
+ANSWER: B
+
+Cấu trúc mang tính kháng nguyên H của vi khuẩn là:
+A) Pili
+B) Vỏ
+C) Nha bào
+D) Lông
+ANSWER: D
+
+Dạng tồn tại đặc biệt giúp vi khuẩn chịu được điều kiện bất lợi là:
+A) Pili
+B) Nha bào
+C) Bào tương
+D) Vỏ
+ANSWER: B
+
+Đặc điểm đúng về vi khuẩn là:
+A) Bắt buộc ký sinh
+B) Không tự sinh sản
+C) Có bộ máy chuyển hóa riêng
+D) Chỉ có RNA
+ANSWER: C
+
+Đặc điểm đúng về virus là:
+A) Tự sinh sản
+B) Dùng bộ máy chuyển hóa của tế bào chủ
+C) Kích thước thường lớn hơn 300 nm
+D) Có lớp màng tế bào phức tạp
+ANSWER: B
+
+Điểm khác biệt cơ bản giữa virus và vi khuẩn là:
+A) Virus không có cấu tạo tế bào
+B) Virus tự tổng hợp protein
+C) Virus có thành tế bào
+D) Virus có màng bào tương
+ANSWER: A
+
+Đơn vị đo kích thước vi khuẩn thường dùng là:
+A) Angstrom (Å)
+B) Micromet (µm)
+C) Milimet (mm)
+D) Nanomet (nm)
+ANSWER: B
+
+Đơn vị đo kích thước virus thường dùng là:
+A) Nanomet (nm)
+B) Milimet (mm)
+C) Micromet (µm)
+D) Angstrom (Å)
+ANSWER: A
+
+Phần chứa thông tin di truyền thiết yếu của vi khuẩn là:
+A) Bào tương
+B) Thành tế bào
+C) Màng bào tương
+D) Nhân
+ANSWER: D
+
+So với vi khuẩn, kích thước của virus thường:
+A) Không so sánh được
+B) Lớn hơn
+C) Nhỏ hơn
+D) Bằng nhau
+ANSWER: C
+
+Tụ cầu vàng thuộc nhóm vi khuẩn:
+A) Ngoại bào
+B) Kỵ khí bắt buộc
+C) Tùy ngộ
+D) Hiếu khí bắt buộc
+ANSWER: C
+
+Vi khuẩn đứng thành từng đôi được gọi là:
+A) Trực khuẩn
+B) Liên cầu khuẩn
+C) Tụ cầu khuẩn
+D) Song cầu khuẩn
+ANSWER: D
+
+Vi khuẩn tả thuộc hình thể:
+A) Trực khuẩn
+B) Liên cầu
+C) Cầu khuẩn
+D) Hình cong
+ANSWER: D
+
+Vi khuẩn là sinh vật:
+A) Đơn bào
+B) Nấm vi sinh
+C) Thực vật bậc thấp
+D) Đa bào
+ANSWER: A
+
+Virus muốn nhân lên cần:
+A) Môi trường dinh dưỡng thường
+B) Môi trường kỵ khí
+C) Tế bào sống
+D) Nha bào vi khuẩn
+ANSWER: C
+
+Virus không tự sinh sản được vì:
+A) Thiếu enzym
+B) Thiếu bộ máy chuyển hóa
+C) Thiếu ribosome
+D) Thiếu vách tế bào
+ANSWER: B
+
+Tính đặc hiệu của virus chủ yếu nhờ:
+A) Pili
+B) Axit nucleic
+C) Capsid
+D) Lõi protein
+ANSWER: C
+
+Virus nhân lên bằng cách:
+A) Dị hóa protein bên ngoài
+B) Tự tổng hợp ribosome
+C) Sử dụng bộ máy của tế bào chủ
+D) Phân chia trực tiếp
+ANSWER: C
+
+Virus được quan sát bằng:
+A) Mắt thường
+B) Kính hiển vi quang học
+C) Kính hiển vi điện tử
+D) Kính lúp
+ANSWER: C
+
+Virus sống ký sinh bắt buộc vì:
+A) Có màng tế bào
+B) Không có cấu trúc tế bào
+C) Có ribosome riêng
+D) Có quá trình trao đổi chất riêng
+ANSWER: B
+
+Vi khuẩn sinh sản chủ yếu bằng cách:
+A) Nảy chồi trong ký chủ
+B) Phân đôi
+C) Kết hợp với tế bào thần kinh
+D) Tự tổng hợp virus
+ANSWER: B
+
+Pili của vi khuẩn có vai trò chủ yếu:
+A) Bảo vệ thành tế bào
+B) Di chuyển
+C) Tạo nha bào
+D) Bám dính và trao đổi vật chất di truyền
+ANSWER: D
+
+Vỏ (capsule) của vi khuẩn có tác dụng:
+A) Giúp sinh sản
+B) Tăng khả năng gây bệnh và chống thực bào
+C) Giúp quang hợp
+D) Giúp di chuyển
+ANSWER: B
+
+Thành phần đặc trưng của thành tế bào vi khuẩn là:
+A) Chitin
+B) Peptidoglycan
+C) Cellulose
+D) Lipid thuần túy
+ANSWER: B
+
+Vi khuẩn Gram dương khi nhuộm Gram có màu:
+A) Vàng
+B) Đỏ hồng
+C) Xanh lục
+D) Tím
+ANSWER: D
+
+Vi khuẩn Gram âm khi nhuộm Gram có màu:
+A) Đỏ hồng
+B) Tím
+C) Đen
+D) Vàng
+ANSWER: A
+
+Điểm khác nhau cơ bản giữa nấm và vi khuẩn là:
+A) Nấm là sinh vật nhân thật
+B) Nấm không có nhân
+C) Nấm không sinh sản
+D) Nấm nhỏ hơn virus
+ANSWER: A
+
+Ký sinh bắt buộc trong tế bào chủ là đặc điểm của:
+A) Nấm men
+B) Vi khuẩn thường
+C) Tảo
+D) Virus
+ANSWER: D
+
+Nhóm vi sinh vật KHÔNG có cấu tạo tế bào là:
+A) Vi khuẩn
+B) Virus
+C) Nấm
+D) Tảo
+ANSWER: B
+
+Vi khuẩn kỵ khí bắt buộc là vi khuẩn:
+A) Không cần nước
+B) Chỉ sống khi oxy cao
+C) Sống được ở mọi nồng độ oxy
+D) Chỉ sống khi không có oxy
+ANSWER: D
+
+Viêm amidan có mủ thường biểu hiện:
+A) Mủ trắng vàng trên bề mặt amidan
+B) Chảy máu mũi
+C) Ngứa mũi
+D) Mất khứu giác
+ANSWER: A
+
+Họng là ngã tư của đường ăn và đường thở, nối liền với:
+A) Dạ dày
+B) Khí quản và phế quản
+C) Thanh quản và thực quản
+D) Gan
+ANSWER: C
+
+Tác nhân vi khuẩn thường gặp nhất gây viêm amidan cấp là:
+A) Dị ứng
+B) Nấm
+C) Liên cầu khuẩn nhóm A
+D) Ký sinh trùng
+ANSWER: C
+
+Ở trẻ nhỏ, bộ phận phát triển mạnh rồi teo dần theo tuổi là:
+A) VA (amidan vòm)
+B) Hạch cổ
+C) Amidan đáy lưỡi
+D) Amidan vòi
+ANSWER: A
+
+Triệu chứng đặc trưng của viêm họng do vi khuẩn là:
+A) Viêm mũi nặng
+B) Amidan sưng to có bựa trắng
+C) Ho khan
+D) Hạch cổ không sưng
+ANSWER: B
+
+Viêm họng do virus thường có triệu chứng:
+A) Khó thở nặng
+B) Bạch cầu tăng cao
+C) Sốt, đau rát họng, nuốt đau
+D) Đau đầu kinh niên
+ANSWER: C
+
+Bạch cầu trong máu của viêm họng do virus thường:
+A) Tăng rất cao
+B) Tăng nhẹ
+C) Giảm mạnh
+D) Không tăng
+ANSWER: D
+
+Dấu hiệu viêm amidan cấp nặng cần nhập viện là:
+A) Sưng chân
+B) Sốt cao, co giật
+C) Tiêu chảy nhẹ
+D) Chảy mũi ít
+ANSWER: B
+
+Sốt ở trẻ nhỏ bị viêm amidan cấp thường:
+A) Sốt nhẹ 37–38°C
+B) Sốt cao 39–40°C
+C) Không sốt
+D) Sốt nhẹ kéo dài
+ANSWER: B
+
+Liên cầu khuẩn nhóm A khi không được điều trị có thể gây biến chứng:
+A) Viêm gan
+B) Viêm tim, viêm thận, viêm khớp
+C) Viêm ruột
+D) Viêm phổi
+ANSWER: B
+
+Thuốc nhỏ mũi thường dùng cho trẻ lớn khi viêm amidan cấp là:
+A) Ephedrin 1%
+B) Xylometazolin 0,05%
+C) Adrenalin 1%
+D) Nước muối ưu trương
+ANSWER: B
+
+Biện pháp điều trị viêm mũi dị ứng hiệu quả nhất là:
+A) Rửa mũi bằng nước lạnh
+B) Tiêm vaccine
+C) Dùng kháng sinh
+D) Tránh tiếp xúc với dị nguyên
+ANSWER: D
+
+Thuốc thường dùng trong viêm mũi dị ứng là:
+A) Clo
+B) Thuốc kháng histamin
+C) Kháng sinh
+D) Thuốc diệt côn trùng
+ANSWER: B
+
+Triệu chứng đặc trưng của viêm mũi dị ứng là:
+A) Viêm amidan
+B) Viêm họng đỏ
+C) Ho khan
+D) Ngứa mũi
+ANSWER: D
+
+Dị nguyên thường gặp nhất trong viêm mũi dị ứng theo mùa là:
+A) Lông súc vật
+B) Phấn hoa
+C) Hóa chất
+D) Bọ bụi nhà
+ANSWER: B
+
+Viêm mũi dị ứng là bệnh dị ứng:
+A) Toàn thân, biểu hiện chủ yếu ở mũi
+B) Chỉ ở họng
+C) Chỉ ở mắt
+D) Chỉ khu trú ở mũi
+ANSWER: A
+
+Thuốc xịt corticoid tại mũi thường được dùng để:
+A) Kháng sinh tiêu diệt vi khuẩn
+B) Kiểm soát viêm mũi dị ứng
+C) Tăng đông máu
+D) Làm tăng sổ mũi
+ANSWER: B
+
+Chảy máu mũi thường gặp nhất ở vị trí:
+A) Họng
+B) Vách ngăn sau
+C) Điểm mạch Kiesselbach
+D) Cuốn mũi giữa
+ANSWER: C
+
+Chảy máu mũi trước, nhẹ thường có đặc điểm:
+A) Tự cầm được
+B) Luôn cần phẫu thuật
+C) Kèm theo sốt cao
+D) Chảy máu từ họng
+ANSWER: A
+
+Nguyên nhân tại chỗ thường gặp nhất của chảy máu mũi là:
+A) Rối loạn đông máu
+B) Ngoáy, dụi mũi
+C) Sốt xuất huyết
+D) Tăng huyết áp
+ANSWER: B
+
+Niêm mạc mũi thuộc loại biểu mô:
+A) Biểu mô tuyến
+B) Biểu mô lát tầng
+C) Biểu mô hô hấp
+D) Biểu mô vảy
+ANSWER: C
+
+Xử trí đầu tiên khi chảy máu mũi là:
+A) Truyền dịch
+B) Bóp hai cánh mũi khoảng 10 phút
+C) Thở oxy
+D) Cho uống thuốc
+ANSWER: B
+
+Khi chảy máu mũi, tư thế người bệnh nên:
+A) Ngửa đầu ra sau
+B) Ngồi cúi người về phía trước
+C) Nằm sấp
+D) Nằm ngửa hoàn toàn
+ANSWER: B
+
+Biện pháp phòng chảy máu mũi tái phát là:
+A) Đắp đá lên sống mũi
+B) Nằm ngửa tối đa
+C) Thổi mạnh mũi nhiều lần
+D) Không ngoáy mũi, giữ ẩm niêm mạc mũi
+ANSWER: D
+
+Chảy máu mũi không cầm sau 10–15 phút ép cánh mũi, người bệnh cần:
+A) Tiếp tục ép thêm một giờ rồi thôi
+B) Uống thuốc chống đông
+C) Không cần làm gì
+D) Đến cơ sở y tế
+ANSWER: D
+
+Chảy máu mũi tái diễn nhiều lần ở người lớn cần nghĩ đến:
+A) Ngứa mũi đơn thuần
+B) Đau bụng
+C) Cảm thông thường
+D) Rối loạn đông máu hoặc tăng huyết áp
+ANSWER: D
+
+Dị nguyên hay gây viêm mũi dị ứng quanh năm là:
+A) Pháo hoa
+B) Phấn hoa mùa xuân
+C) Lá rụng
+D) Bọ bụi nhà
+ANSWER: D
+
+Thuốc kháng histamin trong viêm mũi dị ứng có tác dụng:
+A) Giảm ngứa, hắt hơi và sổ mũi
+B) Làm giảm nhịp tim
+C) Tăng miễn dịch
+D) Tiêu diệt vi khuẩn
+ANSWER: A
+
+Thuốc kháng sinh KHÔNG có tác dụng trong viêm họng do virus vì:
+A) Virus không đáp ứng với kháng sinh
+B) Kháng sinh quá rẻ
+C) Kháng sinh gây sốt
+D) Kháng sinh làm tăng bạch cầu
+ANSWER: A
+
+Biến chứng sớm nguy hiểm của viêm amidan là:
+A) Viêm da
+B) Sâu răng
+C) Áp xe quanh amidan
+D) Viêm kết mạc
+ANSWER: C
+
+Đau rát họng, nuốt đau và sốt thường gặp trong:
+A) Viêm họng cấp
+B) Viêm thận
+C) Viêm khớp
+D) Viêm gan
+ANSWER: A
+
+Chảy nước mũi trong, hắt hơi liên tục, ngứa mũi thường gặp ở:
+A) Viêm tai giữa
+B) Viêm mũi dị ứng
+C) Viêm phổi
+D) Viêm xoang cấp có mủ
+ANSWER: B
+
+Amidan là tổ chức:
+A) Gan
+B) Dạ dày
+C) Lympho thuộc hệ miễn dịch vùng họng
+D) Tuyến giáp
+ANSWER: C
+
+Viêm họng do liên cầu khuẩn nhóm A thường cần điều trị bằng:
+A) Paracetamol liều cao
+B) Penicillin theo y lệnh
+C) Vitamin C
+D) Oresol
+ANSWER: B
+
+Mục đích điều trị viêm mũi dị ứng bằng thuốc kháng histamin là:
+A) Tăng miễn dịch
+B) Tiêu diệt vi khuẩn
+C) Tiêu nhân
+D) Giảm triệu chứng ngứa, hắt hơi, sổ mũi
+ANSWER: D
+
+Viêm amidan cấp thường kéo dài khoảng:
+A) Vĩnh viễn
+B) 3 đến 7 ngày
+C) 1 tháng
+D) 1 năm
+ANSWER: B
+
+Viêm amidan mạn tái phát nhiều lần, có thể cần:
+A) Uống nước lọc
+B) Cắt amidan theo chỉ định
+C) Không làm gì
+D) Đắp thuốc
+ANSWER: B
+
+Trong viêm họng, người bệnh nên:
+A) Uống đủ nước, nghỉ ngơi, ăn thức ăn mềm
+B) Ăn cay nhiều
+C) Hút thuốc lá
+D) Nhịn nước
+ANSWER: A
+
+Súc họng bằng nước muối sinh lý giúp:
+A) Làm tăng sốt
+B) Làm sạch niêm mạc và giảm sưng nhẹ
+C) Gây nôn
+D) Tiêu diệt virus hoàn toàn
+ANSWER: B
+
+Rửa mũi bằng nước muối sinh lý giúp:
+A) Gây viêm
+B) Làm sạch niêm mạc, giảm tắc nghẽn mũi
+C) Gây chảy máu
+D) Tăng dị ứng
+ANSWER: B
+
+Tác nhân chủ yếu gây viêm phổi là:
+A) Phế cầu khuẩn
+B) Vi khuẩn lao
+C) Liên cầu khuẩn
+D) Tụ cầu khuẩn
+ANSWER: A
+
+Bạch cầu trong máu khi viêm phổi do vi khuẩn thường:
+A) Tăng khoảng 15.000–20.000/mm³
+B) Không thay đổi
+C) Giảm mạnh
+D) Bình thường
+ANSWER: A
+
+Viêm phổi thường khởi phát:
+A) Đột ngột
+B) Tiến triển âm thầm
+C) Không ho
+D) Không sốt
+ANSWER: A
+
+Đáp ứng điều trị tốt của viêm phổi được biểu hiện bởi:
+A) Khó thở tăng
+B) Triệu chứng giảm dần
+C) Ho nhiều hơn
+D) Sốt cao hơn
+ANSWER: B
+
+Ho đặc trưng của viêm phổi do phế cầu là:
+A) Ho ra mủ
+B) Ho ra máu tươi
+C) Ho khan kéo dài
+D) Ho khan rồi có đờm gỉ sắt
+ANSWER: D
+
+Kháng sinh thường dùng để điều trị viêm phổi là:
+A) Metronidazole
+B) Chloramphenicol
+C) Ampicillin
+D) Rifampicin
+ANSWER: C
+
+Thuốc thường dùng khi ho có đờm là:
+A) Penicillin
+B) Terpin codein
+C) Paracetamol
+D) Acetylcystein
+ANSWER: D
+
+Nhiệt độ thường gặp khi viêm phổi là:
+A) 39–40°C
+B) 37°C
+C) 36°C
+D) 35°C
+ANSWER: A
+
+Viêm phổi là nhiễm khuẩn cấp tính ở:
+A) Nhu mô phổi
+B) Phế nang và mao mạch phổi
+C) Màng phổi
+D) Phế quản lớn
+ANSWER: A
+
+Đặc điểm khởi phát điển hình của viêm phổi là:
+A) Không sốt
+B) Sốt cao, rét run đột ngột
+C) Ho nhẹ kéo dài
+D) Đau bụng
+ANSWER: B
+
+Viêm phổi do phế cầu thường có biểu hiện:
+A) Sốt cao, rét run, ho gỉ sắt
+B) Ngứa mũi
+C) Tiêu chảy
+D) Đau khớp
+ANSWER: A
+
+Thời gian dùng kháng sinh điều trị viêm phổi ít nhất thường là:
+A) 5–7 ngày
+B) 10–14 ngày
+C) Đến khi hết sốt khoảng 4–5 ngày
+D) 7–10 ngày
+ANSWER: C
+
+Vắc xin phòng phế cầu khuẩn có tác dụng:
+A) Chữa viêm phổi đang có
+B) Giảm nguy cơ viêm phổi do phế cầu
+C) Tăng sốt
+D) Gây bệnh lao
+ANSWER: B
+
+Biện pháp dự phòng viêm phế quản cấp quan trọng nhất là:
+A) Tập thể dục gắng sức
+B) Giữ ấm cổ và ngực
+C) Uống rượu ấm
+D) Ngủ ít
+ANSWER: B
+
+Yếu tố thuận lợi quan trọng gây viêm phế quản cấp là:
+A) Thiếu vitamin K
+B) Thay đổi thời tiết và nhiễm lạnh
+C) Ăn nhiều chất béo
+D) Dị ứng thức ăn
+ANSWER: B
+
+Tác nhân gây viêm phế quản cấp hay gặp nhất là:
+A) Virus
+B) Vi khuẩn lao
+C) Ký sinh trùng
+D) Nấm
+ANSWER: A
+
+Triệu chứng khởi phát thường gặp của viêm phế quản cấp là:
+A) Sốt về chiều
+B) Ho khan, rát họng, sốt nhẹ
+C) Phù phổi cấp
+D) Ho ra máu nhiều
+ANSWER: B
+
+Trong viêm phế quản cấp, chỉ định dùng kháng sinh khi:
+A) Bị tiêu chảy
+B) Có dấu hiệu nhiễm khuẩn rõ
+C) Đau đầu
+D) Ho nhiều
+ANSWER: B
+
+Trong viêm phế quản cấp, đờm thường có màu:
+A) Đỏ tươi
+B) Trong suốt
+C) Tím đen
+D) Vàng hoặc xanh
+ANSWER: D
+
+Vi khuẩn thường gây đợt cấp viêm phế quản mạn là:
+A) Phế cầu
+B) Tụ cầu vàng
+C) E. coli
+D) Lao phổi
+ANSWER: A
+
+Viêm phế quản cấp là viêm của:
+A) Tiểu phế quản
+B) Niêm mạc phế quản lớn và trung bình
+C) Màng phổi
+D) Phế nang
+ANSWER: B
+
+Suy dinh dưỡng ở trẻ em là yếu tố thuận lợi cho:
+A) Chế độ ăn giàu đạm
+B) Viêm phế quản cấp
+C) Ít phơi nắng
+D) Tiêm đủ vắc xin
+ANSWER: B
+
+Hẹp van hai lá gây ho ra máu do:
+A) Xơ phổi
+B) Phù phổi cấp
+C) Nhiễm trùng phổi
+D) Ứ huyết phổi
+ANSWER: D
+
+Ho ra máu là máu xuất phát từ:
+A) Dưới thanh môn
+B) Miệng
+C) Thực quản
+D) Mũi họng
+ANSWER: A
+
+Ho ra máu mức độ vừa có lượng máu khoảng:
+A) Dưới 50 ml/24 giờ
+B) Trên 1000 ml/24 giờ
+C) 50–200 ml/24 giờ
+D) 300–500 ml/24 giờ
+ANSWER: C
+
+Nguyên nhân ho ra máu thường gặp nhất là:
+A) Tổn thương phổi, phế quản
+B) Nhiễm khuẩn máu
+C) Dị vật mũi họng
+D) Bệnh gan
+ANSWER: A
+
+Nguyên tắc xử trí đầu tiên khi ho ra máu là:
+A) Chống sốt
+B) Bù nước
+C) Bất động, nghỉ ngơi
+D) Truyền dịch
+ANSWER: C
+
+Khi ho ra máu, người bệnh nên nằm nghiêng về:
+A) Nằm sấp
+B) Bên chảy máu
+C) Phía sau lưng
+D) Bên đối diện bên chảy máu
+ANSWER: D
+
+Viêm phổi do vi khuẩn kỵ khí thường gặp ở người:
+A) Thể lực tốt
+B) Chưa bao giờ ốm
+C) Trẻ nhũ nhi
+D) Có hít sặc, nôn nhiều
+ANSWER: D
+
+Ho khan kéo dài nhiều tuần cần nghĩ đến:
+A) Cảm thông thường
+B) Viêm họng nhẹ
+C) Dị ứng thức ăn
+D) Lao phổi hoặc bệnh phổi mạn
+ANSWER: D
+
+Triệu chứng gợi ý lao phổi gồm:
+A) Ho kéo dài trên 2 tuần, sốt về chiều, sụt cân
+B) Ho một ngày
+C) Đau khớp
+D) Phát ban
+ANSWER: A
+
+Dấu hiệu gợi ý viêm phổi gồm:
+A) Phù chân
+B) Sốt, ho, khó thở, có ran phổi
+C) Bầm tím
+D) Tiểu nhiều
+ANSWER: B
+
+Ho ra máu lượng lớn trên 300 ml/24 giờ được coi là:
+A) Không cần xử trí
+B) Bình thường
+C) Nhẹ
+D) Nặng, cần xử trí cấp cứu
+ANSWER: D
+
+Dấu hiệu ran nổ thường gặp trong:
+A) Thấp khớp
+B) Tiêu chảy
+C) Viêm mũi
+D) Viêm phổi
+ANSWER: D
+
+Thuốc giãn phế quản dạng hít thường dùng trong cơn hen cấp là:
+A) Paracetamol
+B) Vitamin B1
+C) Salbutamol
+D) Insulin
+ANSWER: C
+
+Yếu tố nguy cơ hàng đầu gây viêm phế quản mạn là:
+A) Hạ đường huyết
+B) Sốt rét
+C) Thấp khớp
+D) Khói thuốc lá
+ANSWER: D
+
+Viêm phế quản mạn được định nghĩa là ho có đờm kéo dài ít nhất:
+A) 1 ngày
+B) 1 tuần
+C) 10 năm
+D) 3 tháng mỗi năm trong 2 năm liên tiếp
+ANSWER: D
+
+Hen phế quản có đặc điểm điển hình:
+A) Ho ra máu
+B) Co thắt phế quản, khò khè, khó thở về đêm
+C) Đau bụng
+D) Sốt cao kéo dài
+ANSWER: B
+
+Biện pháp cải thiện bệnh phổi tắc nghẽn mạn tính là:
+A) Bỏ thuốc lá
+B) Thức khuya
+C) Ăn kiêng
+D) Uống rượu
+ANSWER: A
+
+Điều cần theo dõi chủ yếu ở người bệnh viêm cầu thận cấp là:
+A) Lượng nước tiểu và tình trạng phù
+B) Màu tóc
+C) Chiều cao
+D) Số răng
+ANSWER: A
+
+Triệu chứng khởi phát thường gặp nhất của viêm cầu thận cấp là:
+A) Tiểu ít
+B) Sốt cao
+C) Đau ngực
+D) Ho nhiều
+ANSWER: A
+
+Nước tiểu màu nâu sẫm như nước trà thường gặp trong:
+A) Viêm mũi
+B) Viêm họng
+C) Viêm cầu thận cấp
+D) Viêm phổi
+ANSWER: C
+
+Phù trong viêm cầu thận cấp đầu tiên thường xuất hiện ở:
+A) Bụng
+B) Bàn chân
+C) Mặt và mi mắt
+D) Mông
+ANSWER: C
+
+Lượng nước tiểu dưới 400 ml/24 giờ gọi là:
+A) Vô niệu hoàn toàn
+B) Thiểu niệu
+C) Bình thường
+D) Đa niệu
+ANSWER: B
+
+Tác nhân thường gặp nhất gây viêm cầu thận cấp là:
+A) Vi khuẩn lao
+B) Ký sinh trùng sốt rét
+C) Virus cúm
+D) Liên cầu khuẩn beta tan huyết nhóm A
+ANSWER: D
+
+Viêm cầu thận cấp thường gặp nhất ở độ tuổi:
+A) 20–30 tuổi
+B) 3–10 tuổi
+C) Trên 60 tuổi
+D) 1–2 tuổi
+ANSWER: B
+
+Tiến triển thường gặp nhất của viêm cầu thận cấp ở trẻ em là:
+A) Suy thận mạn
+B) Diễn biến nặng
+C) Tàn phế suốt đời
+D) Khỏi hoàn toàn
+ANSWER: D
+
+Xét nghiệm nước tiểu thường thấy trong viêm cầu thận cấp là:
+A) Hồng cầu
+B) Đường niệu
+C) Protein cao
+D) Bilirubin
+ANSWER: A
+
+Viêm cầu thận cấp thường xảy ra sau nhiễm trùng nào?
+A) Lao phổi
+B) Viêm họng do liên cầu khuẩn
+C) Viêm gan virus
+D) Nhiễm nấm da
+ANSWER: B
+
+Phù trong viêm cầu thận cấp có đặc điểm:
+A) Không phù
+B) Chỉ phù ở tay
+C) Phù cứng, không ấn lõm
+D) Phù mềm, ấn lõm, khởi đầu ở mi mắt
+ANSWER: D
+
+Biện pháp điều trị viêm cầu thận cấp thường bao gồm:
+A) Hạn chế muối và nước theo y lệnh
+B) Uống rượu
+C) Ăn nhiều muối
+D) Ăn nhiều đạm động vật
+ANSWER: A
+
+Biểu hiện cần đi khám ngay ở người bệnh viêm cầu thận cấp là:
+A) Khó thở, phù nhiều, tiểu rất ít
+B) Ăn ngon
+C) Đi lại nhiều
+D) Ngủ ngon
+ANSWER: A
+
+Cơn đau quặn thận là chứng đau xuất hiện do:
+A) Suy thận cấp
+B) Viêm bể thận
+C) Tăng áp lực cấp tính bể thận, niệu quản
+D) Thiếu máu mạn tính
+ANSWER: C
+
+Đặc điểm khởi phát của cơn đau quặn thận là:
+A) Không đau
+B) Khởi phát đột ngột
+C) Đau âm ỉ
+D) Xuất hiện từ từ
+ANSWER: B
+
+Hướng lan của cơn đau quặn thận thường là:
+A) Xuống bộ phận sinh dục
+B) Lên vai
+C) Ra cánh tay
+D) Lên vùng cổ
+ANSWER: A
+
+Vị trí đau thường gặp nhất của cơn đau quặn thận là:
+A) Bụng trên rốn
+B) Bụng dưới bên trái
+C) Vùng hông lưng
+D) Vùng ngực
+ANSWER: C
+
+Triệu chứng thường kèm theo cơn đau quặn thận là:
+A) Ho
+B) Đái buốt, đái rắt
+C) Vàng da
+D) Khó thở
+ANSWER: B
+
+Nguyên nhân thường gặp nhất gây tắc nghẽn niệu quản là:
+A) U bướu chèn ép
+B) Co thắt niệu quản
+C) Sỏi thận-niệu quản
+D) Cục máu đông
+ANSWER: C
+
+Thuốc giảm đau kháng viêm thường dùng trong cơn quặn thận là:
+A) Diclofenac
+B) Morphin
+C) Penicillin
+D) Paracetamol
+ANSWER: A
+
+Cơn quặn thận cấp cần xử trí bằng:
+A) Uống rượu
+B) Nhịn đau
+C) Giảm đau nhanh bằng thuốc theo y lệnh
+D) Đắp đá lạnh vùng bụng
+ANSWER: C
+
+Lượng nước tiểu bình thường trong 24 giờ của người lớn khoảng:
+A) 50 ml
+B) 100–200 ml
+C) 1000–2000 ml
+D) 3000–4000 ml
+ANSWER: C
+
+Protein niệu nhiều thường gặp trong:
+A) Viêm khớp
+B) Hội chứng thận hư
+C) Viêm họng
+D) Đau bụng
+ANSWER: B
+
+Tiểu máu đại thể là tình trạng:
+A) Nước tiểu có màu đỏ nhìn thấy bằng mắt thường
+B) Nước tiểu trong
+C) Nước tiểu đục vì mủ
+D) Không có gì bất thường
+ANSWER: A
+
+Sỏi thận gây đau quặn thận chủ yếu do:
+A) Giảm huyết áp
+B) Viêm da
+C) Tăng sản xuất hồng cầu
+D) Tắc nghẽn dòng chảy nước tiểu
+ANSWER: D
+
+Phòng ngừa sỏi tiết niệu chủ yếu bằng cách:
+A) Ăn quá mặn
+B) Uống đủ nước
+C) Ăn nhiều thực phẩm giàu oxalat
+D) Nhịn nước
+ANSWER: B
+
+Biến chứng lâu dài nguy hiểm của tắc nghẽn niệu quản kéo dài là:
+A) Viêm họng
+B) Vàng da
+C) Ứ nước thận và suy thận
+D) Sâu răng
+ANSWER: C
+
+Chẩn đoán sỏi tiết niệu thường dựa vào:
+A) Đo thân nhiệt
+B) Điện tim
+C) Siêu âm hoặc chụp X-quang tiết niệu
+D) Xét nghiệm đường máu
+ANSWER: C
+
+Trong viêm cầu thận cấp, người bệnh cần theo dõi thường xuyên:
+A) Không cần theo dõi
+B) Chỉ đo mạch
+C) Chỉ đo nhiệt độ
+D) Huyết áp và cân nặng hằng ngày
+ANSWER: D
+
+Đau quặn thận khác đau bụng thông thường ở chỗ đau thường:
+A) Đau khi đói
+B) Đau âm ỉ quanh rốn
+C) Khởi phát đột ngột vùng hông lưng, lan xuống bẹn
+D) Không đau
+ANSWER: C
+
+Đái máu trong viêm cầu thận cấp thường có đặc điểm:
+A) Nước tiểu có mủ đặc
+B) Nước tiểu màu sẫm, có hồng cầu biến dạng
+C) Nước tiểu trong suốt
+D) Nước tiểu có mùi thơm
+ANSWER: B
+
+Thuốc lợi tiểu trong viêm cầu thận cấp được dùng nhằm:
+A) Tăng huyết áp
+B) Tăng protein máu
+C) Giảm sốt
+D) Giảm phù và lượng nước dư
+ANSWER: D
+
+Viêm bể thận cấp thường có biểu hiện:
+A) Vàng da
+B) Phù mặt
+C) Ngứa da
+D) Sốt, đau hông lưng, tiểu buốt
+ANSWER: D
+
+Nhiễm khuẩn tiết niệu thường gặp nhất do vi khuẩn:
+A) Lao
+B) Nấm sợi
+C) Virus cúm
+D) E. coli
+ANSWER: D
+
+Người bệnh tiêu chảy nhưng chưa có dấu hiệu mất nước nặng nên:
+A) Cho uống Oresol từng ngụm nhỏ
+B) Nhịn ăn hai ngày
+C) Không cần bù nước
+D) Uống rượu để cầm tiêu chảy
+ANSWER: A
+
+Biện pháp xử trí tiêu chảy quan trọng nhất là:
+A) Dùng thuốc giảm sốt
+B) Bù nước và điện giải
+C) Bổ sung sắt
+D) Ăn nhiều thịt
+ANSWER: B
+
+Chế phẩm bù điện giải khi tiêu chảy là:
+A) Vitamin B12
+B) Sorbitol
+C) Spartein
+D) Oresol
+ANSWER: D
+
+Dấu hiệu mất nước nặng gồm:
+A) Phân lỏng
+B) Li bì, mắt trũng, véo da mất chậm
+C) Ho khan
+D) Sốt cao
+ANSWER: B
+
+Oresol có tác dụng chính là:
+A) Hạ sốt
+B) Bù nước và điện giải
+C) Tăng cân
+D) Kháng khuẩn
+ANSWER: B
+
+Điều trị táo bón quan trọng nhất là:
+A) Thay đổi lối sống và chế độ ăn
+B) Uống vitamin C
+C) Uống kháng sinh
+D) Dùng thuốc giảm đau
+ANSWER: A
+
+Lượng phân bình thường mỗi ngày ở người lớn khoảng:
+A) 400–500 g
+B) 100–200 g
+C) 200–300 g
+D) 50–100 g
+ANSWER: B
+
+Phân táo bón thường có đặc điểm:
+A) Lỏng toàn nước
+B) Khô, cứng, vón cục
+C) Phân vàng lỏng
+D) Phân nhầy toàn máu
+ANSWER: B
+
+Táo bón được định nghĩa là đi ngoài dưới:
+A) 5 lần/tuần
+B) 7 lần/tuần
+C) 1 lần/tuần
+D) 3 lần/tuần
+ANSWER: D
+
+Thói quen tốt giúp tránh táo bón là:
+A) Uống rượu bia
+B) Nhịn đi ngoài
+C) Ăn nhiều muối
+D) Đi ngoài vào giờ cố định
+ANSWER: D
+
+Thuốc giúp phục hồi hệ vi sinh đường ruột là:
+A) Berberin
+B) Spartein
+C) Oresol
+D) Probiotic
+ANSWER: D
+
+Thuốc nhuận tràng thường dùng là:
+A) Sorbitol
+B) Berberin
+C) Paracetamol
+D) Spartein
+ANSWER: A
+
+Tiêu chảy được định nghĩa là đi ngoài từ bao nhiêu lần trở lên trong 24 giờ?
+A) Một lần mỗi tuần
+B) Hai lần
+C) Ba lần trở lên
+D) Một lần
+ANSWER: C
+
+Vi khuẩn gây tiêu chảy cấp thường gặp là:
+A) Staphylococcus
+B) E. coli
+C) Helicobacter pylori
+D) Mycobacterium tuberculosis
+ANSWER: B
+
+Vì sao không nên cầm tiêu chảy ngay?
+A) Vì dễ gây táo bón
+B) Vì chưa rõ nguyên nhân
+C) Vì khó uống thuốc
+D) Vì tốn tiền
+ANSWER: B
+
+Vi sinh vật thường gây tiêu chảy cấp ở trẻ nhỏ là:
+A) Rotavirus
+B) Streptococcus
+C) Corynebacterium
+D) Mycobacterium
+ANSWER: A
+
+Biến chứng nặng nhất của loét dạ dày là:
+A) Táo bón
+B) Buồn nôn
+C) Đầy bụng
+D) Xuất huyết tiêu hóa
+ANSWER: D
+
+Đặc điểm đau của loét dạ dày là:
+A) Đau sau ăn 4–6 giờ
+B) Đau ngay khi bắt đầu ăn
+C) Đau âm ỉ liên tục cả ngày
+D) Đau sau ăn khoảng 1–2 giờ
+ANSWER: D
+
+Loét dạ dày thường gặp ở độ tuổi:
+A) Trẻ dưới 5 tuổi
+B) Người trưởng thành
+C) Trẻ sơ sinh
+D) Phụ nữ mang thai
+ANSWER: B
+
+Loét hành tá tràng thường đau vào lúc:
+A) Ngay sau ăn
+B) Sau ăn 10 phút
+C) Trước ăn 30 phút
+D) Khi đói, về đêm
+ANSWER: D
+
+Nội soi dạ dày có giá trị:
+A) Phát hiện viêm phổi
+B) Đo áp lực dạ dày
+C) Chẩn đoán bệnh gan
+D) Quan sát ổ loét
+ANSWER: D
+
+Thuốc bảo vệ niêm mạc dạ dày thường dùng là:
+A) Cefalexin
+B) Vitamin C
+C) Berberin
+D) Sucralfat
+ANSWER: D
+
+Thuốc kháng viêm không steroid dễ gây loét dạ dày là:
+A) Oresol
+B) NSAID
+C) Vitamin D
+D) Paracetamol
+ANSWER: B
+
+Thuốc giúp giảm tiết dịch vị là:
+A) Biseptol
+B) Cimetidin
+C) Amoxicillin
+D) Paracetamol
+ANSWER: B
+
+Thuốc trung hòa dịch vị thường dùng là:
+A) Erythromycin
+B) Penicillin
+C) Aspirin
+D) Maalox
+ANSWER: D
+
+Tính chất đau của viêm loét dạ dày - tá tràng là:
+A) Không đau
+B) Đau lan xuống chân
+C) Đau theo chu kỳ
+D) Đau dữ dội, không theo chu kỳ
+ANSWER: C
+
+Triệu chứng thực thể thường gặp khi khám bụng ở người loét dạ dày là:
+A) Điểm thượng vị đau
+B) Gan to
+C) Điểm hố chậu đau
+D) Phổi ran
+ANSWER: A
+
+Vi khuẩn lây qua đường tiêu hóa, liên quan loét dạ dày - tá tràng là:
+A) Salmonella
+B) E. coli
+C) Helicobacter pylori
+D) Shigella
+ANSWER: C
+
+Đường lây truyền chủ yếu của Helicobacter pylori là:
+A) Tiêu hóa
+B) Hô hấp
+C) Tiếp xúc da
+D) Tiêm chích
+ANSWER: A
+
+Vi khuẩn thường gặp trong viêm loét dạ dày - tá tràng là:
+A) Helicobacter pylori
+B) Shigella
+C) Salmonella
+D) E. coli
+ANSWER: A
+
+Vị trí đau thường gặp trong loét dạ dày là:
+A) Vùng hạ sườn phải
+B) Vùng rốn
+C) Vùng thượng vị lệch trái
+D) Vùng hạ vị
+ANSWER: C
+
+Xét nghiệm có giá trị nhất để chẩn đoán bệnh dạ dày - tá tràng là:
+A) Công thức máu
+B) Siêu âm ổ bụng
+C) Xét nghiệm nước tiểu
+D) Nội soi dạ dày
+ANSWER: D
+
+Dấu hiệu nghi ngờ nhiễm giun kim là:
+A) Đau ngực
+B) Ngứa hậu môn về đêm
+C) Thiếu máu nặng
+D) Đau bụng quanh rốn
+ANSWER: B
+
+Dấu hiệu gợi ý nhiễm giun móc là:
+A) Vàng da
+B) Ngứa và thiếu máu
+C) Đau tức ngực
+D) Ho nhiều
+ANSWER: B
+
+Đường lây truyền chủ yếu của giun đũa là:
+A) Qua máu
+B) Qua da
+C) Đường tiêu hóa
+D) Qua hô hấp
+ANSWER: C
+
+Giun đũa có thể gây biến chứng nguy hiểm là:
+A) Lao phổi
+B) Tắc ruột
+C) Viêm loét dạ dày
+D) Xơ gan
+ANSWER: B
+
+Loại giun có thể chui vào ống mật gây sỏi mật là:
+A) Sán dây
+B) Giun móc
+C) Giun kim
+D) Giun đũa
+ANSWER: D
+
+Giun sán thường gặp nhiều nhất ở vùng khí hậu:
+A) Hàn đới
+B) Nhiệt đới
+C) Cận nhiệt đới
+D) Ôn đới
+ANSWER: B
+
+Nguồn lây nhiễm giun sán phổ biến nhất là:
+A) Không khí
+B) Thức ăn sống, nước bẩn
+C) Động vật hoang dã
+D) Thực phẩm đóng hộp
+ANSWER: B
+
+Thời điểm tẩy giun thích hợp là:
+A) 3 tháng một lần
+B) 6 tháng một lần
+C) Mỗi tuần
+D) Mỗi ngày
+ANSWER: B
+
+Thói quen làm tăng nguy cơ nhiễm giun sán là:
+A) Ăn chín uống sôi
+B) Tắm nước ấm
+C) Rửa tay trước khi ăn
+D) Ăn rau sống
+ANSWER: D
+
+Thuốc đặc hiệu để tẩy sán dây là:
+A) Niclosamide
+B) Albendazole
+C) Mebendazole
+D) Levamisole
+ANSWER: A
+
+Thuốc tẩy giun phổ biến là:
+A) Penicillin
+B) Amoxicillin
+C) Albendazole
+D) Paracetamol
+ANSWER: C
+
+Trẻ em nhiễm giun thường có biểu hiện bụng ỏng, nghĩa là:
+A) Tăng cân nhanh
+B) Răng vàng
+C) Cao lớn hơn
+D) Bụng chướng to
+ANSWER: D
+
+Triệu chứng hay gặp nhất của bệnh giun sán là:
+A) Vàng da
+B) Đau bụng
+C) Ho nhiều
+D) Khó thở
+ANSWER: B
+
+Triệu chứng toàn thân của người nhiễm giun sán lâu ngày là:
+A) Mập mạp, khỏe mạnh
+B) Gầy yếu, xanh xao
+C) Vàng da rõ rệt
+D) Phù toàn thân
+ANSWER: B
+
+Vị trí đau bụng thường gặp khi nhiễm giun là:
+A) Quanh rốn
+B) Thượng vị
+C) Hố chậu trái
+D) Hạ sườn phải
+ANSWER: A
+
+Biến chứng vỡ tĩnh mạch thực quản thường gặp ở người bệnh:
+A) Viêm phổi
+B) Bệnh thận mạn
+C) Xơ gan
+D) Tiểu đường
+ANSWER: C
+
+Dấu hiệu lâm sàng điển hình của xuất huyết tiêu hóa trên là:
+A) Tiêu phân lỏng nhiều lần
+B) Sốt cao
+C) Nôn ra máu
+D) Ho ra máu
+ANSWER: C
+
+Nôn máu trong xuất huyết tiêu hóa thường có đặc điểm:
+A) Máu lẫn thức ăn, dịch vị
+B) Nước trong
+C) Màu vàng
+D) Mùi thơm
+ANSWER: A
+
+Điểm phân chia xuất huyết tiêu hóa trên và dưới là:
+A) Đại tràng
+B) Góc Treitz
+C) Dạ dày
+D) Môn vị
+ANSWER: B
+
+Biến chứng nặng nhất của xuất huyết tiêu hóa là:
+A) Sốc mất máu
+B) Viêm phổi
+C) Viêm gan
+D) Viêm ruột thừa
+ANSWER: A
+
+Nguyên nhân hay gặp nhất gây xuất huyết tiêu hóa trên là:
+A) Polip đại tràng
+B) Bệnh trĩ
+C) Loét dạ dày - tá tràng
+D) Viêm ruột thừa
+ANSWER: C
+
+Sau khi nôn ra máu, dấu hiệu có thể gặp tiếp theo trong xuất huyết tiêu hóa là:
+A) Ho ra đờm
+B) Phân vàng tươi
+C) Tiêu phân đen
+D) Tiêu chảy lỏng
+ANSWER: C
+
+Thuốc dễ gây loét và xuất huyết tiêu hóa là:
+A) Vitamin C
+B) Cefalexin
+C) Aspirin
+D) Paracetamol
+ANSWER: C
+
+Triệu chứng điển hình của xuất huyết tiêu hóa dưới là:
+A) Vàng da
+B) Đi ngoài ra máu tươi
+C) Nôn ra máu
+D) Ho ra máu
+ANSWER: B
+
+Xuất huyết tiêu hóa là tình trạng máu chảy vào:
+A) Ống tiêu hóa
+B) Bàng quang
+C) Tim
+D) Phổi
+ANSWER: A
+
+Xuất huyết tiêu hóa được xếp vào loại:
+A) Không cấp cứu
+B) Cấp cứu ngoại khoa
+C) Cấp cứu nội và ngoại khoa
+D) Cấp cứu nội khoa
+ANSWER: C
+
+Chỉ số sớm giúp phát hiện tình trạng mất máu trong xuất huyết tiêu hóa là:
+A) Thay đổi tinh thần
+B) Nôn ra máu
+C) Da xanh, niêm mạc nhợt
+D) Mạch nhanh, huyết áp hạ
+ANSWER: D
+
+Dấu hiệu KHÔNG gặp trong chảy máu tiêu hóa là:
+A) Thiểu niệu
+B) Hematocrit tăng
+C) Mạch nhanh, huyết áp hạ
+D) Số lượng hồng cầu giảm
+ANSWER: B
+
+Mất máu được đánh giá là nặng khi lượng máu mất:
+A) Dưới 300 ml
+B) Dưới 500 ml
+C) Trên 500 ml
+D) Từ 300 đến 500 ml
+ANSWER: C
+
+Việc cần làm ngay khi cấp cứu xuất huyết tiêu hóa nặng là:
+A) Đắp chăn ấm
+B) Cho uống nước
+C) Đặt ngay đường truyền tĩnh mạch
+D) Chờ kết quả nội soi
+ANSWER: C
+
+Việc KHÔNG được làm khi hồi sức người bệnh xuất huyết tiêu hóa là:
+A) Theo dõi sát dấu hiệu sinh tồn
+B) Truyền máu khi mất máu nặng
+C) Rửa dạ dày để giảm tiết dịch vị
+D) Để nằm đầu thấp, phòng yên tĩnh
+ANSWER: C
+
+Viêm ruột thừa cấp thường được xếp mổ:
+A) Cấp cứu
+B) Không cần mổ
+C) Sau một năm
+D) Theo kế hoạch
+ANSWER: A
+
+Áp xe ruột thừa thường được xếp mổ:
+A) Cấp cứu ngay
+B) Không bao giờ mổ
+C) Theo kế hoạch
+D) Sau một tuần bỏ mặc
+ANSWER: C
+
+Đau bụng cấp kèm nôn ói và bí trung đại tiện thường gợi ý:
+A) Sốt rét
+B) Đau đầu
+C) Cảm cúm
+D) Tắc ruột
+ANSWER: D
+
+Đặc điểm đau điển hình của viêm ruột thừa cấp là:
+A) Đau vùng đầu gối
+B) Đau quanh rốn rồi chuyển đau hố chậu phải, kèm sốt, chán ăn
+C) Đau vùng ngực trái
+D) Đau không liên quan vị trí
+ANSWER: B
+
+Triệu chứng chảy máu đỏ tươi khi đi cầu thường gợi ý:
+A) Bệnh trĩ
+B) Sỏi mật
+C) Viêm gan
+D) Loét dạ dày
+ANSWER: A
+
+Giun đũa có thể chui vào đường mật gây biến chứng nào?
+A) Loét giác mạc
+B) Viêm họng
+C) Viêm tắc ống mật
+D) Viêm phổi
+ANSWER: C
+
+Dấu hiệu gợi ý xuất huyết tiêu hóa là:
+A) Đau khớp
+B) Nổi mề đay
+C) Ho khan
+D) Đi ngoài phân đen như hắc ín
+ANSWER: D
+
+Dấu hiệu mất nước thường gặp khi sốt là:
+A) Môi khô, tiểu ít
+B) Chảy mồ hôi nhiều
+C) Nổi vân tím
+D) Phù mặt
+ANSWER: A
+
+Cần hạn chế dùng Aspirin cho trẻ em vì nguy cơ:
+A) Tiểu đường
+B) Hội chứng Reye
+C) Mất ngủ
+D) Tiêu chảy
+ANSWER: B
+
+Liều Paracetamol trung bình cho trẻ em là:
+A) 20–25 mg/kg/lần
+B) 5–10 mg/kg/lần
+C) 10–15 mg/kg/lần
+D) 15–20 mg/kg/lần
+ANSWER: C
+
+Phương pháp hạ sốt không dùng thuốc là:
+A) Lau mát bằng nước ấm, không dùng cồn
+B) Uống ít nước
+C) Dùng miếng dán hạ sốt
+D) Tiêm kháng sinh
+ANSWER: A
+
+Sốt dao động là nhiệt độ thay đổi trong ngày trên:
+A) 0,5°C
+B) 3°C
+C) 1°C
+D) 2°C
+ANSWER: C
+
+Sốt vừa được xác định khi nhiệt độ đo ở nách trong khoảng:
+A) Trên 38–39°C
+B) Trên 39–40°C
+C) Trên 37,5–38,5°C
+D) Trên 37,2–38°C
+ANSWER: A
+
+Thân nhiệt bình thường đo ở nách trong khoảng:
+A) 36,5–37,5°C
+B) 36,1–37,1°C
+C) 37,2–38,0°C
+D) 35,0–36,0°C
+ANSWER: B
+
+Thân nhiệt thấp nhất trong ngày thường xuất hiện vào lúc:
+A) 20 giờ
+B) 4 giờ sáng
+C) 6 giờ sáng
+D) 12 giờ trưa
+ANSWER: B
+
+Thuốc hạ sốt thường được dùng khi thân nhiệt đạt:
+A) Từ 37,5°C
+B) Từ 38°C
+C) Từ 38,5°C
+D) Từ 39,5°C
+ANSWER: C
+
+Trẻ còn bú mẹ khi bị sốt nên:
+A) Ngừng bú
+B) Cho ăn đặc
+C) Nhịn ăn
+D) Tiếp tục bú mẹ
+ANSWER: D
+
+Sốt được coi là có khi nhiệt độ nách từ:
+A) 36°C
+B) 36,5°C
+C) 37,5°C
+D) 35,5°C
+ANSWER: C
+
+Khi dùng thuốc hạ sốt cho trẻ, cần:
+A) Dùng kháng sinh thay thuốc hạ sốt
+B) Dùng Paracetamol đúng liều theo cân nặng
+C) Tự kê liều cao
+D) Dùng Aspirin cho trẻ
+ANSWER: B
+
+Trẻ bị sốt cần được bù nước bằng:
+A) Nước đá lạnh
+B) Nhịn ăn uống
+C) Rượu
+D) Uống nhiều nước và dung dịch điện giải
+ANSWER: D
+
+Thời gian sốt nóng kéo dài trong cơn sốt rét điển hình là:
+A) 30 phút
+B) 15 phút
+C) 2–4 giờ
+D) 8 giờ
+ANSWER: C
+
+Giai đoạn đầu của cơn sốt rét điển hình là:
+A) Đau bụng
+B) Rét run
+C) Vã mồ hôi
+D) Sốt nóng
+ANSWER: B
+
+Giai đoạn cuối của cơn sốt rét điển hình là:
+A) Vã mồ hôi
+B) Đau đầu
+C) Rét run
+D) Sốt cao
+ANSWER: A
+
+Loại Plasmodium là tác nhân gây sốt rét ác tính là:
+A) P. vivax
+B) P. ovale
+C) P. malariae
+D) P. falciparum
+ANSWER: D
+
+Miễn dịch sau khi mắc sốt rét có đặc điểm:
+A) Bền vững suốt đời
+B) Là miễn dịch tự miễn
+C) Không lâu bền
+D) Không tồn tại
+ANSWER: C
+
+Muỗi truyền bệnh sốt rét là:
+A) Muỗi Anopheles
+B) Muỗi Aedes
+C) Muỗi Culex
+D) Muỗi Mansonia
+ANSWER: A
+
+Nguồn bệnh của sốt rét là:
+A) Động vật hoang dã
+B) Côn trùng khác
+C) Nước bẩn
+D) Người bệnh và người mang ký sinh trùng
+ANSWER: D
+
+Sốt rét lây truyền chủ yếu theo đường:
+A) Qua muỗi đốt từ người sang người
+B) Hô hấp
+C) Tiếp xúc trực tiếp
+D) Tiêu hóa
+ANSWER: A
+
+Tác nhân gây bệnh sốt rét là:
+A) Virus
+B) Ký sinh trùng Plasmodium
+C) Nấm
+D) Vi khuẩn
+ANSWER: B
+
+Thời kỳ ủ bệnh sốt rét thường kéo dài khoảng:
+A) 1–3 ngày
+B) 20–30 ngày
+C) Trên 1 tháng
+D) 7–14 ngày
+ANSWER: D
+
+Thuốc điều trị sốt rét thông thường là:
+A) Penicillin
+B) Paracetamol
+C) Artemisinin
+D) Streptomycin
+ANSWER: C
+
+Trong cơn sốt rét, người bệnh thường cảm thấy:
+A) Ăn ngon miệng
+B) Buồn ngủ
+C) Khỏe mạnh
+D) Mệt mỏi, chóng mặt
+ANSWER: D
+
+Xét nghiệm phát hiện sốt rét thường thực hiện bằng:
+A) Xét nghiệm máu tìm ký sinh trùng
+B) Xét nghiệm nước tiểu
+C) Chụp X-quang
+D) Xét nghiệm phân
+ANSWER: A
+
+Xử trí sốt rét ở tuyến đại đội là:
+A) Chỉ uống nước
+B) Không dùng thuốc
+C) Cho ăn nhiều ớt
+D) Dùng thuốc hạ sốt và chuyển tuyến
+ANSWER: D
+
+Biểu hiện sốt cao báo hiệu nguy cơ sốt rét ác tính là:
+A) 38–39°C
+B) Dưới 38°C
+C) Từ 40°C trở lên
+D) 39–40°C
+ANSWER: C
+
+Biểu hiện tâm thần báo động sốt rét ác tính là:
+A) Ăn nhiều, nói ít
+B) Buồn ngủ nhẹ
+C) Bứt rứt, gắt gỏng
+D) Vui vẻ, khỏe mạnh
+ANSWER: C
+
+Đặc điểm hôn mê trong sốt rét ác tính thể não là:
+A) Gây liệt ngay lập tức
+B) Không theo quy luật
+C) Lúc hôn mê lúc tỉnh
+D) Diễn biến có quy luật
+ANSWER: D
+
+Sốt rét ác tính thể não khởi phát từ từ có đặc điểm:
+A) Không sốt
+B) Rối loạn tâm thần, hôn mê dần
+C) Không rối loạn thần kinh
+D) Khỏe mạnh
+ANSWER: B
+
+Người dễ mắc sốt rét ác tính là người:
+A) Người già yếu
+B) Mới vào vùng sốt rét khoảng 6 tháng–1 năm
+C) Trẻ em thành phố
+D) Đã sống lâu năm ở vùng sốt rét
+ANSWER: B
+
+Nhức đầu trong sốt rét ác tính thể não thường:
+A) Không xuất hiện
+B) Kèm sốt nhẹ
+C) Nhẹ, không đáng kể
+D) Rất nặng, dữ dội
+ANSWER: D
+
+Thể sốt rét ác tính hay gặp nhất là:
+A) Thể não
+B) Thể phổi
+C) Thể lách
+D) Thể gan
+ANSWER: A
+
+Sốt rét ác tính là thể bệnh do tác nhân nào gây ra?
+A) Plasmodium vivax
+B) Plasmodium ovale
+C) Plasmodium malariae
+D) Plasmodium falciparum
+ANSWER: D
+
+Biện pháp phòng thấp khớp cấp quan trọng nhất là:
+A) Điều trị viêm họng do liên cầu khuẩn sớm
+B) Dùng kháng sinh phổ rộng kéo dài
+C) Dùng corticoid liều cao kéo dài
+D) Uống thuốc giảm đau liên tục
+ANSWER: A
+
+Biểu hiện hay gặp nhất của thấp khớp cấp là:
+A) Viêm khớp
+B) Nốt cục dưới da
+C) Ban đỏ vòng
+D) Múa giật
+ANSWER: A
+
+Kháng sinh thường dùng để điều trị và dự phòng thấp khớp cấp là:
+A) Tetracycline
+B) Cephalosporin
+C) Amikacin
+D) Penicillin G
+ANSWER: D
+
+Khớp ít bị viêm trong thấp khớp cấp là:
+A) Khớp cổ chân
+B) Khớp cổ tay
+C) Khớp ngón tay
+D) Khớp gối
+ANSWER: C
+
+Lứa tuổi dễ mắc thấp khớp cấp nhất là:
+A) Người già
+B) Trẻ sơ sinh
+C) Trẻ 5–15 tuổi
+D) Người lớn trên 40 tuổi
+ANSWER: C
+
+Thấp khớp cấp thường xảy ra sau viêm đường hô hấp trên do:
+A) Liên cầu khuẩn beta tan máu nhóm A
+B) Vi khuẩn lao
+C) Tụ cầu khuẩn
+D) Virus cúm
+ANSWER: A
+
+Tính chất viêm khớp trong thấp khớp cấp là:
+A) Viêm khớp không mủ, di chuyển
+B) Viêm khớp cố định
+C) Viêm khớp teo cơ
+D) Viêm khớp mủ
+ANSWER: A
+
+Vị trí tổn thương tim hay gặp nhất trong thấp khớp cấp là:
+A) Van ba lá
+B) Cơ tim
+C) Van hai lá
+D) Màng ngoài tim
+ANSWER: C
+
+Xét nghiệm giúp chẩn đoán thấp khớp cấp là:
+A) CRP giảm
+B) Huyết sắc tố giảm
+C) ASLO tăng trên 250 đơn vị
+D) Ion Na+ tăng
+ANSWER: C
+
+Penicillin tiêm bắp định kỳ trong thấp khớp cấp dùng để:
+A) Điều trị sốt
+B) Giảm đau
+C) Dự phòng thấp tim tái phát
+D) Tăng cân
+ANSWER: C
+
+Corticoid trong thấp khớp cấp được dùng để:
+A) Điều trị vi khuẩn
+B) Tăng sốt
+C) Gây loãng xương
+D) Giảm viêm trong đợt cấp có viêm tim
+ANSWER: D
+
+Người bệnh thấp khớp cấp đau nhiều khớp cần:
+A) Không làm gì
+B) Vận động mạnh
+C) Xoa bóp mạnh
+D) Nghỉ tại giường và giảm đau theo y lệnh
+ANSWER: D
+
+Biểu hiện thần kinh của thấp khớp cấp là:
+A) Múa giật
+B) Tiêu chảy
+C) Đau bụng
+D) Ho khan
+ANSWER: A
+
+Ban đỏ vòng là biểu hiện đặc trưng của:
+A) Viêm họng
+B) Thấp khớp cấp
+C) Viêm mũi dị ứng
+D) Đau mắt đỏ
+ANSWER: B
+
+Thuốc giảm đau kháng viêm thường được dùng trong thấp khớp cấp để:
+A) Điều trị sốt rét
+B) Điều trị lao
+C) Tăng bạch cầu
+D) Giảm đau khớp và viêm
+ANSWER: D
+
+Tăng huyết áp được chẩn đoán khi huyết áp tâm thu:
+A) Dưới 120 mmHg
+B) Dưới 90 mmHg
+C) Dưới 70 mmHg
+D) Trên 140 mmHg
+ANSWER: D
+
+Tăng huyết áp được chẩn đoán khi huyết áp tâm trương:
+A) Dưới 60 mmHg
+B) Trên 90 mmHg
+C) Dưới 70 mmHg
+D) Trên 80 mmHg
+ANSWER: B
+
+Triệu chứng cơ năng hay gặp nhất của tăng huyết áp là:
+A) Đau bụng
+B) Ho kéo dài
+C) Đau đầu
+D) Khó thở
+ANSWER: C
+
+Triệu chứng thực thể quan trọng nhất của tăng huyết áp là:
+A) Mạch yếu
+B) Đo huyết áp từ 140/90 mmHg trở lên
+C) Da xanh
+D) Mắt đỏ
+ANSWER: B
+
+Nguyên tắc điều trị tăng huyết áp là:
+A) Uống thuốc khi quên
+B) Uống ngắt quãng
+C) Duy trì điều trị lâu dài
+D) Dừng thuốc khi huyết áp ổn
+ANSWER: C
+
+Huyết áp tâm thu bình thường của người từ 18 tuổi trở lên khoảng:
+A) 140–180 mmHg
+B) 80–120 mmHg
+C) 60–90 mmHg
+D) 90–140 mmHg
+ANSWER: D
+
+Huyết áp tâm trương bình thường của người từ 18 tuổi trở lên khoảng:
+A) 40–70 mmHg
+B) 70–110 mmHg
+C) 30–50 mmHg
+D) 60–90 mmHg
+ANSWER: D
+
+Để chẩn đoán chính xác tăng huyết áp, nên đo huyết áp:
+A) 1 lần duy nhất
+B) 5 phút một lần
+C) Ngay khi đang vận động
+D) 2 lần khi khám
+ANSWER: D
+
+Yếu tố nguy cơ tăng huyết áp có thể thay đổi là:
+A) Giới tính
+B) Tiền sử gia đình
+C) Tuổi
+D) Ăn nhiều muối, hút thuốc, béo phì
+ANSWER: D
+
+Người tăng huyết áp cần hạn chế:
+A) Vận động đều đặn
+B) Muối và rượu bia
+C) Rau xanh
+D) Thuốc theo y lệnh
+ANSWER: B
+
+Biến chứng cấp tính nguy hiểm của tăng huyết áp là:
+A) Sâu răng
+B) Viêm họng
+C) Đột quỵ não
+D) Viêm mũi
+ANSWER: C
+
+Ngất là tình trạng:
+A) Mất ý thức kéo dài
+B) Mất ý thức vĩnh viễn
+C) Mất tri giác ngắn do thiếu máu não
+D) Mất trí nhớ tạm thời
+ANSWER: C
+
+Ngất thường xảy ra khi:
+A) Ngủ sâu
+B) Vận động nhẹ
+C) Nằm nghỉ
+D) Thay đổi tư thế đột ngột
+ANSWER: D
+
+Nguyên nhân ngất hay gặp nhất là:
+A) Bệnh tim mạch
+B) Mất ngủ
+C) Dị ứng thuốc
+D) Sốt cao
+ANSWER: A
+
+Sau cơn ngất, ý thức thường:
+A) Hồi phục nhanh chóng
+B) Mất hoàn toàn
+C) Không hồi phục
+D) Rối loạn kéo dài
+ANSWER: A
+
+Triệu chứng điển hình trước khi ngất là:
+A) Sốt cao
+B) Choáng váng, hoa mắt, ù tai
+C) Đau đầu nhiều
+D) Ngứa ngáy
+ANSWER: B
+
+Ngất do cường phó giao cảm có đặc điểm:
+A) Tăng đường huyết
+B) Tăng huyết áp
+C) Nhịp tim chậm, huyết áp hạ
+D) Sốt cao
+ANSWER: C
+
+Một cơn ngất thường kéo dài:
+A) Vài giây đến vài phút
+B) 5–10 phút
+C) Hàng giờ
+D) Hàng ngày
+ANSWER: A
+
+Ngất do hạ đường huyết khi người bệnh còn tỉnh cần xử trí bằng:
+A) Cho uống đường hoặc nước ngọt
+B) Truyền muối
+C) Cho ăn đạm
+D) Tiêm insulin
+ANSWER: A
+
+Dấu hiệu nặng khi điện giật là:
+A) Sốt cao
+B) Tụt huyết áp nhẹ
+C) Mất ý thức kéo dài, ngừng tim thở
+D) Tăng huyết áp
+ANSWER: C
+
+Điện giật có thể gây tổn thương tim nguy hiểm là:
+A) Suy tim
+B) Rung thất
+C) Viêm tim
+D) Nhồi máu cơ tim
+ANSWER: B
+
+Điện giật là:
+A) Dòng điện chạy qua cơ thể gây rối loạn chức năng sống
+B) Dòng điện sinh ra tia lửa
+C) Dòng điện làm nóng cơ thể
+D) Dòng điện chạy ngoài da
+ANSWER: A
+
+Điện giật tác động đến cơ bằng cách gây:
+A) Tê liệt hoàn toàn
+B) Co cứng, rung giật cơ
+C) Mềm cơ
+D) Đứt cơ
+ANSWER: B
+
+Việc đầu tiên khi thấy người bị điện giật là:
+A) Gọi người nhà
+B) Ngắt nguồn điện
+C) Hô hấp nhân tạo ngay
+D) Cho uống nước
+ANSWER: B
+
+Nguyên tắc quan trọng khi xử trí điện giật là:
+A) Cách ly nạn nhân khỏi nguồn điện
+B) Cho uống thuốc giảm đau
+C) Cho ăn ngay
+D) Tắm nước nóng
+ANSWER: A
+
+Sau khi cách ly nguồn điện, cần:
+A) Cho uống nước muối
+B) Kiểm tra thở và tim đập
+C) Di chuyển ngay
+D) Đợi nạn nhân tỉnh lại
+ANSWER: B
+
+Khi ngưng tim thở, hồi sức tim phổi cần thực hiện:
+A) Trong 30 phút rồi dừng
+B) Trong 10 phút rồi dừng
+C) Liên tục cho đến khi có sự hỗ trợ y tế
+D) Trong 15 phút rồi dừng
+ANSWER: C
+
+Nguyên tắc quan trọng nhất khi cấp cứu đuối nước là:
+A) Trấn an nạn nhân
+B) Làm thông đường thở
+C) Cho uống thuốc
+D) Di chuyển nhẹ nhàng
+ANSWER: B
+
+Khi ngã xuống nước và vùng vẫy quá lâu, người bệnh có thể bị:
+A) Tăng thân nhiệt
+B) Tăng huyết áp
+C) Ngạt, ngừng thở
+D) Hạ thân nhiệt
+ANSWER: C
+
+Tổn thương não do đuối nước là hậu quả của:
+A) Dị vật đường thở
+B) Chấn thương sọ não
+C) Ngộ độc khí
+D) Thiếu oxy
+ANSWER: D
+
+Tổn thương phổi do đuối nước chủ yếu là:
+A) Xuất huyết phổi
+B) Lao phổi
+C) Phù phổi cấp
+D) Viêm phổi
+ANSWER: C
+
+Triệu chứng nhẹ khi đuối nước là:
+A) Phù não
+B) Hôn mê sâu
+C) Rối loạn ý thức nhẹ, hồi phục nhanh
+D) Ngưng tim phổi
+ANSWER: C
+
+Trường hợp ngưng tuần hoàn và hô hấp cần:
+A) Đợi xe cấp cứu
+B) Cho uống nước
+C) Gọi người thân
+D) Hồi sức tim phổi ngay
+ANSWER: D
+
+Loài rắn hổ mang thuộc họ:
+A) Rắn biển
+B) Rắn hổ
+C) Rắn lục
+D) Rắn nước
+ANSWER: B
+
+Loài rắn lục xanh thuộc họ:
+A) Rắn biển
+B) Rắn lục
+C) Rắn nước
+D) Rắn hổ
+ANSWER: B
+
+Khi bị rắn cắn, bất động nạn nhân nhằm mục đích:
+A) Để dễ di chuyển
+B) Hạn chế độc lan tỏa
+C) Tránh hoảng loạn
+D) Giảm đau
+ANSWER: B
+
+Độc tố rắn làm rối loạn đông máu là:
+A) Neurotoxin
+B) Insulin
+C) Adrenalin
+D) Hemorrhagin
+ANSWER: D
+
+Triệu chứng đặc trưng khi bị rắn hổ cắn là:
+A) Chảy máu vết cắn
+B) Liệt cơ hô hấp
+C) Phù nề lớn
+D) Hoại tử rộng
+ANSWER: B
+
+Triệu chứng tại chỗ khi bị rắn lục cắn là:
+A) Đau ít
+B) Vết cắn khô
+C) Không đau
+D) Phù nề nhanh, nổi phỏng nước
+ANSWER: D
+
+Dị nguyên động vật thường gây sốc phản vệ là:
+A) Côn trùng đốt
+B) Bướm đêm
+C) Bọ chét
+D) Chuột cắn
+ANSWER: A
+
+Liều adrenalin tiêm bắp thường dùng cho người lớn là:
+A) 5 ml
+B) 0,5–1 ml
+C) 2 ml
+D) 10 ml
+ANSWER: B
+
+Adrenalin trong cấp cứu phản vệ được tiêm vào:
+A) Trong da
+B) Uống
+C) Tĩnh mạch
+D) Bắp
+ANSWER: D
+
+Phản vệ độ I thường chỉ biểu hiện:
+A) Khó thở nặng
+B) Co giật
+C) Tụt huyết áp
+D) Triệu chứng ở da
+ANSWER: D
+
+Phản vệ độ II có biểu hiện:
+A) Mạch chậm
+B) Chỉ ngứa
+C) Chỉ ho nhẹ
+D) Tổn thương nhiều cơ quan
+ANSWER: D
+
+Phản vệ độ III có đặc điểm:
+A) Chỉ đỏ da
+B) Tăng huyết áp
+C) Chỉ buồn nôn
+D) Đường thở phù, tím tái
+ANSWER: D
+
+Phản vệ độ IV là tình trạng:
+A) Sốt cao
+B) Nôn liên tục
+C) Ho nhiều
+D) Ngừng hô hấp, tuần hoàn
+ANSWER: D
+
+Khi phát hiện phản vệ, cần xử trí:
+A) Sau 1 ngày
+B) Ngay lập tức
+C) Sau 12 giờ
+D) Từ từ
+ANSWER: B
+
+Phản vệ thường xuất hiện trong khoảng:
+A) Sau 1 tháng
+B) Vài giây đến vài giờ
+C) Sau 1 tuần
+D) Sau vài ngày
+ANSWER: B
+
+Thuốc hàng đầu điều trị phản vệ là:
+A) Paracetamol
+B) Adrenalin
+C) Vitamin B1
+D) Kháng sinh
+ANSWER: B
+
+Thuốc dễ gây sốc phản vệ là:
+A) Penicillin
+B) Paracetamol
+C) Vitamin C
+D) Nước muối sinh lý
+ANSWER: A
+
+Triệu chứng da điển hình trong phản vệ là:
+A) Mày đay, phù mạch
+B) Phát ban khô
+C) Ngứa nhẹ
+D) Ban đỏ
+ANSWER: A
+
+Triệu chứng hô hấp thường gặp trong phản vệ là:
+A) Sổ mũi
+B) Ho khan
+C) Khó thở, thở rít
+D) Viêm phổi
+ANSWER: C
+
+Triệu chứng thần kinh trong phản vệ là:
+A) Kích thích ăn uống
+B) Khó ngủ
+C) Ngủ gà
+D) Rối loạn ý thức
+ANSWER: D
+
+Triệu chứng tuần hoàn trong phản vệ là:
+A) Mạch đập mạnh
+B) Huyết áp tăng
+C) Tĩnh mạch giãn
+D) Tụt huyết áp, ngất
+ANSWER: D
+
+Biện pháp dự phòng quan trọng nhất của say nắng là:
+A) Đội mũ che kín đầu và gáy
+B) Mặc kín
+C) Làm việc liên tục
+D) Không nghỉ trưa
+ANSWER: A
+
+Biện pháp đầu tiên khi cấp cứu say nắng là:
+A) Cho ăn
+B) Đưa ngay ra nơi mát
+C) Tiêm thuốc trợ tim
+D) Cho uống Paracetamol
+ANSWER: B
+
+Biện pháp hạ thân nhiệt tại chỗ trong say nắng hoặc say nóng là:
+A) Tắm nước nóng
+B) Đắp khăn lạnh, chăn ướt
+C) Che chăn bông
+D) Uống nước nóng
+ANSWER: B
+
+Bổ sung nước cho người bệnh say nắng tốt nhất là:
+A) Trà pha muối, uống từng ít
+B) Nước lọc lạnh
+C) Nước ngọt có gas
+D) Sữa
+ANSWER: A
+
+Dấu hiệu sớm của say nóng là:
+A) Vã mồ hôi, khó chịu
+B) Sốt nhẹ
+C) Chảy máu cam
+D) Run tay
+ANSWER: A
+
+Lều cấp cứu say nắng LSN-12 làm mát bằng phương pháp:
+A) Phun thuốc xịt
+B) Phun khí nóng
+C) Phun nước lạnh trực tiếp
+D) Phun sương kết hợp quạt gió
+ANSWER: D
+
+Ưu điểm của lều cấp cứu say nắng-say nóng là:
+A) Tăng nhiệt
+B) Hạn chế thoát nhiệt
+C) Làm tăng mồ hôi
+D) Hạ thân nhiệt nhanh
+ANSWER: D
+
+Nguyên nhân chủ yếu gây say nóng là:
+A) Thiếu ăn
+B) Thiếu ngủ
+C) Làm việc đêm
+D) Làm việc nơi nhiệt độ cao, ẩm, ít thoáng khí
+ANSWER: D
+
+Say nắng thường xảy ra nhất khi:
+A) Làm việc ngoài trời nắng lâu
+B) Làm việc trong hầm lò
+C) Làm việc trong nhà kín
+D) Làm việc ban đêm
+ANSWER: A
+
+Say nắng và say nóng đều có thể gây:
+A) Tiêu chảy nặng
+B) Đau bụng cấp
+C) Sốt cao, rối loạn thần kinh
+D) Không sốt
+ANSWER: C
+
+Say nóng dễ gặp ở người:
+A) Người già
+B) Làm việc ở lò luyện kim
+C) Người ngủ ngoài trời
+D) Người không làm việc
+ANSWER: B
+
+Say nóng và say nắng giống nhau ở chỗ:
+A) Không cần xử trí
+B) Đều không sốt
+C) Không cần dự phòng
+D) Đều rối loạn điều hòa thân nhiệt
+ANSWER: D
+
+Triệu chứng đặc trưng ban đầu của say nóng là:
+A) Ngứa da
+B) Vã mồ hôi như tắm, khát nước
+C) Chảy máu cam
+D) Tím tái toàn thân
+ANSWER: B
+
+Triệu chứng thần kinh của say nắng là:
+A) Tê tay
+B) Khô miệng
+C) Tĩnh tại, buồn ngủ
+D) Kích động, vật vã, co giật
+ANSWER: D
+
+Yếu tố quan trọng nhất gây say nắng là:
+A) Tia tử ngoại chiếu trực tiếp vào đầu, gáy
+B) Thiếu nước
+C) Không ăn sáng
+D) Thiếu ngủ
+ANSWER: A
+
+Ngộ độc phospho hữu cơ thường có dấu hiệu tiêu hóa:
+A) Ợ hơi
+B) Nôn ói, tiêu chảy
+C) Đầy bụng
+D) Táo bón
+ANSWER: B
+
+Đồng tử trong ngộ độc phospho hữu cơ thường:
+A) Co nhỏ
+B) Không có phản xạ
+C) Giãn to
+D) Không thay đổi
+ANSWER: A
+
+Khi người bệnh ngộ độc còn tỉnh và không uống chất ăn mòn, có thể:
+A) Cho ăn nhẹ
+B) Tiêm thuốc an thần
+C) Gây nôn theo chỉ định
+D) Đắp chăn ấm
+ANSWER: C
+
+Ngộ độc thuốc ngủ có thể gây rối loạn:
+A) Ý thức và hô hấp
+B) Tiết niệu
+C) Gan mật
+D) Tiêu hóa
+ANSWER: A
+
+Ngộ độc thuốc ngủ và phospho hữu cơ đều có thể gây:
+A) Mất ý thức
+B) Tụt đường huyết
+C) Ho ra máu
+D) Viêm phổi
+ANSWER: A
+
+Thuốc ngủ thường gây ngộ độc là:
+A) Morphin
+B) Gardenal
+C) Aspirin
+D) Paracetamol
+ANSWER: B
+
+Triệu chứng điển hình của ngộ độc thuốc ngủ nặng là:
+A) Vàng da
+B) Mất phản xạ giác mạc
+C) Sốt cao
+D) Chảy máu cam
+ANSWER: B
+
+Triệu chứng ngộ độc phospho hữu cơ thường xuất hiện sau khoảng:
+A) 5–7 ngày
+B) 1–2 ngày
+C) 30 phút
+D) Vài giờ
+ANSWER: C
+
+Triệu chứng quan trọng khi ngộ độc phospho hữu cơ là:
+A) Co giật, run cơ
+B) Suy gan
+C) Ho nhiều
+D) Sốt cao
+ANSWER: A
+
+Trường hợp ngộ độc thuốc ngủ nhẹ thường có biểu hiện:
+A) Co giật
+B) Lơ mơ, buồn ngủ
+C) Hôn mê sâu
+D) Suy hô hấp
+ANSWER: B
+
+Thuốc giúp giảm đau bụng khi ngộ độc thức ăn là:
+A) Vitamin B1
+B) Metronidazol
+C) No-spa
+D) Penicillin
+ANSWER: C
+
+Thời gian ủ bệnh của tụ cầu khuẩn gây ngộ độc thức ăn khoảng:
+A) 24–72 giờ
+B) 2–6 giờ
+C) 12–24 giờ
+D) 8–12 giờ
+ANSWER: B
+
+Thời gian ủ bệnh của Salmonella thường khoảng:
+A) 12–36 giờ
+B) 48–72 giờ
+C) 2–6 giờ
+D) 8–24 giờ
+ANSWER: D
+
+Thực phẩm dễ gây ngộ độc Clostridium botulinum là:
+A) Trái cây tươi
+B) Rau sống
+C) Đồ hộp quá hạn
+D) Sữa tươi
+ANSWER: C
+
+Thuốc dùng bù nước và điện giải khi ngộ độc thức ăn là:
+A) Vitamin C
+B) Oresol
+C) Paracetamol
+D) Amoxicillin
+ANSWER: B
+
+Triệu chứng điển hình của ngộ độc Clostridium botulinum là:
+A) Sốt cao liên tục
+B) Tiêu chảy nặng
+C) Phát ban da
+D) Rối loạn thị giác
+ANSWER: D
+
+Triệu chứng thường gặp khi bị ngộ độc thức ăn là:
+A) Đau ngực
+B) Đau quặn bụng
+C) Viêm da
+D) Ho khan
+ANSWER: B
+
+Vi khuẩn dễ gây sốt khi ngộ độc thức ăn là:
+A) Salmonella
+B) Clostridium botulinum
+C) Lactobacillus
+D) Tụ cầu
+ANSWER: A
+
+Bệnh mắt hột là bệnh:
+A) Viêm giác mạc cấp tính
+B) Viêm màng bồ đào
+C) Viêm thần kinh thị giác
+D) Viêm kết, giác mạc thể dịch
+ANSWER: D
+
+Bệnh mắt hột lây truyền mạnh nhất ở:
+A) Doanh trại, tập thể
+B) Siêu thị
+C) Khu công nghiệp
+D) Gia đình ít người
+ANSWER: A
+
+Đặc điểm chảy nước mắt trong đau mắt đỏ là:
+A) Không chảy nước mắt
+B) Ít nước mắt
+C) Chảy nhiều nước mắt
+D) Dính mủ đặc
+ANSWER: C
+
+Đau mắt đỏ là tình trạng viêm của:
+A) Thủy tinh thể
+B) Kết mạc
+C) Thể mi
+D) Giác mạc
+ANSWER: B
+
+Điều trị đau mắt đỏ do virus chủ yếu là:
+A) Kháng sinh liều cao
+B) Giữ vệ sinh và nhỏ thuốc sát trùng
+C) Mổ ngay
+D) Tiêm corticoid
+ANSWER: B
+
+Nguyên nhân gây đau mắt đỏ thường gặp nhất là:
+A) Ký sinh trùng
+B) Vi khuẩn và virus
+C) Dị vật
+D) Sỏi kết mạc
+ANSWER: B
+
+Tác nhân gây bệnh mắt hột là:
+A) Nấm sợi
+B) Vi khuẩn lậu
+C) Virus Adeno
+D) Chlamydia trachomatis
+ANSWER: D
+
+Thuốc tra mắt thường dùng trong bệnh mắt hột là:
+A) Gentamicin
+B) Nystatin
+C) Tetracyclin tra mắt 1%
+D) Metronidazol
+ANSWER: C
+
+Viêm kết mạc còn được gọi là:
+A) Viêm màng bồ đào
+B) Đau mắt đỏ
+C) Viêm củng mạc
+D) Viêm giác mạc
+ANSWER: B
+
+Viêm kết mạc do Adenovirus thường:
+A) Chỉ một mắt
+B) Cả hai mắt
+C) Không lây
+D) Không theo mùa
+ANSWER: B
+
+Đau mắt đỏ lây chủ yếu qua:
+A) Tiếp xúc với dịch tiết và đồ dùng cá nhân
+B) Muỗi đốt
+C) Thức ăn
+D) Không lây
+ANSWER: A
+
+Biện pháp phòng đau mắt đỏ là:
+A) Không vệ sinh mắt
+B) Tự dùng kháng sinh
+C) Rửa tay thường xuyên, không dùng chung khăn
+D) Dùng chung khăn mặt
+ANSWER: C
+
+Biện pháp làm giảm màng bám vi khuẩn trên răng là:
+A) Hạn chế uống nước
+B) Uống kháng sinh
+C) Ăn nhiều đồ ngọt
+D) Chải răng đúng cách
+ANSWER: D
+
+Khi ăn đường, nguy cơ sâu răng tăng vì:
+A) Tăng canxi
+B) Tăng fluor
+C) Làm pH giảm quanh răng
+D) Tạo mảng bám vi khuẩn
+ANSWER: C
+
+Khi nào nên bôi Fluoride trực tiếp lên răng?
+A) Khi viêm lợi
+B) Khi phát hiện vết trắng sâu men
+C) Răng sữa đã lung lay
+D) Khi mất răng
+ANSWER: B
+
+Mục đích của trám răng là:
+A) Thẩm mỹ
+B) Hàn kín phục hồi mô cứng
+C) Làm dài răng
+D) Làm răng trắng
+ANSWER: B
+
+Mục tiêu điều trị sâu ngà là:
+A) Bôi fluoride
+B) Lấy bỏ mô nhiễm khuẩn và phục hồi mô cứng
+C) Tẩy trắng răng
+D) Uống kháng sinh
+ANSWER: B
+
+Phát hiện sớm sâu men nhờ dấu hiệu:
+A) Vết trắng ở thân răng
+B) Chảy máu chân răng
+C) Lỗ sâu to
+D) Sưng nướu
+ANSWER: A
+
+Sâu ngà khác sâu ngà nông ở điểm:
+A) Chỉ đau khi kích thích
+B) Không có lỗ sâu
+C) Không đau
+D) Đau kéo dài cả khi hết kích thích
+ANSWER: D
+
+Sâu răng thường bắt đầu ở:
+A) Bề mặt men răng
+B) Nướu
+C) Chóp răng
+D) Chân răng
+ANSWER: A
+
+Tổn thương sâu men phát hiện nhờ:
+A) Thám trâm thấy bề mặt răng nhám
+B) Siêu âm
+C) X-quang
+D) Xét nghiệm máu
+ANSWER: A
+
+Tổn thương sâu men thường biểu hiện:
+A) Đau liên tục
+B) Sưng mặt
+C) Không đau
+D) Đau dữ dội
+ANSWER: C
+
+Vai trò của fluoride là:
+A) Làm đổi màu răng
+B) Làm men răng cứng chắc, khó hòa tan
+C) Làm mềm men răng
+D) Làm mòn men răng
+ANSWER: B
+
+Vai trò của nước bọt trong dự phòng sâu răng là:
+A) Trung hòa axit và làm sạch răng
+B) Làm mòn men răng
+C) Tăng vi khuẩn
+D) Tạo màng bám
+ANSWER: A
+
+Vai trò quan trọng nhất của vệ sinh răng miệng là:
+A) Làm răng mọc đủ số lượng
+B) Giảm màng bám vi khuẩn
+C) Làm răng trắng sáng và đều
+D) Ít gây đau buốt răng
+ANSWER: B
+
+Vết trắng trên răng báo hiệu sâu răng ở giai đoạn:
+A) Sâu ngà sâu
+B) Sâu men
+C) Viêm tủy
+D) Sâu ngà nông
+ANSWER: B
+
+Vi khuẩn chính gây sâu răng là:
+A) Lactobacillus
+B) Streptococcus mutans
+C) Streptococcus aureus
+D) Streptococcus pyogenes
+ANSWER: B
+
+Nướu sưng và chảy máu khi chải răng là dấu hiệu của:
+A) Viêm lợi
+B) Ung thư
+C) Gãy răng
+D) Viêm xương
+ANSWER: A
+
+Chải răng nên thực hiện:
+A) Một lần mỗi tuần
+B) Sau mỗi bữa ăn 10 phút
+C) Chỉ khi đau
+D) Hai lần mỗi ngày, mỗi lần khoảng 2 phút
+ANSWER: D
+
+Biện pháp giảm lây HIV qua tiêm chích là:
+A) Đun kim
+B) Không dùng kim chung
+C) Dùng kim chung
+D) Bẻ đầu kim
+ANSWER: B
+
+Điều trị dự phòng sau phơi nhiễm HIV tốt nhất khi thực hiện trong:
+A) Sau 1 tháng
+B) 3 ngày đầu
+C) 24 giờ đầu hoặc những giờ đầu
+D) 1 tuần
+ANSWER: C
+
+Đối tượng dễ lây HIV qua đường máu là:
+A) Người hiến máu
+B) Nhân viên ngân hàng
+C) Người tiêm chích ma túy
+D) Người ăn chay
+ANSWER: C
+
+Giai đoạn AIDS được xác định khi CD4 dưới:
+A) 300
+B) 500
+C) 400
+D) 200
+ANSWER: D
+
+Giai đoạn sơ nhiễm HIV hay bị bỏ sót vì:
+A) Triệu chứng rầm rộ
+B) Test HIV âm tính
+C) Test HIV đã dương tính sớm
+D) Người bệnh phát hiện nhanh
+ANSWER: B
+
+Giai đoạn sơ nhiễm HIV xuất hiện sau khoảng:
+A) 1–2 tuần
+B) 3–6 tuần
+C) 3 tháng
+D) 6 tháng
+ANSWER: B
+
+HIV gây tử vong chủ yếu do:
+A) Tăng huyết áp
+B) Nhiễm trùng cơ hội
+C) Sốt cao
+D) Tiêu chảy
+ANSWER: B
+
+HIV lây qua đường phổ biến nhất là:
+A) Đường da
+B) Đường hô hấp
+C) Đường tiêu hóa
+D) Đường tình dục
+ANSWER: D
+
+Khi phơi nhiễm HIV cần:
+A) Chờ 1 tuần
+B) Chỉ rửa vết thương
+C) Điều trị dự phòng ngay
+D) Băng bó kín
+ANSWER: C
+
+Mẹ có thể truyền HIV sang con trong:
+A) Chỉ khi sinh
+B) Chỉ khi cho con bú
+C) Chỉ khi mang thai
+D) Cả mang thai, sinh và cho con bú
+ANSWER: D
+
+Mục đích dùng thuốc ARV là:
+A) Diệt vi khuẩn
+B) Chữa ung thư
+C) Kìm hãm virus
+D) Tăng miễn dịch
+ANSWER: C
+
+Người mắc HIV được gọi là:
+A) Vật chủ trung gian
+B) Động vật truyền bệnh
+C) Nguồn bệnh
+D) Nguồn mang mầm bệnh
+ANSWER: C
+
+Giai đoạn có nồng độ virus cao nhưng xét nghiệm kháng thể còn âm tính được gọi là:
+A) Giai đoạn AIDS
+B) Giai đoạn mạn tính
+C) Giai đoạn có triệu chứng sớm
+D) Giai đoạn cửa sổ
+ANSWER: D
+
+Ở giai đoạn không triệu chứng, HIV thường ẩn náu chủ yếu ở:
+A) Phổi
+B) Dạ dày
+C) Hạch bạch huyết
+D) Gan
+ANSWER: C
+
+Thời gian trung bình từ nhiễm HIV đến AIDS khoảng:
+A) 5 năm
+B) 15 năm
+C) 10 năm
+D) 2 năm
+ANSWER: C
+
+Thời gian từ khi có biểu hiện AIDS đến tử vong thường khoảng:
+A) 5–10 năm
+B) 18–24 tháng
+C) 3–5 năm
+D) 6–12 tháng
+ANSWER: B
+
+Thuốc ARV có tác dụng:
+A) Ức chế nhân lên của HIV
+B) Làm HIV tăng lên
+C) Làm HIV biến mất
+D) Tiêu diệt HIV hoàn toàn
+ANSWER: A
+
+Thuốc điều trị HIV là:
+A) Zidovudine
+B) Penicillin
+C) Amoxicillin
+D) Cefixime
+ANSWER: A
+
+Triệu chứng sớm hay gặp của HIV/AIDS là:
+A) Đau đầu dữ dội
+B) Viêm phổi
+C) Hạch to toàn thân
+D) Ho ra máu
+ANSWER: C
+
+HIV lây dễ nhất qua:
+A) Máu và dịch tình dục
+B) Hắt hơi
+C) Tiếp xúc da
+D) Chạm tay
+ANSWER: A

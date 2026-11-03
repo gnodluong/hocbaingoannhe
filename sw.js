@@ -11,7 +11,7 @@
  */
 'use strict';
 
-const VERSION = '1.1.3-web5';
+const VERSION = '1.1.3-web6';
 const CACHE = `tracnghiem-web-v${VERSION}`;
 
 const SHELL = [
@@ -36,10 +36,12 @@ const SHELL = [
   'screens.guide.js',
   'screens.grades.js',
   'screens.sync.js',
+  'admin.js',
   'app.js',
   'logo.png',
   'manifest.webmanifest',
   'samples/manifest.json',
+  'samples/sets.json',
   'icons/icon-192.png',
   'icons/icon-512.png',
   'icons/favicon.png',
@@ -48,16 +50,20 @@ const SHELL = [
 async function precache() {
   const cache = await caches.open(CACHE);
   await cache.addAll(SHELL.map((url) => new Request(url, { cache: 'reload' })));
-  // Đề mẫu: đọc danh sách trong samples/manifest.json rồi cache từng tệp.
+  // Đề mẫu: đọc samples/sets.json rồi cache manifest + từng tệp của MỌI bộ đề.
   try {
-    const res = await fetch('samples/manifest.json', { cache: 'reload' });
-    if (res.ok) {
+    const sres = await fetch('samples/sets.json', { cache: 'reload' });
+    const sets = sres.ok ? ((await sres.json()).sets || []) : [{ dir: '' }];
+    for (const set of sets) {
+      const dir = set.dir || '';
+      const res = await fetch(`samples/${dir}manifest.json`, { cache: 'reload' });
+      if (!res.ok) continue;
       const list = await res.json();
       const files = (list || [])
         .map((item) => (typeof item === 'string' ? item : item.file))
         .filter(Boolean)
-        .map((f) => `samples/${encodeURIComponent(f)}`);
-      if (files.length) await cache.addAll(files.map((url) => new Request(url, { cache: 'reload' })));
+        .map((f) => `samples/${dir}${encodeURIComponent(f)}`);
+      await cache.addAll([`samples/${dir}manifest.json`, ...files].map((url) => new Request(url, { cache: 'reload' })));
     }
   } catch (err) {
     // Không cache được đề mẫu vẫn phải cài worker: phần còn lại đã có trong cache.

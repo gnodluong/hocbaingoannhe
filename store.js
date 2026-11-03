@@ -17,13 +17,14 @@ const TN_DEFAULT_PREFS = { count: 50, mode: 'stage', shuffleOptions: true, autoN
 const TN_MAX_HISTORY = 100;
 const TN_DB_NAME = 'tracnghiem-dd5';
 const TN_DB_VERSION = 1;
-const TN_SAMPLE_MANIFEST = 'samples/manifest.json';
+const TN_SAMPLE_SETS = 'samples/sets.json';
 
 class Store {
   constructor() {
     this.data = { banks: [], fillBanks: [], roster: [], history: [], prefs: { ...TN_DEFAULT_PREFS } };
     this.logs = [];
-    this._sampleCache = null;
+    this._sampleCache = {};
+    this._setsCache = null;
     this._db = null;
     this.ready = this._init();
   }
@@ -102,6 +103,7 @@ class Store {
     bank.id = bank.id || QuizCore.slugify(bank.name || 'de-thi');
     bank.name = bank.name || 'Đề chưa đặt tên';
     bank.source = bank.source || 'import';
+    if (bank.sampleSet === undefined) delete bank.sampleSet;
     bank.createdAt = bank.createdAt || Date.now();
     bank.updatedAt = bank.updatedAt || Date.now();
     bank.color = bank.color || this.colorFor(bank.id);
@@ -157,11 +159,40 @@ class Store {
   }
 
   // -------------------------------------------------------- de mau .txt (MCQ)
-  async sampleBanks() {
-    if (this._sampleCache) return this._sampleCache;
+  // Danh sach cac bo de mau (samples/sets.json). Thieu file -> chi co bo "goc".
+  async sampleSets() {
+    if (this._setsCache) return this._setsCache;
+    let info = { default: 'goc', sets: [{ id: 'goc', name: 'Bộ đề gốc', dir: '' }] };
+    try {
+      const res = await fetch(TN_SAMPLE_SETS, { cache: 'no-cache' });
+      if (res.ok) {
+        const data = await res.json();
+        if (data && Array.isArray(data.sets) && data.sets.length) info = data;
+      }
+    } catch (err) {
+      this.log('Không đọc được danh mục bộ đề:', err.message);
+    }
+    this._setsCache = info;
+    return info;
+  }
+
+  async activeSampleSet() {
+    const info = await this.sampleSets();
+    const prefs = await this.prefs();
+    const ids = info.sets.map((x) => x.id);
+    if (ids.includes(prefs.sampleSet)) return prefs.sampleSet;
+    return ids.includes(info.default) ? info.default : ids[0];
+  }
+
+  async sampleBanks(setId) {
+    const info = await this.sampleSets();
+    setId = setId || (await this.activeSampleSet());
+    if (this._sampleCache[setId]) return this._sampleCache[setId];
+    const set = info.sets.find((x) => x.id === setId) || info.sets[0];
+    const dir = set.dir || '';
     let names = [];
     try {
-      const res = await fetch(TN_SAMPLE_MANIFEST, { cache: 'no-cache' });
+      const res = await fetch(`samples/${dir}manifest.json`, { cache: 'no-cache' });
       if (res.ok) names = await res.json();
     } catch (err) {
       this.log('Không đọc được danh mục đề mẫu:', err.message);
@@ -172,33 +203,48 @@ class Store {
       const file = typeof entry === 'string' ? entry : entry.file;
       if (!file) continue;
       try {
-        const res = await fetch(`samples/${encodeURIComponent(file)}`);
+        const res = await fetch(`samples/${dir}${encodeURIComponent(file)}`);
         if (!res.ok) continue;
         const raw = await res.text();
         const name = (typeof entry === 'string' ? file : entry.name || file).replace(/\.txt$/i, '');
         const bank = QuizCore.loadTxtBank(name, raw);
+        // Bo goc giu id cu (khong lam mat lich su); cac bo khac them hau to de khong trung id.
+        if (set.id !== 'goc') bank.id = `${bank.id}-${set.id}`;
+        bank.sampleSet = set.id;
         if (bank.questions.length) banks.push(bank);
       } catch (err) {
         this.log(`Không đọc được đề mẫu ${file}:`, err.message);
       }
     }
-    this._sampleCache = banks;
+    this._sampleCache[setId] = banks;
     return banks;
   }
 
+  // Nap bo de dang chon; go cac mon mau thuoc bo khac (mon do nguoi dung tu nhap duoc giu nguyen).
   async seedSamples() {
-    const banks = await this.allBanks();
+    const target = await this.activeSampleSet();
+    let banks = await this.allBanks();
+    const before = banks.length;
+    banks = banks.filter((b) => b.source !== 'sample' || (b.sampleSet || 'goc') === target);
+    const removed = before - banks.length;
     const known = new Set(banks.map((b) => b.id));
     let added = 0;
     const issues = [];
-    for (const sample of await this.sampleBanks()) {
+    for (const sample of await this.sampleBanks(target)) {
       for (const msg of sample.issues || []) issues.push(`${sample.name} — ${msg}`);
       if (known.has(sample.id)) continue;
       banks.push(this.normalize(JSON.parse(JSON.stringify(sample))));
       added += 1;
     }
-    if (added) await this.saveBanks(banks);
-    return { added, issues };
+    if (added || removed) await this.saveBanks(banks);
+    return { added, removed, issues };
+  }
+
+  async switchSampleSet(setId) {
+    const info = await this.sampleSets();
+    if (!info.sets.some((x) => x.id === setId)) throw new Error('Không có bộ đề này.');
+    await this.setPrefs({ sampleSet: setId }, { requireWrite: true });
+    return this.seedSamples();
   }
 
   async restoreSample(id) {
@@ -443,7 +489,8 @@ class Store {
     for (const key of ['banks', 'fillBanks', 'roster', 'history', 'prefs']) {
       await this._write(key, key === 'prefs' ? { ...TN_DEFAULT_PREFS } : []);
     }
-    this._sampleCache = null;
+    this._sampleCache = {};
+    this._setsCache = null;
   }
 }
 

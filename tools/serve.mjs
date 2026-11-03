@@ -37,7 +37,7 @@ export function createServer(root = ROOT) {
       res.writeHead(400).end('Bad request');
       return;
     }
-    if (urlPath === '/' || urlPath === '') urlPath = '/index.html';
+    if (urlPath === '/' || urlPath === '' || /^\/admin\/?$/.test(urlPath)) urlPath = '/index.html';
 
     const target = path.join(root, urlPath);
     if (!target.startsWith(root)) {

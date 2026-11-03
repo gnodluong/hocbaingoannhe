@@ -80,6 +80,7 @@ const App = {
       guide: (c) => renderGuide(c),
       sync: (c) => renderSyncScreen(c, App),
       gradehub: (c) => renderGradeHub(c, App),
+      admin: (c) => renderAdmin(c, App),
       gradeboard: (c) => renderGradeBoard(c, App, { kind: params.kind, bankId: params.bankId }),
     };
     const fn = renderers[name];
@@ -254,7 +255,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const prefs = await App.api.prefs();
     App.candidateName = String(prefs.studentName || '').trim();
   } catch (err) { /* chưa có tuỳ chọn */ }
-  await App.navigate('start');
+  await App.navigate(isAdminRoute() ? 'admin' : 'start');
+  window.addEventListener('hashchange', () => { if (isAdminRoute()) App.navigate('admin'); });
   if (seedResult.added) toast(`Đã nạp ${seedResult.added} môn học từ file .txt trong thư mục`, 'ok');
   if (seedResult.issues && seedResult.issues.length) {
     App.api.log('Câu hỏi bị bỏ qua (thiếu đáp án hoặc thiếu lựa chọn):', seedResult.issues.join(' | '));
