@@ -11,7 +11,7 @@
  */
 'use strict';
 
-const VERSION = '1.1.3-web6';
+const VERSION = '1.1.3-web7';
 const CACHE = `tracnghiem-web-v${VERSION}`;
 
 const SHELL = [
@@ -89,6 +89,7 @@ self.addEventListener('fetch', (event) => {
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+  if (/\/api\//.test(url.pathname)) return; // du lieu dong: luon hoi may chu
 
   event.respondWith(
     (async () => {

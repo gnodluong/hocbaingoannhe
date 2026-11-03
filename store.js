@@ -25,6 +25,7 @@ class Store {
     this.logs = [];
     this._sampleCache = {};
     this._setsCache = null;
+    this._globalSet = null;
     this._db = null;
     this.ready = this._init();
   }
@@ -176,10 +177,42 @@ class Store {
     return info;
   }
 
+  // Bo de do admin chon CHUNG cho moi thiet bi (Vercel /api/active). Khong co API (GitHub Pages,
+  // offline...) thi giu lua chon cuoi cung da luu tren may nay.
+  async refreshGlobalSet() {
+    try {
+      const ctl = new AbortController();
+      const timer = setTimeout(() => ctl.abort(), 4000);
+      const res = await fetch('api/active', { cache: 'no-store', signal: ctl.signal });
+      clearTimeout(timer);
+      if (!res.ok) return;
+      const data = await res.json();
+      const ids = (await this.sampleSets()).sets.map((x) => x.id);
+      if (data && ids.includes(data.set)) {
+        this._globalSet = data.set;
+        if ((await this.prefs()).sampleSet !== data.set) await this.setPrefs({ sampleSet: data.set });
+      }
+    } catch (err) { /* khong co mang / khong co API: dung bo da luu */ }
+  }
+
+  async setGlobalSet(setId, password) {
+    const res = await fetch('api/active', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ set: setId, password }),
+    });
+    let data = {};
+    try { data = await res.json(); } catch (err) { /* khong phai JSON */ }
+    if (!res.ok) throw new Error(data.error || `Máy chủ trả lỗi ${res.status}`);
+    this._globalSet = setId;
+    return data;
+  }
+
   async activeSampleSet() {
     const info = await this.sampleSets();
     const prefs = await this.prefs();
     const ids = info.sets.map((x) => x.id);
+    if (ids.includes(this._globalSet)) return this._globalSet;
     if (ids.includes(prefs.sampleSet)) return prefs.sampleSet;
     return ids.includes(info.default) ? info.default : ids[0];
   }
@@ -222,6 +255,7 @@ class Store {
 
   // Nap bo de dang chon; go cac mon mau thuoc bo khac (mon do nguoi dung tu nhap duoc giu nguyen).
   async seedSamples() {
+    await this.refreshGlobalSet();
     const target = await this.activeSampleSet();
     let banks = await this.allBanks();
     const before = banks.length;

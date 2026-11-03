@@ -6,17 +6,18 @@
 const ADMIN_HASH = '95f0584a75d7774fdd04471cef27c685fa7d5c1616395905acd46090f6404ffe';
 const ADMIN_SALT = 'tnthu-admin:';
 const ADMIN_SESSION_KEY = 'tn-admin';
+const ADMIN_PW_KEY = 'tn-admin-pw';
 
 function isAdminRoute() {
   return location.hash.replace(/\/+$/, '') === '#/admin' || /\/admin\/?$/.test(location.pathname);
 }
 
 function adminSignedIn() {
-  try { return sessionStorage.getItem(ADMIN_SESSION_KEY) === ADMIN_HASH; } catch (err) { return false; }
+  try { return sessionStorage.getItem(ADMIN_SESSION_KEY) === ADMIN_HASH && Boolean(sessionStorage.getItem(ADMIN_PW_KEY)); } catch (err) { return false; }
 }
 
 function adminSignOut() {
-  try { sessionStorage.removeItem(ADMIN_SESSION_KEY); } catch (err) { /* bo qua */ }
+  try { sessionStorage.removeItem(ADMIN_SESSION_KEY); sessionStorage.removeItem(ADMIN_PW_KEY); } catch (err) { /* bo qua */ }
 }
 
 async function adminSha256(text) {
@@ -43,7 +44,7 @@ function renderAdminLogin(root, App) {
     try {
       const hash = await adminSha256(ADMIN_SALT + input.value);
       if (hash !== ADMIN_HASH) { msg.textContent = 'Sai mật khẩu.'; input.select(); return; }
-      try { sessionStorage.setItem(ADMIN_SESSION_KEY, hash); } catch (err) { /* bo qua */ }
+      try { sessionStorage.setItem(ADMIN_SESSION_KEY, hash); sessionStorage.setItem(ADMIN_PW_KEY, input.value); } catch (err) { /* bo qua */ }
       App.navigate('admin');
     } catch (err) { msg.textContent = err.message; }
   };
@@ -78,8 +79,17 @@ async function renderAdminSets(root, App) {
       if (busy || isActive) return;
       busy = true;
       try {
+        let shared = true;
+        try {
+          let pw = '';
+          try { pw = sessionStorage.getItem(ADMIN_PW_KEY) || ''; } catch (err) { /* bo qua */ }
+          await App.api.setGlobalSet(set.id, pw);
+        } catch (err) {
+          shared = false;
+          toast(`Chưa đổi được cho mọi thiết bị: ${err.message}`, 'err');
+        }
         const res = await App.api.switchSampleSet(set.id);
-        toast(`Đã chuyển sang "${set.name}" (nạp ${res.added} môn, gỡ ${res.removed} môn của bộ cũ)`, 'ok');
+        toast(`Đã chuyển sang "${set.name}"${shared ? ' cho MỌI thiết bị' : ' (chỉ máy này)'} — nạp ${res.added} môn, gỡ ${res.removed} môn của bộ cũ`, 'ok');
         await App.navigate('admin');
       } catch (err) {
         toast(err.message, 'err');
@@ -101,7 +111,7 @@ async function renderAdminSets(root, App) {
   });
   root.appendChild(list);
   root.appendChild(el('div', { class: 'muted-line mt14',
-    text: 'Công tắc chỉ đổi bộ đề trên trình duyệt/thiết bị đang mở trang này (môn bạn tự nhập vẫn được giữ). Điểm và lịch sử cũ không bị xoá.' }));
+    text: 'Công tắc áp dụng cho mọi thiết bị: máy nào mở (hoặc tải lại) web sẽ nhận bộ đề này. Nếu máy chủ chưa nối Redis thì chỉ đổi trên máy này. Môn bạn tự nhập, điểm và lịch sử cũ không bị xoá.' }));
   root.appendChild(el('div', { class: 'mt14', style: { display: 'flex', gap: '8px' } }, [
     btn('Đăng xuất', () => { adminSignOut(); App.navigate('admin'); }, { kind: 'ghost', small: true }),
     btn('Về trang chủ', () => {

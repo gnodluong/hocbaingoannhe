@@ -145,6 +145,7 @@
     sampleSets: () => store().sampleSets(),
     activeSampleSet: () => store().activeSampleSet(),
     switchSampleSet: (id) => store().switchSampleSet(id),
+    setGlobalSet: (id, password) => store().setGlobalSet(id, password),
     restoreSample: (id) => store().restoreSample(id),
     hasSample: (id) => store().hasSample(id),
 
