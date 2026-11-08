@@ -143,11 +143,14 @@ function sampleArray(arr, n) { return shuffleArray(arr.slice()).slice(0, n); }
 // Mot so file .txt nguon co cau hoi trung noi dung (khac id). Loc trung theo
 // noi dung TRUOC khi bo vao 1 lan lam bai, de khong bao gio ra 2 cau y het
 // nhau trong cung 1 de — ngan hang van giu nguyen, chi loc luc bat dau lam.
+// Khoa so sanh = de bai + 4 dap an (khong phan biet thu tu dap an) + noi dung
+// dap an dung; cau cung de bai nhung dap an khac nhau la cau KHAC, khong loc.
 function uniqueByText(questions) {
+  const norm = (s) => String(s).trim().toLowerCase().replace(/\s+/g, ' ');
   const seen = new Set();
   const out = [];
   for (const q of questions) {
-    const key = q.text.trim().toLowerCase();
+    const key = norm(q.text) + '||' + q.options.map(norm).sort().join('|') + '||' + norm(q.options[q.answer]);
     if (seen.has(key)) continue;
     seen.add(key);
     out.push(q);
