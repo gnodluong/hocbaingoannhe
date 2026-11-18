@@ -254,6 +254,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   } catch (err) {
     console.error(err);
   }
+  try { await App.api.seedFillSamples(); } catch (err) { console.error(err); }
   try {
     const prefs = await App.api.prefs();
     App.candidateName = String(prefs.studentName || '').trim();

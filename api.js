@@ -142,6 +142,7 @@
     removeBank: (id) => store().removeBank(id),
     uniqueId: (base) => store().uniqueId(base),
     seedSamples: () => store().seedSamples(),
+    seedFillSamples: () => store().seedFillSamples(),
     sampleSets: () => store().sampleSets(),
     activeSampleSet: () => store().activeSampleSet(),
     switchSampleSet: (id) => store().switchSampleSet(id),

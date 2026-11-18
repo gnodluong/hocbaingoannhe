@@ -274,6 +274,39 @@ class Store {
     return { added, removed, issues };
   }
 
+  // De DIEN CHO TRONG mau (samples/fill/): nap 1 lan moi bo; xoa roi thi khong tu hien lai.
+  async seedFillSamples() {
+    let list = [];
+    try {
+      const res = await fetch('samples/fill/manifest.json', { cache: 'no-cache' });
+      if (res.ok) list = await res.json();
+    } catch (err) { return 0; }
+    if (!Array.isArray(list) || !list.length) return 0;
+    const prefs = await this.prefs();
+    const seeded = new Set(Array.isArray(prefs.fillSeeded) ? prefs.fillSeeded : []);
+    const banks = await this.allFillBanks();
+    const known = new Set(banks.map((b) => b.id));
+    let added = 0;
+    for (const entry of list) {
+      const id = `fill-${QuizCore.slugify(entry.name)}`;
+      if (known.has(id) || seeded.has(id)) continue;
+      try {
+        const res = await fetch(`samples/fill/${encodeURIComponent(entry.file)}`);
+        if (!res.ok) continue;
+        const { questions } = QuizCore.parseFillQuestions(await res.text());
+        if (!questions.length) continue;
+        banks.push(this.normalizeFill({ id, name: entry.name, subject: entry.subject || 'Chung', source: 'sample', questions }));
+        seeded.add(id);
+        added += 1;
+      } catch (err) { this.log(`Không đọc được đề điền chỗ trống ${entry.file}:`, err.message); }
+    }
+    if (added) {
+      await this.saveFillBanks(banks);
+      await this.setPrefs({ fillSeeded: [...seeded] });
+    }
+    return added;
+  }
+
   async switchSampleSet(setId) {
     const info = await this.sampleSets();
     if (!info.sets.some((x) => x.id === setId)) throw new Error('Không có bộ đề này.');

@@ -11,7 +11,7 @@
  */
 'use strict';
 
-const VERSION = '1.1.3-web8';
+const VERSION = '1.1.3-web9';
 const CACHE = `tracnghiem-web-v${VERSION}`;
 
 const SHELL = [
@@ -42,6 +42,7 @@ const SHELL = [
   'manifest.webmanifest',
   'samples/manifest.json',
   'samples/sets.json',
+  'samples/fill/manifest.json',
   'icons/icon-192.png',
   'icons/icon-512.png',
   'icons/favicon.png',
@@ -64,6 +65,13 @@ async function precache() {
         .filter(Boolean)
         .map((f) => `samples/${dir}${encodeURIComponent(f)}`);
       await cache.addAll([`samples/${dir}manifest.json`, ...files].map((url) => new Request(url, { cache: 'reload' })));
+    }
+    // Đề điền chỗ trống mẫu (samples/fill/).
+    const fres = await fetch('samples/fill/manifest.json', { cache: 'reload' });
+    if (fres.ok) {
+      const flist = await fres.json();
+      const ffiles = (flist || []).map((item) => `samples/fill/${encodeURIComponent(item.file)}`);
+      await cache.addAll(ffiles.map((url) => new Request(url, { cache: 'reload' })));
     }
   } catch (err) {
     // Không cache được đề mẫu vẫn phải cài worker: phần còn lại đã có trong cache.
