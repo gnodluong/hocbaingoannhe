@@ -106,6 +106,9 @@ function exportTxt(bank) {
 
 // ---------------------------------------------------------------- dien vao cho trong
 
+// Cau nhieu dong giu nguyen "Cau N." o dau (la tieu de cau hoi); cau 1 dong thi bo so thu tu.
+function stripNum(t) { return t.includes('\n') ? t.trim() : t.replace(NUMBERING_RE, '').trim(); }
+
 function parseFillQuestions(raw) {
   const questions = [];
   const issues = [];
@@ -113,9 +116,11 @@ function parseFillQuestions(raw) {
 
   lines.forEach((rawLine, idx) => {
     const lineNo = idx + 1;
-    const line = rawLine.trim();
-    if (!line || line.startsWith('#')) return;
+    const lineRaw = rawLine.trim();
+    if (!lineRaw || lineRaw.startsWith('#')) return;
 
+    // Cau nhieu dong: viet "\\n" (dau gach cheo + n) trong file .txt de xuong dong.
+    const line = lineRaw.replace(/\\n/g, '\n');
     const blanks = [];
     let m;
     BLANK_RE.lastIndex = 0;
@@ -124,11 +129,11 @@ function parseFillQuestions(raw) {
       if (val) blanks.push(val);
     }
     if (blanks.length) {
-      const display = line.replace(BLANK_RE, '___').replace(NUMBERING_RE, '').trim();
+      const display = stripNum(line.replace(BLANK_RE, '___'));
       questions.push({ id: newId('f'), text: display, blanks, auto: false });
       return;
     }
-    const text = line.replace(NUMBERING_RE, '').trim();
+    const text = stripNum(line);
     if (text.split(/\s+/).filter(Boolean).length < 3) {
       if (text) issues.push(`Dòng ${lineNo}: ${text.slice(0, 70)}`);
       return;
@@ -196,12 +201,12 @@ function autoBlank(text, rng = Math.random) {
 
 function exportFillTxt(bank) {
   const lines = bank.questions.map((q) => {
-    if (q.auto === undefined ? !q.blanks.length : q.auto) return q.text;
+    if (q.auto === undefined ? !q.blanks.length : q.auto) return q.text.replace(/\n/g, '\\n');
     let text = q.text;
     q.blanks.forEach((answer) => {
       text = text.replace('___', `{{${answer}}}`);
     });
-    return text;
+    return text.replace(/\n/g, '\\n');
   });
   return lines.join('\n') + '\n';
 }

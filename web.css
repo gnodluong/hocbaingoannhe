@@ -258,3 +258,6 @@ body { overflow: hidden; }
 #app-noscript .box { max-width: 460px; }
 #app-noscript h1 { font-size: 22px; margin: 0 0 10px; }
 #app-noscript p { font-size: 14px; line-height: 1.65; color: #a9b6d6; margin: 0; }
+
+/* Cau dien cho trong nhieu dong (barem nguyen cau): giu xuong dong, tu ngat dong khi qua dai */
+.fill-sentence, .q-text { white-space: pre-line; overflow-wrap: anywhere; }

@@ -284,9 +284,13 @@ class Store {
     if (!Array.isArray(list) || !list.length) return 0;
     const prefs = await this.prefs();
     const seeded = new Set(Array.isArray(prefs.fillSeeded) ? prefs.fillSeeded : []);
-    const banks = await this.allFillBanks();
+    let banks = await this.allFillBanks();
+    // Go cac de mau cu da bi thay bang phien ban moi (de khong con ban chia nho cu).
+    const current = new Set(list.map((e) => `fill-${QuizCore.slugify(e.name)}`));
+    const before = banks.length;
+    banks = banks.filter((b) => b.source !== 'sample' || current.has(b.id));
+    let added = before - banks.length;
     const known = new Set(banks.map((b) => b.id));
-    let added = 0;
     for (const entry of list) {
       const id = `fill-${QuizCore.slugify(entry.name)}`;
       if (known.has(id) || seeded.has(id)) continue;
