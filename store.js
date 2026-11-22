@@ -293,13 +293,21 @@ class Store {
     const known = new Set(banks.map((b) => b.id));
     for (const entry of list) {
       const id = `fill-${QuizCore.slugify(entry.name)}`;
-      if (known.has(id) || seeded.has(id)) continue;
+      const existing = banks.find((b) => b.id === id);
+      if (!existing && seeded.has(id)) continue; // nguoi dung da xoa -> khong nap lai
       try {
         const res = await fetch(`samples/fill/${encodeURIComponent(entry.file)}`);
         if (!res.ok) continue;
-        const { questions } = QuizCore.parseFillQuestions(await res.text());
+        const raw = await res.text();
+        // Dau van tay noi dung: file mau doi thi de mau tren may duoc cap nhat theo.
+        let h = 0;
+        for (let i = 0; i < raw.length; i += 1) h = (Math.imul(h, 31) + raw.charCodeAt(i)) | 0;
+        const sig = `${raw.length}-${h}`;
+        if (existing && (existing.source !== 'sample' || existing.sampleSig === sig)) continue;
+        const { questions } = QuizCore.parseFillQuestions(raw);
         if (!questions.length) continue;
-        banks.push(this.normalizeFill({ id, name: entry.name, subject: entry.subject || 'Chung', source: 'sample', questions }));
+        const bank = this.normalizeFill({ id, name: entry.name, subject: entry.subject || 'Chung', source: 'sample', sampleSig: sig, questions });
+        if (existing) banks[banks.indexOf(existing)] = bank; else banks.push(bank);
         seeded.add(id);
         added += 1;
       } catch (err) { this.log(`Không đọc được đề điền chỗ trống ${entry.file}:`, err.message); }
