@@ -261,3 +261,36 @@ body { overflow: hidden; }
 
 /* Cau dien cho trong nhieu dong (barem nguyen cau): giu xuong dong, tu ngat dong khi qua dai */
 .fill-sentence, .q-text { white-space: pre-line; overflow-wrap: anywhere; }
+
+/* ===== Điền chỗ trống: chia đôi màn hình + thân thiện điện thoại ===== */
+.fill-qbar { display: flex; gap: 6px; overflow-x: auto; padding: 4px 2px 10px; margin-top: 12px; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+.fill-qdot { flex: none; min-width: 38px; height: 38px; padding: 0 8px; border-radius: 10px; border: 1.5px solid var(--border-2, var(--border)); background: var(--surface); color: var(--dim); font-weight: 700; font-size: 14px; cursor: pointer; }
+.fill-qdot.part { border-color: var(--warn); color: var(--warn); }
+.fill-qdot.full { border-color: var(--ok); color: var(--ok-text, var(--ok)); background: color-mix(in srgb, var(--ok) 12%, var(--surface)); }
+.fill-qdot.cur { background: var(--accent); border-color: var(--accent); color: var(--white, #fff); }
+
+.fill-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+.fill-col { min-width: 0; }
+.fill-col-text, .fill-col-blanks { max-height: calc(100vh - 290px); min-height: 280px; overflow-y: auto; overscroll-behavior: contain; padding-right: 2px; }
+.fill-col-blanks > .panel + .panel { margin-top: 14px; }
+.fill-sentence .mark { cursor: pointer; border-radius: 6px; padding: 0 3px; background: color-mix(in srgb, var(--accent-2) 14%, transparent); }
+.fill-sentence .mark.done { background: color-mix(in srgb, var(--ok) 22%, transparent); color: var(--ok-text, var(--ok)); }
+.fill-sentence .mark.active { outline: 2px solid var(--accent-2); outline-offset: 1px; }
+.blank-row.active .blank-num { background: var(--accent-2); color: #04121a; }
+.blank-row.active .drop-slot:not(.filled) { border-color: var(--accent-2); background: rgba(34,211,238,.10); }
+.drag-chip { cursor: pointer; user-select: none; -webkit-user-select: none; touch-action: manipulation; }
+
+@media (max-width: 860px) {
+  .fill-split { grid-template-columns: 1fr; gap: 10px; }
+  /* Câu hỏi nằm trên, cuộn riêng trong khung ~40% màn hình; ô trống ngay bên dưới nên không phải kéo xa */
+  .fill-col-text { max-height: 38vh; min-height: 0; }
+  .fill-col-blanks { max-height: none; overflow: visible; }
+  .fill-sentence { font-size: 16px !important; line-height: 1.6; }
+  .blank-row { padding: 4px 0; gap: 8px; }
+  .blank-row .text-input, .drop-slot { min-height: 44px; font-size: 16px; } /* 16px: iOS khỏi tự phóng to khi gõ */
+  .drag-chip { padding: 10px 14px; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; }
+  /* Kho từ dính đáy màn hình: chạm từ là điền luôn, không phải cuộn qua lại */
+  .fill-mode-drag .fill-blanks-panel { display: none; }
+  .fill-mode-drag .fill-col-text { max-height: 46vh; }
+  .fill-pool-panel { position: sticky; bottom: 0; z-index: 20; max-height: 32vh; overflow-y: auto; box-shadow: 0 -8px 20px rgba(0,0,0,.28); }
+}
