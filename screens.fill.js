@@ -2,6 +2,7 @@
 /** Che do dien vao cho trong: hub theo mon, thiet lap, lam bai (go/keo tha), ket qua. */
 
 const FILL_COUNT_CHOICES = [10, 20, 30];
+let _fillCleanup = null;
 
 // ==================================================================== HUB
 async function renderFillHub(root, App) {
@@ -249,6 +250,7 @@ function numberedText(text) {
 
 async function renderFillQuiz(root, App, session) {
   unbindKeys(); stopTimer();
+  if (_fillCleanup) _fillCleanup();
   const head = el('div', { class: 'stage-head' });
   const counter = el('span', { class: 'counter' });
   const subject = el('span', { class: 'subject' });
@@ -260,15 +262,32 @@ async function renderFillQuiz(root, App, session) {
   const progress = el('div', { class: 'progress-track', style: { margin: '14px 0 0' } }, [el('div', { class: 'progress-fill', style: { background: 'var(--accent-2)' } })]);
   root.appendChild(progress);
 
-  const body = el('div', { class: 'mt16' });
+  // Thanh chon cau + nut Truoc/Tiep nam o PHIA TREN de khong phai cuon xuong moi bam duoc.
+  session.checked = session.checked || {};
+  const top = el('div', { class: 'fill-top' });
+  const qbar = el('div', { class: 'fill-qbar' });
+  const prevBtn = btn('Câu trước', () => nav(-1), { kind: 'ghost' });
+  const nextBtn = btn('Chấm câu này', () => nav(1), { kind: 'primary' });
+  top.append(qbar, el('div', { class: 'fill-navbtns' }, [prevBtn, nextBtn]));
+  root.appendChild(top);
+
+  const body = el('div', { class: 'fill-body' });
   root.appendChild(body);
 
-  const foot = el('div', { class: 'row gap10 mt18' });
-  const prevBtn = btn('Câu trước', () => nav(-1), { kind: 'ghost' });
-  const nextBtn = btn('Câu tiếp theo', () => nav(1), { kind: 'primary' });
-  foot.append(el('div', { class: 'credit', text: CREDIT }), el('div', { class: 'spacer' }), prevBtn, nextBtn);
-  root.appendChild(foot);
-  root.appendChild(el('div', { style: { height: '18px' } }));
+  // Chieu cao khung cau/cho trong = phan man hinh con lai -> khong phai cuon ca trang.
+  function fitHeight() {
+    const avail = Math.max(260, window.innerHeight - body.getBoundingClientRect().top - 44);
+    body.style.setProperty('--fill-h', `${avail}px`);
+  }
+  window.addEventListener('resize', fitHeight);
+  _fillCleanup = () => window.removeEventListener('resize', fitHeight);
+
+  function syncButtons() {
+    const checked = !!session.checked[session.index];
+    const last = session.index === session.total - 1;
+    prevBtn.disabled = session.index === 0;
+    nextBtn.querySelector('span').textContent = !checked ? 'Chấm câu này' : (last ? 'Xem kết quả' : 'Câu tiếp theo');
+  }
 
   function render() {
     const q = session.questions[session.index];
@@ -280,15 +299,15 @@ async function renderFillQuiz(root, App, session) {
     body.innerHTML = '';
 
     // ---- Thanh chon cau: nhay nhanh toi bat ky cau nao (huu ich tren dien thoai)
-    const qbar = el('div', { class: 'fill-qbar' });
+    qbar.innerHTML = '';
     session.questions.forEach((qq, qi) => {
       const got = session.answers[qi].filter((v) => v && String(v).trim()).length;
-      const state = got === 0 ? '' : (got >= qq.blanks.length ? ' full' : ' part');
+      let state = got === 0 ? '' : (got >= qq.blanks.length ? ' full' : ' part');
+      if (session.checked[qi]) state = session.questionCorrect(qi) ? ' rv-ok' : ' rv-bad';
       const b = el('button', { class: `fill-qdot${qi === session.index ? ' cur' : ''}${state}`, text: String(qi + 1), attrs: { type: 'button', title: `Câu ${qi + 1}` } });
       b.addEventListener('click', () => { session.index = qi; render(); });
       qbar.appendChild(b);
     });
-    body.appendChild(qbar);
     setTimeout(() => { const cur = qbar.querySelector('.cur'); if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: 'nearest', inline: 'center' }); }, 0);
 
     // ---- Chia doi: trai = cau hoi, phai = cho trong / tu co san
@@ -330,12 +349,49 @@ async function renderFillQuiz(root, App, session) {
         if (scroll) inputs[bi].scrollIntoView({ block: 'center', behavior: 'smooth' });
       } else if (slots[bi] && scroll) slots[bi].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
+    if (session.checked[session.index]) {
+      renderReviewMode();
+      syncButtons();
+      fitHeight();
+      return;
+    }
     marks.forEach((m, bi) => m.addEventListener('click', () => {
       if (session.fillMode === 'drag' && !isEmpty(bi)) clearSlot(slots[bi], bi); else activate(bi, true);
     }));
 
+    function renderReviewMode() {
+      const qi = session.index;
+      let wrong = 0;
+      marks.forEach((m, bi) => {
+        const ok = session.blankCorrect(qi, bi);
+        m.classList.remove('done', 'active');
+        m.classList.add(ok ? 'rv-ok' : 'rv-bad');
+        m.textContent = '';
+        if (ok) { m.textContent = q.blanks[bi]; return; }
+        wrong += 1;
+        const g = given[bi];
+        m.append(el('del', { text: (g && String(g).trim()) ? String(g) : '(trống)' }), document.createTextNode(` → ${q.blanks[bi]}`));
+      });
+      const rp = panel([], { classes: 'fill-review-panel' });
+      const okCount = q.blanks.length - wrong;
+      rp.appendChild(el('div', { class: `fill-review-title ${wrong ? 'bad' : 'ok'}`, text: wrong ? `Câu này sai ${wrong}/${q.blanks.length} chỗ trống` : `Chính xác hoàn toàn! ${okCount}/${q.blanks.length} chỗ trống` }));
+      if (wrong) rp.appendChild(el('div', { class: 'muted-line', style: { marginBottom: '8px' }, text: 'Chỗ sai được gạch đỏ trong câu, kèm đáp án đúng. Chi tiết:' }));
+      q.blanks.forEach((word, bi) => {
+        if (session.blankCorrect(qi, bi)) return;
+        const g = given[bi];
+        rp.appendChild(el('div', { class: 'review-blank' }, [
+          el('span', { class: 'rb-num', text: `⟦${bi + 1}⟧` }),
+          el('span', { class: 'rb-bad', text: `Bạn điền: ${(g && String(g).trim()) ? g : '(bỏ trống)'}` }),
+          el('span', { class: 'rb-ok', text: `Đáp án: ${word}` }),
+        ]));
+      });
+      if (!wrong) rp.appendChild(el('div', { class: 'muted-line', text: 'Bấm "Câu tiếp theo" để làm tiếp.' }));
+      right.appendChild(rp);
+    }
+
     const blanksPanel = panel([], { classes: 'fill-blanks-panel' });
     blanksPanel.appendChild(el('div', { class: 'muted-line', style: { marginBottom: '10px' }, text: `CHỖ TRỐNG CẦN ĐIỀN (${q.blanks.length})` }));
+    const blankList = el('div', { class: 'blank-list' });
     q.blanks.forEach((_, bi) => {
       const row = el('div', { class: 'blank-row' });
       row.appendChild(el('div', { class: 'blank-num', text: String(bi + 1) }));
@@ -368,8 +424,9 @@ async function renderFillQuiz(root, App, session) {
         slots.push(slot);
         row.appendChild(slot);
       }
-      blanksPanel.appendChild(row);
+      blankList.appendChild(row);
     });
+    blanksPanel.appendChild(blankList);
     right.appendChild(blanksPanel);
 
     if (session.fillMode === 'drag') {
@@ -407,8 +464,8 @@ async function renderFillQuiz(root, App, session) {
     refreshMarks();
     if (session.fillMode === 'type' && inputs[activeIdx]) setTimeout(() => inputs[activeIdx].focus({ preventScroll: true }), 20);
 
-    prevBtn.disabled = session.index === 0;
-    nextBtn.querySelector('span').textContent = session.index === session.total - 1 ? 'Xem kết quả' : 'Câu tiếp theo';
+    syncButtons();
+    fitHeight();
   }
 
   function fillSlot(slot, blankIndex, word, chipId) {
@@ -428,7 +485,10 @@ async function renderFillQuiz(root, App, session) {
   }
 
   function nav(delta) {
-    if (delta > 0 && session.index >= session.total - 1) { finish(); return; }
+    if (delta > 0) {
+      if (!session.checked[session.index]) { session.checked[session.index] = true; render(); return; }
+      if (session.index >= session.total - 1) { finish(); return; }
+    }
     session.index = Math.max(0, Math.min(session.total - 1, session.index + delta));
     render();
   }

@@ -294,3 +294,40 @@ body { overflow: hidden; }
   .fill-mode-drag .fill-col-text { max-height: 46vh; }
   .fill-pool-panel { position: sticky; bottom: 0; z-index: 20; max-height: 32vh; overflow-y: auto; box-shadow: 0 -8px 20px rgba(0,0,0,.28); }
 }
+
+/* ===== Điền chỗ trống v2: vừa một màn hình, chấm từng câu ===== */
+.fill-top { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+.fill-top .fill-qbar { flex: 1; min-width: 0; margin: 0; padding: 4px 2px; }
+.fill-navbtns { display: flex; gap: 8px; flex: none; }
+.fill-body { margin-top: 6px; }
+.fill-col-text, .fill-col-blanks { max-height: var(--fill-h, calc(100vh - 290px)); min-height: 0; }
+.fill-qdot.rv-ok { border-color: var(--ok); background: var(--ok); color: #04210f; }
+.fill-qdot.rv-bad { border-color: var(--bad); background: var(--bad); color: #fff; }
+.fill-qdot.cur { box-shadow: 0 0 0 2px var(--accent-2); }
+/* Kéo thả: danh sách ô riêng bị ẩn (từ đã điền hiện ngay trong câu) -> cột phải chỉ còn kho từ */
+.fill-mode-drag .fill-blanks-panel { display: none; }
+.fill-mode-drag .fill-pool-panel { position: static; max-height: none; box-shadow: none; }
+/* Gõ: các ô xếp 2 cột trên màn rộng cho đỡ dài */
+.blank-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 16px; }
+.fill-sentence { font-size: 17px !important; line-height: 1.6; padding: 16px 18px !important; }
+/* Chấm câu: đúng xanh, sai gạch đỏ kèm đáp án đúng */
+.fill-sentence .mark.rv-ok { background: color-mix(in srgb, var(--ok) 22%, transparent); color: var(--ok-text, var(--ok)); outline: 0; }
+.fill-sentence .mark.rv-bad { background: color-mix(in srgb, var(--bad) 16%, transparent); color: var(--text); outline: 0; cursor: default; }
+.fill-sentence .mark.rv-bad del { color: var(--bad-text, var(--bad)); text-decoration: line-through; margin-right: 2px; }
+.fill-review-title { font-size: 17px; font-weight: 800; margin-bottom: 10px; }
+.fill-review-title.ok { color: var(--ok-text, var(--ok)); }
+.fill-review-title.bad { color: var(--bad-text, var(--bad)); }
+.fill-review-panel .review-blank { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; padding: 8px 0; border-top: 1px solid var(--border); }
+.fill-review-panel .rb-num { color: var(--muted); font-weight: 700; }
+.fill-review-panel .rb-bad { color: var(--bad-text, var(--bad)); }
+.fill-review-panel .rb-ok { color: var(--ok-text, var(--ok)); font-weight: 700; }
+@media (max-width: 1100px) { .blank-list { grid-template-columns: 1fr; } }
+@media (max-width: 860px) {
+  .fill-top { flex-wrap: wrap; gap: 8px; }
+  .fill-top .fill-qbar { order: 2; flex: 1 0 100%; }
+  .fill-navbtns { order: 1; width: 100%; }
+  .fill-navbtns .btn { flex: 1; justify-content: center; }
+  .fill-col-text { max-height: min(var(--fill-h, 60vh), 52vh); }
+  .fill-mode-drag .fill-col-text { max-height: 46vh; }
+  .fill-mode-drag .fill-pool-panel { position: sticky; max-height: 32vh; box-shadow: 0 -8px 20px rgba(0,0,0,.28); }
+}
