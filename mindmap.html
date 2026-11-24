@@ -1,106 +1,376 @@
-<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mindmap ôn cấp tốc</title><style>body{margin:0;background:#101722;color:#e8edf5;font:16px/1.5 system-ui,sans-serif;padding:14px;max-width:900px;margin:auto}
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mindmap ôn cấp tốc</title><style>body{margin:0 auto;background:#101722;color:#e8edf5;font:16px/1.55 system-ui,sans-serif;padding:14px;max-width:900px}
 h1{font-size:20px;margin:6px 0 12px}.tip{background:#1b2638;border-radius:12px;padding:10px 12px;margin:8px 0 12px;font-size:14px}
 details{margin:6px 0}summary{cursor:pointer;padding:10px 12px;border-radius:12px;font-weight:700;list-style:none}
 summary::-webkit-details-marker{display:none}summary:before{content:"▸ ";opacity:.7}details[open]>summary:before{content:"▾ "}
 .s>summary{font-size:18px;background:var(--c);color:#0b1220}.q>summary{background:#1b2638;border-left:5px solid var(--c)}
-.q{margin-left:6px}.g{margin:6px 0 10px 10px;border-left:2px dashed #3a4b66;padding-left:12px}
-.g h4{margin:8px 0 4px;color:#9db4d8;font-size:14px;text-transform:uppercase;letter-spacing:.3px}
-.k{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0}.k span{background:#243652;border:1px solid #3a5075;border-radius:999px;padding:3px 10px;font-size:14px}
-.k span.n{background:#4a3b1f;border-color:#a8832f;color:#ffd77a}
-.btns{display:flex;gap:8px;margin-bottom:8px}button{flex:1;padding:10px;border-radius:10px;border:1px solid #3a5075;background:#1b2638;color:#e8edf5;font-size:14px}</style><body><h1>🧠 Mindmap ôn cấp tốc — 20 câu</h1><div class="tip">Bấm để mở/đóng. Cam = <b>con số</b> (nhớ riêng). Che từ khoá, tự nhắc lại cả nhánh.</div><div class="btns"><button onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Mở hết</button><button onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Đóng hết</button></div>
+.q{margin-left:4px}.body{padding:4px 4px 8px 10px}
+.h{margin:12px 0 4px;padding:5px 10px;border-radius:8px;background:#22334d;color:#cfe0ff;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.3px}
+.l{margin:5px 0;padding-left:16px;position:relative}.l:before{content:"–";position:absolute;left:3px;color:#7f93b5}
+.l.sub{margin-left:20px}.l.sub:before{content:"+"}.l.note{font-style:italic;color:#b8c6dd}.l.note:before{content:""}
+mark{background:#244d3a;color:#aef0cc;border-radius:5px;padding:0 4px;font-weight:700}
+mark.n{background:#5a431a;color:#ffd77a}
+.btns{display:flex;gap:8px;margin-bottom:8px}button{flex:1;padding:10px;border-radius:10px;border:1px solid #3a5075;background:#1b2638;color:#e8edf5;font-size:14px}
+.hide mark{background:#243652;color:transparent;user-select:none;cursor:pointer}.hide mark.show{color:#aef0cc;background:#244d3a}</style><body><h1>🧠 Mindmap ôn cấp tốc — 20 câu (đủ nội dung)</h1><div class="tip">Bấm tên câu để mở. <mark>Xanh</mark> = từ khoá, <mark class="n">cam</mark> = con số. Bấm <b>"Che từ khoá"</b> để tự kiểm tra: chạm vào ô tối để hiện đáp án.</div><div class="btns"><button onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Mở hết</button><button onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Đóng hết</button><button onclick="document.body.classList.toggle('hide')">Che từ khoá</button></div>
 <details class="s" open style="--c:#e0746c"><summary>Bệnh Nội – Ngoại (10 câu)</summary><div class="tip">Cấp cứu: <b>ra khỏi nguy hiểm → sơ cứu tại chỗ → chuyển tuyến sau</b>. Triệu chứng: <b>cơ năng → thực thể → toàn thân</b>.</div>
-<details class="q" style="--c:#e0746c"><summary>1. Câu 1 (Nội khoa). Trình bày cách xử lý các trường hợp sốt?</summary>
-<div class="g"><h4>CÁC BIỆN PHÁP CHĂM SÓC (KHÔNG DÙNG THUỐC)</h4><div class="k"><span class="">phòng thoáng mát</span><span class="">Cho uống đủ nước</span><span class="">Truyền dịch</span><span class="">bệnh nặng</span><span class="">Chườm mát</span><span class="">khăn nhúng nước ấm</span><span class="">trán, nách, bẹn</span><span class="">ngâm cả người bệnh</span><span class="">ăn lỏng, dễ tiêu</span><span class="">Tiếp tục bú mẹ</span></div></div>
-<div class="g"><h4>THUỐC HẠ SỐT</h4><div class="k"></div></div>
-<div class="g"><h4>Thường dùng khi sốt cao từ {{38,5°C}} trở lên</h4><div class="k"><span class="">Paracetamol</span><span class="">Efferalgan, Panadol</span><span class="">uống, đặt hậu môn</span><span class="n">10–15 mg/kg/lần</span><span class="n">4–6 giờ</span><span class="n">60 mg/kg/24 giờ</span><span class="">Ibuprofen</span><span class="">Aspirin</span></div></div>
-</details>
-<details class="q" style="--c:#e0746c"><summary>2. Câu 2 (Nội khoa). Trình bày cách xử trí đuối nước?</summary>
-<div class="g"><h4>NGUYÊN TẮC</h4><div class="k"><span class="">Sơ cứu tại chỗ</span><span class="">Kiên trì cấp cứu</span><span class="">thông đường hô hấp</span><span class="">tim mạch, hô hấp, chuyển hóa</span></div></div>
-<div class="g"><h4>CẤP CỨU TẠI CHỖ</h4><div class="k"><span class="">sự trợ giúp</span><span class="">ném phao</span><span class="">sào gậy</span><span class="">vào bờ</span><span class="">gạt ra</span><span class="">đạp ra</span><span class="">bơi vòng ra phía sau</span><span class="">nền phẳng cứng</span><span class="">khô ráo</span><span class="">nghiêng đầu sang một bên</span><span class="">móc đờm, dãi</span><span class="">Đánh giá nạn nhân</span><span class="">thay hết quần áo ướt</span><span class="">ủ ấm</span><span class="">hồi sức tim, phổi</span><span class="">tự thở</span><span class="">tim đập trở lại</span><span class="n">1–2 giờ</span><span class="">đồng tử giãn</span><span class="">tay, chân</span><span class="">lạnh cứng</span><span class="">hết hy vọng cứu sống</span><span class="">tuyến sau</span></div></div>
-<div class="g"><h4>Điều kiện chuyển về tuyến sau</h4><div class="k"><span class="n">90 mmHg</span><span class="">vừa hồi sức, vừa chuyển</span><span class="">điều kiện vận chuyển khó khăn</span><span class="">mời tuyến sau lên chi viện</span></div></div>
-</details>
-<details class="q" style="--c:#e0746c"><summary>3. Câu 3 (Nội khoa). Trình bày cách xử trí cấp cứu điện giật?</summary>
-<div class="g"><div class="k"><span class="">khẩn trương và tại chỗ</span><span class="">cách ly nạn nhân</span><span class="">Cúp cầu dao</span><span class="">không dẫn điện</span><span class="">miệng–miệng hoặc miệng–mũi</span><span class="">ngừng tim, ngừng thở</span><span class="">trước tim</span><span class="">ấn tim ngoài lồng ngực</span><span class="">huyết áp, mạch</span><span class="">tuyến sau</span></div></div>
-<div class="g"><h4>Điều kiện chuyển về tuyến sau</h4><div class="k"><span class="">tim đập trở lại</span><span class="n">90 mmHg</span><span class="">tự thở</span><span class="">vừa hồi sức, vừa chuyển</span><span class="">điều kiện vận chuyển khó khăn</span><span class="">mời tuyến sau lên</span></div></div>
-</details>
-<details class="q" style="--c:#e0746c"><summary>4. Câu 4 (Nội khoa). Trình bày cách xử trí say nắng – say nóng?</summary>
-<div class="g"><div class="k"><span class="">nơi nắng, nóng</span><span class="">thoáng mát, yên tĩnh</span><span class="">hạ thân nhiệt</span><span class="">khăn lạnh</span><span class="">trà pha thêm ít muối</span><span class="">Paracetamol</span><span class="n">1/4 mg</span><span class="n">0,9%</span><span class="n">5%</span><span class="n">10 mg</span><span class="n">1 ống</span><span class="">chuyển sớm về tuyến sau</span><span class="">vào lều</span><span class="">giàn phun nước dạng sương mù</span><span class="">phun sương</span><span class="">bay hơi nước</span></div></div>
-</details>
-<details class="q" style="--c:#e0746c"><summary>5. Câu 5 (Nội khoa). Trình bày cách xử trí và dự phòng rắn độc cắn?</summary>
-<div class="g"><h4>XỬ TRÍ</h4><div class="k"><span class="">tầm hoạt động của rắn</span><span class="">Trấn an nạn nhân</span><span class="">thấp hơn tim</span><span class="n">5–10 cm</span><span class="">Bất động nạn nhân</span><span class="">nước chanh</span><span class="">phèn chua</span><span class="">Betadin</span><span class="">Chườm đá</span><span class="n">2%</span><span class="n">10 ml</span><span class="n">30 mg</span><span class="">giảm đau</span><span class="n">10–20 ml</span><span class="">bệnh viện ngay</span></div></div>
-<div class="g"><h4>DỰ PHÒNG</h4><div class="k"><span class="">giày tất cao cổ</span><span class="">Phát quang</span><span class="">hầm hào</span></div></div>
-</details>
-<details class="q" style="--c:#e0746c"><summary>6. Câu 1 (Ngoại khoa). Trình bày triệu chứng lâm sàng của thủng dạ dày–tá tràng?</summary>
-<div class="g"><h4>Triệu chứng cơ năng</h4><div class="k"><span class="">Đau bụng</span><span class="">trên rốn</span><span class="">đau âm ỉ</span><span class="">đột ngột dữ dội</span><span class="">vai ra sau lưng</span><span class="">gập người, ôm bụng</span><span class="">nôn hay không nôn</span><span class="">bí trung đại tiện</span></div></div>
-<div class="g"><h4>Triệu chứng thực thể</h4><div class="k"><span class="">múi cơ</span><span class="">nhịp thở</span><span class="">cứng như gỗ</span><span class="">mất vùng đục trước gan</span></div></div>
-<div class="g"><h4>Triệu chứng toàn thân</h4><div class="k"><span class="">choáng nhẹ</span><span class="">vã mồ hôi</span><span class="">Mạch hơi nhanh, nhỏ</span><span class="">huyết áp hạ ít</span><span class="n">6 giờ</span></div></div>
-<div class="g"><h4>Diễn biến</h4><div class="k"><span class="">Viêm phúc mạc toàn thể</span><span class="n">12–24 giờ</span></div></div>
-</details>
-<details class="q" style="--c:#e0746c"><summary>7. Câu 2 (Ngoại khoa). Trình bày triệu chứng lâm sàng của viêm ruột thừa cấp?</summary>
-<div class="g"><h4>Triệu chứng cơ năng</h4><div class="k"><span class="">đột ngột và tăng dần</span><span class="">thượng vị</span><span class="">hố chậu phải</span><span class="">không thành cơn</span><span class="">không có tư thế giảm đau</span><span class="">khu trú ngay từ đầu</span><span class="">buồn nôn và nôn</span><span class="">tiêu chảy</span></div></div>
-<div class="g"><h4>Triệu chứng thực thể</h4><div class="k"><span class="">tay che vào chỗ đau</span><span class="">bụng chướng</span><span class="">bốn đầu ngón tay</span><span class="">từ nơi không đau tới nơi đau</span><span class="">Mac-Burney</span><span class="">Blumberg (+)</span><span class="">đau thốt</span><span class="">Phản ứng thành bụng</span><span class="">co các cơ thành bụng</span><span class="">giảm hoặc mất</span></div></div>
-<div class="g"><h4>Triệu chứng toàn thân</h4><div class="k"><span class="n">37,5–38°C</span><span class="">triệu chứng đau</span><span class="">môi khô, lưỡi bẩn, hơi thở hôi</span></div></div>
-</details>
-<details class="q" style="--c:#e0746c"><summary>8. Câu 3 (Ngoại khoa). Trình bày các biện pháp sơ cứu nạn nhân bỏng?</summary>
-<div class="g"><h4>Loại trừ tác nhân gây bỏng: cúp điện, cắt bỏ quần áo…</h4><div class="k"></div></div>
-<div class="g"><h4>Xử trí tổn thương bỏng</h4><div class="k"><span class="n">30 phút</span><span class="">Băng ép</span><span class="">Không bôi chất gì</span></div></div>
-<div class="g"><h4>Giảm đau</h4><div class="k"><span class="">Bất động vùng bỏng</span><span class="">Promedol, Morphin</span><span class="n">0,25%</span></div></div>
-<div class="g"><h4>Uống dịch thể sớm: uống Oresol hoặc dung dịch tự pha (1–2 lít/24 giờ).</h4><div class="k"></div></div>
-<div class="g"><h4>Ủ ấm</h4><div class="k"><span class="">rét run</span><span class="n">37°C</span></div></div>
-<div class="g"><h4>Vận chuyển về tuyến bệnh viện: Không được vận chuyển bệnh nhân đang sốc hoặc đe dọa sốc.</h4><div class="k"></div></div>
-</details>
-<details class="q" style="--c:#e0746c"><summary>9. Câu 4 (Ngoại khoa). Trình bày cách sơ cứu người bị bong gân?</summary>
-<div class="g"><h4>Những điều cần làm</h4><div class="k"><span class="">Bất động</span><span class="n">20–30 phút</span><span class="n">4 giờ</span><span class="n">48 giờ</span><span class="">Kê cao chi bị thương</span><span class="">máu tụ</span><span class="">Giảm đau</span><span class="">Indomethacine, Ibuprofen</span><span class="n">24 giờ</span></div></div>
-<div class="g"><h4>Các biện pháp nói trên, nhất là chườm đá lạnh, sẽ làm hết đau nhanh chóng.</h4><div class="k"></div></div>
-<div class="g"><h4>Không được làm</h4><div class="k"><span class="n">42–78 giờ</span><span class="">rượu</span><span class="">dãn mạch</span><span class="">steroid</span><span class="">dây chằng</span></div></div>
-</details>
-<details class="q" style="--c:#e0746c"><summary>10. Câu 5 (Ngoại khoa). Trình bày triệu chứng lâm sàng và nguyên tắc chung xử trí sai khớp?</summary>
-<div class="g"><h4>Triệu chứng lâm sàng</h4><div class="k"><span class="">Đau</span><span class="">Đau dữ dội</span><span class="">cử động hoặc sờ nắn</span><span class="">Giảm hoặc mất cử động</span><span class="">biến dạng</span><span class="">tư thế cố định</span><span class="">Sưng nề, bầm tím</span><span class="">Sờ nắn</span><span class="">Ổ khớp rỗng</span><span class="">chỏm xương</span><span class="">bật lò xo</span></div></div>
-<div class="g"><h4>Nguyên tắc chung xử trí sai khớp</h4><div class="k"><span class="">Vô cảm</span><span class="">Nắn chỉnh sớm</span><span class="">Cố định tốt</span><span class="">Tập vận động sớm</span><span class="">Phẫu thuật</span></div></div>
-</details>
+<details class="q" style="--c:#e0746c"><summary>1. Câu 1 (Nội khoa). Trình bày cách xử lý các trường hợp sốt?</summary><div class="body">
+<div class="h">CÁC BIỆN PHÁP CHĂM SÓC (KHÔNG DÙNG THUỐC)</div>
+<div class="l">Cởi bớt quần áo, <mark class="">phòng thoáng mát</mark>.</div>
+<div class="l"><mark class="">Cho uống đủ nước</mark>. <mark class="">Truyền dịch</mark> nếu không uống được, <mark class="">bệnh nặng</mark>.</div>
+<div class="l"><mark class="">Chườm mát</mark> với nước ấm:</div>
+<div class="l sub">Dùng <mark class="">khăn nhúng nước ấm</mark> đắp vào các vị trí da ở <mark class="">trán, nách, bẹn</mark>.</div>
+<div class="l sub">Đôi khi phải <mark class="">ngâm cả người bệnh</mark> vào bể nước ấm.</div>
+<div class="l">Cho trẻ <mark class="">ăn lỏng, dễ tiêu</mark>, chia nhỏ bữa. <mark class="">Tiếp tục bú mẹ</mark> nếu trẻ còn bú.</div>
+<div class="h">THUỐC HẠ SỐT</div>
+<div class="h">Thường dùng khi sốt cao từ {{38,5°C}} trở lên</div>
+<div class="l"><mark class="">Paracetamol</mark> (Acetaminophen): <mark class="">Efferalgan, Panadol</mark>…</div>
+<div class="l sub">Đường dùng: <mark class="">uống, đặt hậu môn</mark>.</div>
+<div class="l sub">Liều lượng trung bình: <mark class="n">10–15 mg/kg/lần</mark>.</div>
+<div class="l sub">Có thể dùng lại cách mỗi <mark class="n">4–6 giờ</mark>, tối đa <mark class="n">60 mg/kg/24 giờ</mark>.</div>
+<div class="l">Các thuốc hạ sốt khác: <mark class="">Ibuprofen</mark>, <mark class="">Aspirin</mark>…</div>
+</div></details>
+<details class="q" style="--c:#e0746c"><summary>2. Câu 2 (Nội khoa). Trình bày cách xử trí đuối nước?</summary><div class="body">
+<div class="h">NGUYÊN TẮC</div>
+<div class="l"><mark class="">Sơ cứu tại chỗ</mark> tích cực, đúng phương pháp.</div>
+<div class="l"><mark class="">Kiên trì cấp cứu</mark> trong nhiều giờ.</div>
+<div class="l">Làm <mark class="">thông đường hô hấp</mark>.</div>
+<div class="l">Xử trí các rối loạn về <mark class="">tim mạch, hô hấp, chuyển hóa</mark>.</div>
+<div class="h">CẤP CỨU TẠI CHỖ</div>
+<div class="l">Hô hoán tìm kiếm <mark class="">sự trợ giúp</mark> của nhiều người.</div>
+<div class="l">Nhanh chóng đưa nạn nhân ra khỏi nước một cách an toàn bằng mọi cách: <mark class="">ném phao</mark>, ném vật nổi hoặc dùng <mark class="">sào gậy</mark> để nạn nhân nắm lấy rồi kéo <mark class="">vào bờ</mark>.</div>
+<div class="l note">(Lưu ý: Nếu bơi ra cứu, nạn nhân bám vào, người cứu phải lấy tay <mark class="">gạt ra</mark>, hoặc lấy chân <mark class="">đạp ra</mark>, <mark class="">bơi vòng ra phía sau</mark> ôm kéo nạn nhân vào bờ).</div>
+<div class="l">Đặt nạn nhân nằm trên <mark class="">nền phẳng cứng</mark>, <mark class="">khô ráo</mark>, <mark class="">nghiêng đầu sang một bên</mark>, <mark class="">móc đờm, dãi</mark>… ra khỏi miệng nạn nhân.</div>
+<div class="l"><mark class="">Đánh giá nạn nhân</mark> và xử trí:</div>
+<div class="l sub">Nếu tỉnh: động viên, <mark class="">thay hết quần áo ướt</mark>, lau khô, <mark class="">ủ ấm</mark>.</div>
+<div class="l sub">Nếu ngừng tim, ngừng thở: Tiến hành <mark class="">hồi sức tim, phổi</mark> ngay lập tức đến khi nạn nhân <mark class="">tự thở</mark>, <mark class="">tim đập trở lại</mark>.</div>
+<div class="l note">(Sau <mark class="n">1–2 giờ</mark> tiến hành cấp cứu tích cực mà tim không đập, hô hấp không trở lại, <mark class="">đồng tử giãn</mark>, <mark class="">tay, chân</mark> nạn nhân <mark class="">lạnh cứng</mark> là <mark class="">hết hy vọng cứu sống</mark>).</div>
+<div class="l">Chuyển nạn nhân về <mark class="">tuyến sau</mark>.</div>
+<div class="h">Điều kiện chuyển về tuyến sau</div>
+<div class="l sub">Nạn nhân tạm thời ổn định: tim đập trở lại, huyết áp tối đa &gt; <mark class="n">90 mmHg</mark>, tự thở, có thể chuyển nạn nhân về tuyến sau; <mark class="">vừa hồi sức, vừa chuyển</mark>.</div>
+<div class="l sub">Nếu nạn nhân còn nặng, <mark class="">điều kiện vận chuyển khó khăn</mark>, phải <mark class="">mời tuyến sau lên chi viện</mark>.</div>
+</div></details>
+<details class="q" style="--c:#e0746c"><summary>3. Câu 3 (Nội khoa). Trình bày cách xử trí cấp cứu điện giật?</summary><div class="body">
+<div class="l">Tuân thủ theo nguyên tắc cấp cứu <mark class="">khẩn trương và tại chỗ</mark>.</div>
+<div class="l">Nhanh chóng <mark class="">cách ly nạn nhân</mark> ra khỏi nguồn điện:</div>
+<div class="l sub"><mark class="">Cúp cầu dao</mark>, cắt nguồn điện.</div>
+<div class="l sub">Nếu không cắt được nguồn điện: dùng các vật dụng <mark class="">không dẫn điện</mark> để tách nạn nhân khỏi nguồn điện.</div>
+<div class="l">Nếu ngừng thở: tiến hành bằng hô hấp nhân tạo <mark class="">miệng–miệng hoặc miệng–mũi</mark>.</div>
+<div class="l">Nếu <mark class="">ngừng tim, ngừng thở</mark>:</div>
+<div class="l sub">Đấm mạnh vào vùng <mark class="">trước tim</mark> 2–3 cái.</div>
+<div class="l sub">Nếu tim không đập trở lại thì tiến hành vừa hô hấp nhân tạo miệng–miệng, vừa <mark class="">ấn tim ngoài lồng ngực</mark>.</div>
+<div class="l">Sau khi nạn nhân hồi phục, theo dõi <mark class="">huyết áp, mạch</mark>.</div>
+<div class="l">Chuyển nạn nhân về <mark class="">tuyến sau</mark>.</div>
+<div class="h">Điều kiện chuyển về tuyến sau</div>
+<div class="l sub">Nạn nhân tạm thời ổn định, <mark class="">tim đập trở lại</mark>, huyết áp tối đa &gt; <mark class="n">90 mmHg</mark>, <mark class="">tự thở</mark>.</div>
+<div class="l sub">Có thể chuyển nạn nhân về tuyến sau, <mark class="">vừa hồi sức, vừa chuyển</mark>.</div>
+<div class="l sub">Nếu nạn nhân còn nặng, <mark class="">điều kiện vận chuyển khó khăn</mark>, phải <mark class="">mời tuyến sau lên</mark>.</div>
+</div></details>
+<details class="q" style="--c:#e0746c"><summary>4. Câu 4 (Nội khoa). Trình bày cách xử trí say nắng – say nóng?</summary><div class="body">
+<div class="l">Đưa ngay nạn nhân ra khỏi <mark class="">nơi nắng, nóng</mark>.</div>
+<div class="l">Đặt nằm nghỉ nơi <mark class="">thoáng mát, yên tĩnh</mark>, cởi bớt quần áo, trang bị, nới dây lưng.</div>
+<div class="l">Nhanh chóng làm <mark class="">hạ thân nhiệt</mark> nạn nhân: Đắp <mark class="">khăn lạnh</mark> lên trán, lên mặt, vào gáy, có thể đắp chăn ướt hoặc nước đá lạnh khắp người, theo dõi thân nhiệt.</div>
+<div class="l">Bổ sung nước: Cho uống nước <mark class="">trà pha thêm ít muối</mark>, cho uống dần từng ít một.</div>
+<div class="l">Nếu còn sốt cao cho uống thuốc hạ sốt <mark class="">Paracetamol</mark>.</div>
+<div class="l">Nếu trụy tim mạch: tiêm tĩnh mạch Ouabain <mark class="n">1/4 mg</mark>, truyền dung dịch natri clorua (<mark class="n">0,9%</mark>) hoặc glucose <mark class="n">5%</mark>, Ringer lactat.</div>
+<div class="l">Nếu có kích động, co giật: Seduxen <mark class="n">10 mg</mark> × <mark class="n">1 ống</mark> tiêm bắp.</div>
+<div class="l">Nếu có dấu hiệu thần kinh nặng, hôn mê thì <mark class="">chuyển sớm về tuyến sau</mark>.</div>
+<div class="l sub">Đưa ngay nạn nhân say nắng–say nóng <mark class="">vào lều</mark>, cởi bỏ quần áo dài, cho nằm trên cáng đặt giữa lều.</div>
+<div class="l sub">Bật <mark class="">giàn phun nước dạng sương mù</mark> được đặt dọc bên trên và bên dưới cáng.</div>
+<div class="l sub">Bằng cách <mark class="">phun sương</mark> liên tục lên da, kết hợp với quạt gió cưỡng bức sẽ thúc đẩy quá trình <mark class="">bay hơi nước</mark> để hạ nhiệt độ một cách nhanh chóng.</div>
+</div></details>
+<details class="q" style="--c:#e0746c"><summary>5. Câu 5 (Nội khoa). Trình bày cách xử trí và dự phòng rắn độc cắn?</summary><div class="body">
+<div class="h">XỬ TRÍ</div>
+<div class="l">Di chuyển nạn nhân ra khỏi <mark class="">tầm hoạt động của rắn</mark>.</div>
+<div class="l"><mark class="">Trấn an nạn nhân</mark>, giữ bình tĩnh. Tháo bỏ đồ trang sức ở chân, tay bị cắn và để chi <mark class="">thấp hơn tim</mark>.</div>
+<div class="l">Băng ép hoặc garo tĩnh mạch: trên vết cắn <mark class="n">5–10 cm</mark> (không băng ép khi rắn lục cắn vì có thể làm vết thương nặng thêm).</div>
+<div class="l"><mark class="">Bất động nạn nhân</mark> ngay: băng nẹp, không để nạn nhân tự đi lại.</div>
+<div class="l">Rửa sạch vết cắn: bằng <mark class="">nước chanh</mark>, xà phòng, <mark class="">phèn chua</mark>, rượu trắng hoặc dung dịch <mark class="">Betadin</mark>.</div>
+<div class="l"><mark class="">Chườm đá</mark> tại chỗ và trên chỗ rắn cắn.</div>
+<div class="l">Phong bế quanh vết cắn bằng Novocain <mark class="n">2%</mark> × <mark class="n">10 ml</mark>.</div>
+<div class="l">Chống dị ứng bằng Depersolon <mark class="n">30 mg</mark> tiêm bắp thịt.</div>
+<div class="l">Nếu đau nhiều <mark class="">giảm đau</mark> cho người bệnh.</div>
+<div class="l">Cho uống nước trà đường nóng, rượu quế <mark class="n">10–20 ml</mark>. Ủ ấm nạn nhân.</div>
+<div class="l">Chuyển nạn nhân về <mark class="">bệnh viện ngay</mark>.</div>
+<div class="h">DỰ PHÒNG</div>
+<div class="l">Khi hành quân ra rừng rậm cần đi <mark class="">giày tất cao cổ</mark>.</div>
+<div class="l"><mark class="">Phát quang</mark>, vệ sinh nơi ở.</div>
+<div class="l">Sinh hoạt trong <mark class="">hầm hào</mark> cần gọn gàng cao ráo, thường xuyên kiểm tra nơi ở đề phòng rắn cắn.</div>
+</div></details>
+<details class="q" style="--c:#e0746c"><summary>6. Câu 1 (Ngoại khoa). Trình bày triệu chứng lâm sàng của thủng dạ dày–tá tràng?</summary><div class="body">
+<div class="h">Triệu chứng cơ năng</div>
+<div class="l"><mark class="">Đau bụng</mark>:</div>
+<div class="l sub">Đau dữ dội, đột ngột vùng <mark class="">trên rốn</mark>.</div>
+<div class="l sub">Có khi <mark class="">đau âm ỉ</mark> vài ba ngày trước rồi sau đó đau <mark class="">đột ngột dữ dội</mark>.</div>
+<div class="l sub">Đau lan ra khắp ổ bụng, lan lên <mark class="">vai ra sau lưng</mark>.</div>
+<div class="l">Đau bụng ngày càng tăng, làm bệnh nhân phải <mark class="">gập người, ôm bụng</mark>, khom lưng không dám đứng thẳng, không dám thở mạnh.</div>
+<div class="l">Có thể <mark class="">nôn hay không nôn</mark>.</div>
+<div class="l">Có thể <mark class="">bí trung đại tiện</mark>.</div>
+<div class="h">Triệu chứng thực thể</div>
+<div class="l">Nhìn: thành bụng nổi rõ <mark class="">múi cơ</mark> và không di động theo <mark class="">nhịp thở</mark>.</div>
+<div class="l">Sờ nắn: thành bụng <mark class="">cứng như gỗ</mark>.</div>
+<div class="l">Gõ: <mark class="">mất vùng đục trước gan</mark>.</div>
+<div class="h">Triệu chứng toàn thân</div>
+<div class="l">Bệnh nhân <mark class="">choáng nhẹ</mark> do đau, <mark class="">vã mồ hôi</mark>.</div>
+<div class="l"><mark class="">Mạch hơi nhanh, nhỏ</mark>, <mark class="">huyết áp hạ ít</mark>.</div>
+<div class="l">Sau <mark class="n">6 giờ</mark> có xuất hiện dấu hiệu nhiễm khuẩn rõ.</div>
+<div class="h">Diễn biến</div>
+<div class="l"><mark class="">Viêm phúc mạc toàn thể</mark>: hầu hết thủng dạ dày đều dẫn đến viêm màng bụng toàn thể.</div>
+<div class="l">Nếu xử trí chậm sau <mark class="n">12–24 giờ</mark> thường rất nặng dễ tử vong.</div>
+</div></details>
+<details class="q" style="--c:#e0746c"><summary>7. Câu 2 (Ngoại khoa). Trình bày triệu chứng lâm sàng của viêm ruột thừa cấp?</summary><div class="body">
+<div class="h">Triệu chứng cơ năng</div>
+<div class="l">Đau: thường xuất hiện <mark class="">đột ngột và tăng dần</mark>.</div>
+<div class="l sub">Lúc đầu thường đau vùng <mark class="">thượng vị</mark>, vùng quanh rốn sau lan dần và khu trú <mark class="">hố chậu phải</mark>.</div>
+<div class="l sub">Đau âm ỉ <mark class="">không thành cơn</mark>. Đau không lan xuyên, <mark class="">không có tư thế giảm đau</mark>.</div>
+<div class="l sub">Có trường hợp đau <mark class="">khu trú ngay từ đầu</mark> ở hố chậu phải.</div>
+<div class="l">Rối loạn tiêu hóa: Có thể <mark class="">buồn nôn và nôn</mark>. Trẻ em có thể đi <mark class="">tiêu chảy</mark>. Bí trung, đại tiện khi viêm phúc mạc.</div>
+<div class="h">Triệu chứng thực thể</div>
+<div class="l">Nhìn: Thường thấy bệnh nhân <mark class="">tay che vào chỗ đau</mark>. Có thể thấy <mark class="">bụng chướng</mark> khi đến muộn (đã có viêm phúc mạc).</div>
+<div class="l">Sờ ấn bụng: dùng <mark class="">bốn đầu ngón tay</mark> sờ nhẹ nhàng, sờ <mark class="">từ nơi không đau tới nơi đau</mark>:</div>
+<div class="l sub">Ấn điểm <mark class="">Mac-Burney</mark> đau (điểm giữa đường thẳng nối từ gai chậu trước trên bên phải tới rốn).</div>
+<div class="l sub">Dấu hiệu <mark class="">Blumberg (+)</mark>: Ấn tay từ từ vào vùng hố chậu phải sau đó thả ra đột ngột bệnh nhân sẽ cảm thấy <mark class="">đau thốt</mark>, do phúc mạc viêm bị căng dãn đột ngột.</div>
+<div class="l sub"><mark class="">Phản ứng thành bụng</mark>: là sự <mark class="">co các cơ thành bụng</mark> chống lại cảm giác đau. Ban đầu có thể nhẹ và khu trú ở hố chậu phải, sau đó lan dần ra khắp ổ bụng.</div>
+<div class="l sub">Nghe nhu động ruột <mark class="">giảm hoặc mất</mark>.</div>
+<div class="h">Triệu chứng toàn thân</div>
+<div class="l">Thường sốt nhẹ <mark class="n">37,5–38°C</mark>, mệt mỏi.</div>
+<div class="l">Sốt thường xuất hiện cùng với <mark class="">triệu chứng đau</mark>.</div>
+<div class="l">Khi viêm phúc mạc sẽ sốt cao, <mark class="">môi khô, lưỡi bẩn, hơi thở hôi</mark>.</div>
+</div></details>
+<details class="q" style="--c:#e0746c"><summary>8. Câu 3 (Ngoại khoa). Trình bày các biện pháp sơ cứu nạn nhân bỏng?</summary><div class="body">
+<div class="h">Loại trừ tác nhân gây bỏng: cúp điện, cắt bỏ quần áo…</div>
+<div class="h">Xử trí tổn thương bỏng</div>
+<div class="l">Ngâm nước lạnh để giảm đau và dự phòng sốc (làm sớm trong <mark class="n">30 phút</mark> đầu).</div>
+<div class="l"><mark class="">Băng ép</mark> (hạn chế thoát dịch, che phủ vết thương bỏng).</div>
+<div class="l"><mark class="">Không bôi chất gì</mark> (trừ bỏng do hóa chất thì xử trí trung hòa tùy tác nhân).</div>
+<div class="h">Giảm đau</div>
+<div class="l sub"><mark class="">Bất động vùng bỏng</mark>.</div>
+<div class="l sub">Thuốc giảm đau toàn thân (<mark class="">Promedol, Morphin</mark>).</div>
+<div class="l sub">Hoặc phong bế Novocain <mark class="n">0,25%</mark> tại gốc chi.</div>
+<div class="h">Uống dịch thể sớm: uống Oresol hoặc dung dịch tự pha (1–2 lít/24 giờ).</div>
+<div class="h">Ủ ấm</div>
+<div class="l sub">Vì nạn nhân bỏng thường có <mark class="">rét run</mark>.</div>
+<div class="l sub">Không ủ ấm quá <mark class="n">37°C</mark> sẽ làm mất nước thêm dưới dạng bốc hơi.</div>
+<div class="h">Vận chuyển về tuyến bệnh viện: Không được vận chuyển bệnh nhân đang sốc hoặc đe dọa sốc.</div>
+</div></details>
+<details class="q" style="--c:#e0746c"><summary>9. Câu 4 (Ngoại khoa). Trình bày cách sơ cứu người bị bong gân?</summary><div class="body">
+<div class="h">Những điều cần làm</div>
+<div class="l"><mark class="">Bất động</mark>: Để vùng chi có bong gân nằm yên.</div>
+<div class="l">Chườm đá lạnh: giãn cách sau <mark class="n">20–30 phút</mark>, trong <mark class="n">4 giờ</mark> liền sau chấn thương.</div>
+<div class="l">Băng ép: liên tục ít nhất <mark class="n">48 giờ</mark>.</div>
+<div class="l"><mark class="">Kê cao chi bị thương</mark>: để kích thích lưu thông máu tĩnh mạch trở về thuận lợi và làm tiêu hút nhanh chóng <mark class="">máu tụ</mark>.</div>
+<div class="l"><mark class="">Giảm đau</mark>:</div>
+<div class="l sub">Dùng các loại thuốc phong bế, chống tiết prostaglandin (như <mark class="">Indomethacine, Ibuprofen</mark> v.v..) ngay sau khi bị chấn thương.</div>
+<div class="l sub">Hoặc chậm nhất trong vòng <mark class="n">24 giờ</mark> để hạn chế hình thành phù nề.</div>
+<div class="h">Các biện pháp nói trên, nhất là chườm đá lạnh, sẽ làm hết đau nhanh chóng.</div>
+<div class="h">Không được làm</div>
+<div class="l sub">Không được đắp nóng: ít nhất trong vòng <mark class="n">42–78 giờ</mark> đầu sau chấn thương.</div>
+<div class="l sub">Không được uống <mark class="">rượu</mark>: vì rượu cũng là thứ làm <mark class="">dãn mạch</mark>.</div>
+<div class="l sub">Không được tiêm các thuốc loại <mark class="">steroid</mark>: làm kéo dài thời gian phục hồi <mark class="">dây chằng</mark>.</div>
+</div></details>
+<details class="q" style="--c:#e0746c"><summary>10. Câu 5 (Ngoại khoa). Trình bày triệu chứng lâm sàng và nguyên tắc chung xử trí sai khớp?</summary><div class="body">
+<div class="h">Triệu chứng lâm sàng</div>
+<div class="l"><mark class="">Đau</mark>:</div>
+<div class="l sub"><mark class="">Đau dữ dội</mark> tại ổ khớp.</div>
+<div class="l sub">Đau tăng khi <mark class="">cử động hoặc sờ nắn</mark> khớp.</div>
+<div class="l"><mark class="">Giảm hoặc mất cử động</mark> tại ổ khớp.</div>
+<div class="l">Chi bị <mark class="">biến dạng</mark> ở một <mark class="">tư thế cố định</mark>.</div>
+<div class="l"><mark class="">Sưng nề, bầm tím</mark> quanh khớp nếu đến muộn.</div>
+<div class="l"><mark class="">Sờ nắn</mark>:</div>
+<div class="l sub"><mark class="">Ổ khớp rỗng</mark>, <mark class="">chỏm xương</mark> tròn, nhẵn, cứng, nằm ngoài ổ khớp.</div>
+<div class="l sub">Có cử động bất thường <mark class="">bật lò xo</mark>.</div>
+<div class="h">Nguyên tắc chung xử trí sai khớp</div>
+<div class="l"><mark class="">Vô cảm</mark> tốt.</div>
+<div class="l"><mark class="">Nắn chỉnh sớm</mark>: trước khi có sưng, đưa chỏm xương vào đúng ổ khớp.</div>
+<div class="l"><mark class="">Cố định tốt</mark>: giúp dây chằng, bao khớp hồi phục tốt.</div>
+<div class="l"><mark class="">Tập vận động sớm</mark>: giúp phục hồi cơ năng khớp.</div>
+<div class="l"><mark class="">Phẫu thuật</mark>: đối với sai khớp nặng, sai khớp đến muộn, sai khớp tái diễn.</div>
+</div></details>
 </details>
 <details class="s" open style="--c:#4fb286"><summary>Vệ Sinh Phòng Dịch (4 câu)</summary><div class="tip">Phòng dịch luôn 3 khâu: <b>NGUỒN truyền nhiễm → TRUNG GIAN → KHỐI CẢM THỤ</b>.</div>
-<details class="q" style="--c:#4fb286"><summary>11. Câu 1. Nêu các biện pháp phòng chống nhiễm khuẩn nhiễm độc thức ăn?</summary>
-<div class="g"><h4>Đối với nguồn truyền nhiễm</h4><div class="k"><span class="">Phát hiện sớm</span><span class="">chính xác nguồn truyền nhiễm</span><span class="">Cách ly sớm</span><span class="">kịp thời hợp lý</span><span class="">Điều trị triệt để</span><span class="">bệnh nhân chặt chẽ</span><span class="">xét nghiệm phân</span></div></div>
-<div class="g"><h4>Đối với trung gian truyền nhiễm</h4><div class="k"><span class="">vệ sinh an toàn thực phẩm</span><span class="">nhà ăn nhà bếp, nhà trẻ, nguồn nước</span><span class="">Xử lý tốt vệ sinh nguồn chất thải</span><span class="">phân – nước – rác</span><span class="">ruồi, nhặng, chuột</span></div></div>
-<div class="g"><h4>Đối với khối cảm thụ</h4><div class="k"><span class="">vệ sinh cá nhân, vệ sinh ăn uống</span><span class="">ăn chín, ăn nóng uống sạch</span><span class="">dinh dưỡng</span><span class="">vắcxin</span></div></div>
-</details>
-<details class="q" style="--c:#4fb286"><summary>12. Câu 2. Nêu những biện pháp phòng chống bệnh truyền nhiễm?</summary>
-<div class="g"><h4>Biện pháp phòng chống đối với nguồn truyền nhiễm (NTN)</h4><div class="k"><span class="">Phát hiện sớm</span><span class="">cách ly sớm</span><span class="">điều trị triệt căn</span><span class="">động vật ốm</span><span class="">tiêu diệt chúng</span><span class="">người bệnh truyền nhiễm</span></div></div>
-<div class="g"><h4>Biện pháp phòng chống đối với trung gian truyền nhiễm</h4><div class="k"><span class="">khử trùng, tẩy uế</span><span class="">chất thải của bệnh nhân, nguồn nước, thực phẩm</span><span class="">Xua và diệt côn trùng</span><span class="">ổ chứa</span><span class="">vectơ truyền bệnh</span><span class="">vệ sinh, ăn uống, vệ sinh cá nhân</span><span class="">vệ sinh môi trường sống</span></div></div>
-<div class="g"><h4>Biện pháp phòng chống đối với khối cảm thụ</h4><div class="k"><span class="">sức khỏe chung</span><span class="">khả năng miễn dịch</span><span class="">tiêm chủng quốc gia</span><span class="">nhóm người có nguy cơ cao</span><span class="n">1 số bệnh truyền nhiễm</span></div></div>
-</details>
-<details class="q" style="--c:#4fb286"><summary>13. Câu 4. Kể tên nội dung đơn vị quân y 5 tốt?</summary>
-<div class="g"><div class="k"><span class="">huấn luyện xây dựng đơn vị tốt</span><span class="">sẵn sàng chiến đấu tốt</span><span class="">nếp sống vệ sinh khoa học</span><span class="">đảm bảo sức khỏe tốt</span><span class="">Quản lý sức khỏe</span><span class="">cấp cứu, điều trị tốt</span><span class="">vườn thuốc nam</span><span class="">y dược học cổ truyền</span><span class="">kết hợp đông tây y tốt</span><span class="">Quản lý và sử dụng thuốc</span><span class="">trang bị y tế tốt</span></div></div>
-</details>
-<details class="q" style="--c:#4fb286"><summary>14. Câu 5. Chức trách của nhân viên Quân y?</summary>
-<div class="g"><div class="k"><span class="">cấp ủy Đảng và thủ trưởng đơn vị</span><span class="">chủ động báo cáo tình hình công tác quân y</span><span class="">chỉ thị, nghị quyết của đại đội</span><span class="">bảo vệ sức khỏe bộ đội</span><span class="">nhiệm vụ chủ yếu</span><span class="">tuyên truyền giáo dục vệ sinh</span><span class="">công tác hàng đầu</span><span class="">phong trào quần chúng rộng rãi</span><span class="">xây dựng đơn vị có nếp sống vệ sinh</span><span class="">kế hoạch, khoa học</span></div></div>
-</details>
+<details class="q" style="--c:#4fb286"><summary>11. Câu 1. Nêu các biện pháp phòng chống nhiễm khuẩn nhiễm độc thức ăn?</summary><div class="body">
+<div class="h">Đối với nguồn truyền nhiễm</div>
+<div class="l"><mark class="">Phát hiện sớm</mark> <mark class="">chính xác nguồn truyền nhiễm</mark>.</div>
+<div class="l"><mark class="">Cách ly sớm</mark> <mark class="">kịp thời hợp lý</mark>.</div>
+<div class="l"><mark class="">Điều trị triệt để</mark> đối với bệnh nhân.</div>
+<div class="l">Quản lý <mark class="">bệnh nhân chặt chẽ</mark>, đảm bảo chế độ <mark class="">xét nghiệm phân</mark>.</div>
+<div class="h">Đối với trung gian truyền nhiễm</div>
+<div class="l">Thực hiện nghiêm và làm tốt công tác <mark class="">vệ sinh an toàn thực phẩm</mark>; vệ sinh <mark class="">nhà ăn nhà bếp, nhà trẻ, nguồn nước</mark>.</div>
+<div class="l"><mark class="">Xử lý tốt vệ sinh nguồn chất thải</mark>, <mark class="">phân – nước – rác</mark>.</div>
+<div class="l">Tích cực diệt <mark class="">ruồi, nhặng, chuột</mark>.</div>
+<div class="h">Đối với khối cảm thụ</div>
+<div class="l">Thường xuyên thực hiện <mark class="">vệ sinh cá nhân, vệ sinh ăn uống</mark>, <mark class="">ăn chín, ăn nóng uống sạch</mark>.</div>
+<div class="l">Nâng cao sức đề kháng cơ thể bằng <mark class="">dinh dưỡng</mark>.</div>
+<div class="l">Dùng <mark class="">vắcxin</mark> phòng bệnh (nếu có).</div>
+</div></details>
+<details class="q" style="--c:#4fb286"><summary>12. Câu 2. Nêu những biện pháp phòng chống bệnh truyền nhiễm?</summary><div class="body">
+<div class="h">Biện pháp phòng chống đối với nguồn truyền nhiễm (NTN)</div>
+<div class="l"><mark class="">Phát hiện sớm</mark> chính xác mọi nguồn truyền nhiễm.</div>
+<div class="l">Tổ chức <mark class="">cách ly sớm</mark>, hợp lý và <mark class="">điều trị triệt căn</mark> cho NTN.</div>
+<div class="l">Hạn chế tiếp xúc với <mark class="">động vật ốm</mark>, <mark class="">tiêu diệt chúng</mark> khi điều kiện cho phép.</div>
+<div class="l">Hạn chế tiếp xúc với <mark class="">người bệnh truyền nhiễm</mark> khi không cần thiết.</div>
+<div class="h">Biện pháp phòng chống đối với trung gian truyền nhiễm</div>
+<div class="l">Phải <mark class="">khử trùng, tẩy uế</mark> triệt để các <mark class="">chất thải của bệnh nhân, nguồn nước, thực phẩm</mark>.</div>
+<div class="l"><mark class="">Xua và diệt côn trùng</mark> có vai trò <mark class="">ổ chứa</mark> và là <mark class="">vectơ truyền bệnh</mark>.</div>
+<div class="l">Thực hiện tốt các khâu: <mark class="">vệ sinh, ăn uống, vệ sinh cá nhân</mark>, <mark class="">vệ sinh môi trường sống</mark>.</div>
+<div class="h">Biện pháp phòng chống đối với khối cảm thụ</div>
+<div class="l">Nâng cao <mark class="">sức khỏe chung</mark> để tăng cường <mark class="">khả năng miễn dịch</mark>.</div>
+<div class="l">Tiến hành tốt công tác <mark class="">tiêm chủng quốc gia</mark>.</div>
+<div class="l">Dùng thuốc dự phòng cho 1 số <mark class="">nhóm người có nguy cơ cao</mark> trong cộng đồng đối với <mark class="n">1 số bệnh truyền nhiễm</mark>.</div>
+</div></details>
+<details class="q" style="--c:#4fb286"><summary>13. Câu 4. Kể tên nội dung đơn vị quân y 5 tốt?</summary><div class="body">
+<div class="l">1. Phục vụ chiến đấu, sẵn sàng chiến đấu, <mark class="">huấn luyện xây dựng đơn vị tốt</mark> (gọi tắt là <mark class="">sẵn sàng chiến đấu tốt</mark>).</div>
+<div class="l">2. Có <mark class="">nếp sống vệ sinh khoa học</mark>, đảm bảo quân số khỏe tốt (<mark class="">đảm bảo sức khỏe tốt</mark>).</div>
+<div class="l">3. <mark class="">Quản lý sức khỏe</mark> và cấp cứu điều trị tốt (<mark class="">cấp cứu, điều trị tốt</mark>).</div>
+<div class="l">4. Có <mark class="">vườn thuốc nam</mark>, kết hợp y dược học hiện đại với <mark class="">y dược học cổ truyền</mark> tốt (<mark class="">kết hợp đông tây y tốt</mark>).</div>
+<div class="l">5. <mark class="">Quản lý và sử dụng thuốc</mark>, <mark class="">trang bị y tế tốt</mark>.</div>
+</div></details>
+<details class="q" style="--c:#4fb286"><summary>14. Câu 5. Chức trách của nhân viên Quân y?</summary><div class="body">
+<div class="l">1. Công tác quân y phải đặt dưới sự lãnh đạo của <mark class="">cấp ủy Đảng và thủ trưởng đơn vị</mark>. Y tá phải <mark class="">chủ động báo cáo tình hình công tác quân y</mark>, đề xuất các biện pháp công tác quân y vào nội dung <mark class="">chỉ thị, nghị quyết của đại đội</mark> làm cơ sở thực hiện.</div>
+<div class="l">2. Lấy công tác <mark class="">bảo vệ sức khỏe bộ đội</mark> làm <mark class="">nhiệm vụ chủ yếu</mark>, lấy <mark class="">tuyên truyền giáo dục vệ sinh</mark> làm <mark class="">công tác hàng đầu</mark>, tổ chức công tác vệ sinh phòng dịch thành <mark class="">phong trào quần chúng rộng rãi</mark>, <mark class="">xây dựng đơn vị có nếp sống vệ sinh</mark>.</div>
+<div class="l">3. Xây dựng nếp sống và làm việc có <mark class="">kế hoạch, khoa học</mark>.</div>
+</div></details>
 </details>
 <details class="s" open style="--c:#6c9cf0"><summary>Điều Dưỡng (6 câu)</summary><div class="tip">Mọi kỹ thuật: <b>1) Chuẩn bị (người bệnh + dụng cụ) → 2) Kỹ thuật → thu dọn, ghi hồ sơ</b>.</div>
-<details class="q" style="--c:#6c9cf0"><summary>15. Câu 1. Trình bày nội dung chuẩn bị và kỹ thuật tiêm bắp nông ở cơ delta?</summary>
-<div class="g"><h4>1) Chuẩn bị</h4><div class="k"><span class="">Chuẩn bị người bệnh</span><span class="">yên tâm, tin tưởng</span><span class="">hợp tác</span><span class="">Chuẩn bị dụng cụ</span><span class="">vô khuẩn</span><span class="">sạch</span><span class="">khác</span></div></div>
-<div class="g"><h4>2) Kỹ thuật</h4><div class="k"><span class="">Rửa tay, đeo khẩu trang</span><span class="n">3 kiểm tra – 5 đối chiếu</span><span class="">Rút thuốc</span><span class="">đuổi khí</span><span class="">bộc lộ vùng tiêm</span><span class="">sát khuẩn vùng tiêm</span><span class="n">45–60 độ</span><span class="">không có máu</span><span class="">rút kim nhanh</span><span class="">kéo chếch căng da</span><span class="">tư thế thoải mái</span><span class="">ghi hồ sơ</span></div></div>
+<details class="q" style="--c:#6c9cf0"><summary>15. Câu 1. Trình bày nội dung chuẩn bị và kỹ thuật tiêm bắp nông ở cơ delta?</summary><div class="body">
+<div class="h">1) Chuẩn bị</div>
+<div class="l"><mark class="">Chuẩn bị người bệnh</mark>:</div>
+<div class="l sub">Báo trước và giải thích để người bệnh biết và <mark class="">yên tâm, tin tưởng</mark>.</div>
+<div class="l sub">Đề nghị người bệnh <mark class="">hợp tác</mark> khi thực hiện kỹ thuật.</div>
+<div class="l"><mark class="">Chuẩn bị dụng cụ</mark>:</div>
+<div class="l sub">Dụng cụ <mark class="">vô khuẩn</mark></div>
+<div class="l sub">Dụng cụ <mark class="">sạch</mark></div>
+<div class="l sub">Dụng cụ <mark class="">khác</mark></div>
+<div class="h">2) Kỹ thuật</div>
+<div class="l"><mark class="">Rửa tay, đeo khẩu trang</mark></div>
+<div class="l">Mang dụng cụ đến cạnh người bệnh, thực hiện <mark class="n">3 kiểm tra – 5 đối chiếu</mark>.</div>
+<div class="l"><mark class="">Rút thuốc</mark>, <mark class="">đuổi khí</mark></div>
+<div class="l">Bệnh nhân ở tư thế thuận lợi, <mark class="">bộc lộ vùng tiêm</mark>, xác định vị trí tiêm, <mark class="">sát khuẩn vùng tiêm</mark>.</div>
+<div class="l">Sát khuẩn tay điều dưỡng lần 2, tay trái căng da, tay phải cầm bơm tiêm có gắn kim, đâm kim nhanh vào cơ delta một góc <mark class="n">45–60 độ</mark>.</div>
+<div class="l">Rút thử nòng bơm tiêm thấy <mark class="">không có máu</mark>, bơm thuốc từ từ, quan sát sắc mặt bệnh nhân.</div>
+<div class="l">Hết thuốc nhẹ nhàng <mark class="">rút kim nhanh</mark>, <mark class="">kéo chếch căng da</mark> nơi tiêm, sát khuẩn lại vùng tiêm.</div>
+<div class="l">Để người bệnh nằm <mark class="">tư thế thoải mái</mark>.</div>
+<div class="l">Thu dọn dụng cụ, <mark class="">ghi hồ sơ</mark>.</div>
+</div></details>
+<details class="q" style="--c:#6c9cf0"><summary>16. Câu 2. Trình bày nội dung chuẩn bị và kỹ thuật tiêm bắp sâu ở mông?</summary><div class="body">
+<div class="h">1) Chuẩn bị</div>
+<div class="l"><mark class="">Chuẩn bị người bệnh</mark>:</div>
+<div class="l sub">Báo trước và giải thích để người bệnh biết và <mark class="">yên tâm, tin tưởng</mark>.</div>
+<div class="l sub">Đề nghị người bệnh <mark class="">hợp tác</mark> khi thực hiện kỹ thuật.</div>
+<div class="l"><mark class="">Chuẩn bị dụng cụ</mark>:</div>
+<div class="l sub">Dụng cụ <mark class="">vô khuẩn</mark></div>
+<div class="l sub">Dụng cụ <mark class="">sạch</mark></div>
+<div class="l sub">Dụng cụ <mark class="">khác</mark></div>
+<div class="h">2) Kỹ thuật</div>
+<div class="l"><mark class="">Rửa tay, đeo khẩu trang</mark></div>
+<div class="l">Mang dụng cụ đến cạnh người bệnh, thực hiện <mark class="n">3 kiểm tra – 5 đối chiếu</mark>.</div>
+<div class="l"><mark class="">Rút thuốc</mark>, <mark class="">đuổi khí</mark></div>
+<div class="l">Bệnh nhân ở tư thế thuận lợi, <mark class="">bộc lộ vùng tiêm</mark>, xác định vị trí, sát khuẩn vùng tiêm.</div>
+<div class="l">Sát khuẩn tay lần 2, tay trái căng da, tay phải cầm bơm tiêm có gắn kim, đâm kim nhanh vào <mark class="">cơ mông</mark> <mark class="">vuông góc với mặt da</mark>.</div>
+<div class="l">Rút thử nòng bơm tiêm, <mark class="">bơm thuốc từ từ</mark>, quan sát sắc mặt bệnh nhân.</div>
+<div class="l">Hết thuốc nhẹ nhàng rút kim nhanh, <mark class="">căng da nơi tiêm</mark>, sát khuẩn lại vùng tiêm.</div>
+<div class="l">Để người bệnh nằm <mark class="">tư thế thoải mái</mark>.</div>
+<div class="l">Thu dọn dụng cụ, <mark class="">ghi hồ sơ</mark>.</div>
+</div></details>
+<details class="q" style="--c:#6c9cf0"><summary>17. Câu 3. Trình bày nội dung chuẩn bị và kỹ thuật tiêm tĩnh mạch?</summary><div class="body">
+<div class="h">1) Chuẩn bị</div>
+<div class="l"><mark class="">Chuẩn bị người bệnh</mark>:</div>
+<div class="l sub">Báo trước và giải thích để người bệnh biết và <mark class="">yên tâm, tin tưởng</mark>.</div>
+<div class="l sub">Đề nghị người bệnh <mark class="">hợp tác</mark> khi thực hiện kỹ thuật.</div>
+<div class="l"><mark class="">Chuẩn bị dụng cụ</mark>:</div>
+<div class="l sub">Dụng cụ <mark class="">vô khuẩn</mark></div>
+<div class="l sub">Dụng cụ <mark class="">sạch</mark></div>
+<div class="l sub">Dụng cụ <mark class="">khác</mark></div>
+<div class="h">2) Kỹ thuật</div>
+<div class="l"><mark class="">Rửa tay, đeo khẩu trang</mark></div>
+<div class="l">Mang dụng cụ đến cạnh người bệnh, thực hiện <mark class="n">3 kiểm tra – 5 đối chiếu</mark>.</div>
+<div class="l">Lấy thuốc, <mark class="">sát khuẩn đầu ống thuốc</mark>/nút chai thuốc; lấy bơm tiêm và rút thuốc; nắp kim, <mark class="">đuổi khí</mark>.</div>
+<div class="l">Người bệnh ở tư thế thuận lợi, xác định vị trí tiêm, bộc lộ vùng tiêm, thắt dây ga rô trên vị trí tiêm <mark class="n">3 cm</mark> – <mark class="n">5 cm</mark>, sát khuẩn vùng tiêm <mark class="n">2 lần</mark> từ trong ra ngoài.</div>
+<div class="l">Sát khuẩn tay lần 2, tay trái căng da, tay phải cầm bơm tiêm có gắn kim, đâm kim qua da, <mark class="">luồn vào tĩnh mạch</mark>.</div>
+<div class="l">Rút thử nòng bơm tiêm <mark class="">nếu có máu</mark> là được, vừa <mark class="">bơm thuốc chậm</mark> vừa quan sát sắc mặt người bệnh.</div>
+<div class="l">Hết thuốc, nhẹ nhàng <mark class="">đặt bông lên chỗ tiêm</mark> và rút kim nhanh, ấn nhẹ nơi tiêm để <mark class="">cầm máu</mark>.</div>
+<div class="l">Để người bệnh nằm <mark class="">tư thế thoải mái</mark>.</div>
+<div class="l">Thu dọn dụng cụ, <mark class="">ghi hồ sơ</mark>.</div>
+</div></details>
+<details class="q" style="--c:#6c9cf0"><summary>18. Câu 4. Trình bày nội dung chuẩn bị và kỹ thuật truyền dịch tĩnh mạch?</summary><div class="body">
+<div class="h">1) Chuẩn bị</div>
+<div class="l"><mark class="">Chuẩn bị người bệnh</mark>:</div>
+<div class="l sub">Báo trước và giải thích để người bệnh biết và <mark class="">yên tâm, tin tưởng</mark>.</div>
+<div class="l sub">Đề nghị người bệnh <mark class="">hợp tác</mark> khi thực hiện kỹ thuật.</div>
+<div class="l"><mark class="">Chuẩn bị dụng cụ</mark>:</div>
+<div class="l sub">Dụng cụ <mark class="">vô khuẩn</mark></div>
+<div class="l sub">Dụng cụ <mark class="">sạch</mark></div>
+<div class="l sub">Dụng cụ <mark class="">khác</mark></div>
+<div class="h">2) Kỹ thuật</div>
+<div class="l"><mark class="">Rửa tay, đeo khẩu trang</mark></div>
+<div class="l">Mang dụng cụ đến cạnh người bệnh, thực hiện <mark class="n">3 kiểm tra – 5 đối chiếu</mark>.</div>
+<div class="l"><mark class="">Sát khuẩn tay nhanh</mark>.</div>
+<div class="l">Kiểm tra chai dịch, bật nắp và <mark class="">sát khuẩn nút chai dịch</mark>.</div>
+<div class="l">Lấy dây truyền, <mark class="">khoá lại</mark> và gắn vào chai dịch.</div>
+<div class="l">Treo chai dịch lên cọc truyền. Mở khoá cho dịch chảy xuống <mark class="">½ bầu đếm giọt</mark>, <mark class="">đuổi hết khí</mark>, khoá lại và để dây truyền lên cọc truyền</div>
+<div class="l">Chuẩn bị băng dính. Mang <mark class="">găng tay sạch</mark></div>
+<div class="l">Chọn vị trí tĩnh mạch <mark class="">thẳng, ít di động</mark>, <mark class="">tránh khớp và sẹo</mark></div>
+<div class="l">Garot tĩnh mạch, trên vị trí định truyền <mark class="n">3–5 cm</mark></div>
+<div class="l">Sát khuẩn vị trí truyền từ trong ra ngoài <mark class="n">2 lần</mark>, sát khuẩn tay</div>
+<div class="l">Một tay căng da, một tay cầm đốc kim, ngửa mũi vát lên trên, đâm kim qua da một góc <mark class="n">30 độ</mark> rồi luồn vào tĩnh mạch 2/3 chiều dài của kim</div>
+<div class="l">Kiểm tra có <mark class="">máu trào vào đốc kim</mark> là được</div>
+<div class="l">Một tay giữ kim, một tay <mark class="">tháo garot</mark> → mở khoá cho dịch chảy nhỏ giọt → lấy băng dính <mark class="">cố định đốc kim</mark></div>
+<div class="l">Tháo găng, đặt <mark class="">gạc vô khuẩn</mark> và dán băng dính, cố định chi (nếu cần)</div>
+<div class="l">Điều chỉnh <mark class="">số giọt/phút</mark> theo chỉ định</div>
+<div class="l"><mark class="">Bỏ rác</mark> đúng theo quy định</div>
+<div class="l">Thu dọn dụng cụ <mark class="">gọn, ngăn nắp</mark></div>
+<div class="l">Đánh giá, ghi <mark class="">phiếu truyền dịch</mark>/phiếu điều dưỡng/hồ sơ</div>
+<div class="l">Theo dõi, phát hiện <mark class="">tai biến</mark>.</div>
+<div class="l"><mark class="">Dặn người bệnh</mark>, thân nhân</div>
+</div></details>
+<details class="q" style="--c:#6c9cf0"><summary>19. Câu 5. Trình bày nội dung chuẩn bị và kỹ thuật thay băng vết thương?</summary><div class="body">
+<div class="h">2) Chuẩn bị</div>
+<div class="l"><mark class="">Chuẩn bị người bệnh</mark>:</div>
+<div class="l sub"><mark class="">Báo trước và giải thích</mark> để người bệnh biết và yên tâm, tin tưởng. Đề nghị người bệnh hợp tác trong khi thay băng.</div>
+<div class="l sub"><mark class="">Tư thế thuận tiện</mark> cho việc thay băng.</div>
+<div class="l"><mark class="">Chuẩn bị dụng cụ</mark>:</div>
+<div class="l sub">Dụng cụ <mark class="">vô khuẩn</mark></div>
+<div class="l sub"><mark class="">Dụng cụ sạch và thuốc</mark></div>
+<div class="l sub">Dụng cụ <mark class="">khác</mark></div>
+<div class="h">2) Kỹ thuật</div>
+<div class="l"><mark class="">Rửa tay, đeo khẩu trang</mark></div>
+<div class="l"><mark class="">Mang dụng cụ</mark> đến cạnh người bệnh.</div>
+<div class="l">Lót <mark class="">tấm nylon</mark> hoặc giấy dưới vết thương.</div>
+<div class="l">Đặt túi nylon hoặc <mark class="">thùng rác</mark> thuận tiện.</div>
+<div class="l"><mark class="">Mang găng tay</mark>.</div>
+<div class="l">Tháo băng bẩn bằng <mark class="">kìm sạch</mark>, bỏ kìm bẩn vào <mark class="">khay dung dịch sát khuẩn</mark>.</div>
+<div class="l">Sát khuẩn tay, mở <mark class="">khay dụng cụ vô khuẩn</mark>.</div>
+<div class="l">Nhỏ <mark class="">oxy già</mark> lên vết thương rửa sạch các chất bẩn, sát khuẩn tay.</div>
+<div class="l">Rửa bằng NaCl <mark class="n">0,9%</mark> cho đến khi sạch: Dùng bông thấm NaCl <mark class="n">0,9%</mark> miết sát vào da từ mép vết thương hất ra ngoài <mark class="n">5 cm</mark>, (từ bên xa đến bên gần, từ cao xuống thấp). Sau đó rửa vết thương.</div>
+<div class="l">Thấm khô vết thương, thấm khô da bằng <mark class="">gạc vô khuẩn</mark>.</div>
+<div class="l">Sát khuẩn bằng <mark class="">Povidine (Betadine)</mark> lên vết thương sau đó sát khuẩn vùng da quanh vết thương. Dùng Povidine (Betadine) <mark class="n">4%</mark> cho vết thương mất da), Povidine <mark class="n">10%</mark> cho vết thương đã khâu da.</div>
+<div class="l">Đắp thuốc <mark class="">khi có y lệnh</mark>, đặt gạc, bông che kín vết thương (phủ ra ngoài vết thương <mark class="n">3 cm</mark> – <mark class="n">5 cm</mark>).</div>
+<div class="l">Tháo bỏ <mark class="">găng tay bẩn</mark> đúng phương pháp</div>
+<div class="l">Băng vết thương bằng <mark class="">băng keo hoặc băng cuộn</mark>.</div>
+<div class="l">Giúp người bệnh trở lại <mark class="">tư thế ban đầu</mark>.</div>
+<div class="l">Dọn dẹp dụng cụ, xử lý <mark class="">dụng cụ truyền nhiễm</mark> và rác thải đúng quy định.</div>
+<div class="l"><mark class="">Rửa tay</mark>, <mark class="">lau khô</mark>.</div>
+<div class="l"><mark class="">Ghi hồ sơ</mark>.</div>
+<div class="l"><mark class="">Dặn người bệnh</mark>, thân nhân</div>
+</div></details>
+<details class="q" style="--c:#6c9cf0"><summary>20. Câu 6. Trình bày các bước chuẩn bị và kỹ thuật đo huyết áp động mạch cánh tay?</summary><div class="body">
+<div class="h">1. Chuẩn bị</div>
+<div class="l">Báo trước, giải thích ngắn gọn những điều cần thiết để <mark class="">NB an tâm</mark>.</div>
+<div class="l">Cho bệnh nhân nghỉ ngơi <mark class="n">15 phút</mark>, không dùng thuốc, chất kích thích.</div>
+<div class="l"><mark class="">Chuẩn bị đầy đủ dụng cụ</mark>:</div>
+<div class="l sub"><mark class="">HA kế</mark></div>
+<div class="l sub"><mark class="">Ống nghe</mark></div>
+<div class="l sub"><mark class="">Bảng theo dõi</mark></div>
+<div class="l sub">Viết <mark class="">màu đỏ</mark>.</div>
+<div class="h">2. Kỹ thuật</div>
+<div class="l">Đem dụng cụ đến cạnh người bệnh. <mark class="">Vén áo người bệnh tới nách</mark>.</div>
+<div class="l">Quấn băng HA vừa đủ chặt, cách nếp khuỷu <mark class="n">3–5 cm</mark>.</div>
+<div class="l"><mark class="">Vặn chặt khoá</mark> huyết áp. Đeo ống nghe vào tai, màng ống nghe đặt ngay động mạch cánh tay chỗ <mark class="">nếp khuỷu</mark>.</div>
+<div class="l">Bơm cho cột thuỷ ngân hoặc kim đồng hồ lên quá mức không nghe tiếng đập <mark class="n">30 mmHg</mark> hoặc <mark class="n">200 mmHg</mark>.</div>
+<div class="l">Mở khoá xả từ từ và lắng nghe <mark class="">tiếng đập đầu tiên</mark> là <mark class="">HA tối đa</mark>, tiếng đập cuối cùng là <mark class="">HA tối thiểu</mark>.</div>
+<div class="l"><mark class="">Xả hết hơi</mark> trong HA</div>
+<div class="l">Thu dọn dụng cụ <mark class="">gọn, ngăn nắp</mark>.</div>
+<div class="l">Ghi kết quả vào <mark class="">hồ sơ</mark></div>
+<div class="l"><mark class="">kẻ bảng</mark></div>
+<div class="l">Ký tên <mark class="">người thực hiện</mark>.</div>
+</div></details>
 </details>
-<details class="q" style="--c:#6c9cf0"><summary>16. Câu 2. Trình bày nội dung chuẩn bị và kỹ thuật tiêm bắp sâu ở mông?</summary>
-<div class="g"><h4>1) Chuẩn bị</h4><div class="k"><span class="">Chuẩn bị người bệnh</span><span class="">yên tâm, tin tưởng</span><span class="">hợp tác</span><span class="">Chuẩn bị dụng cụ</span><span class="">vô khuẩn</span><span class="">sạch</span><span class="">khác</span></div></div>
-<div class="g"><h4>2) Kỹ thuật</h4><div class="k"><span class="">Rửa tay, đeo khẩu trang</span><span class="n">3 kiểm tra – 5 đối chiếu</span><span class="">Rút thuốc</span><span class="">đuổi khí</span><span class="">bộc lộ vùng tiêm</span><span class="">cơ mông</span><span class="">vuông góc với mặt da</span><span class="">bơm thuốc từ từ</span><span class="">căng da nơi tiêm</span><span class="">tư thế thoải mái</span><span class="">ghi hồ sơ</span></div></div>
-</details>
-<details class="q" style="--c:#6c9cf0"><summary>17. Câu 3. Trình bày nội dung chuẩn bị và kỹ thuật tiêm tĩnh mạch?</summary>
-<div class="g"><h4>1) Chuẩn bị</h4><div class="k"><span class="">Chuẩn bị người bệnh</span><span class="">yên tâm, tin tưởng</span><span class="">hợp tác</span><span class="">Chuẩn bị dụng cụ</span><span class="">vô khuẩn</span><span class="">sạch</span><span class="">khác</span></div></div>
-<div class="g"><h4>2) Kỹ thuật</h4><div class="k"><span class="">Rửa tay, đeo khẩu trang</span><span class="n">3 kiểm tra – 5 đối chiếu</span><span class="">sát khuẩn đầu ống thuốc</span><span class="">đuổi khí</span><span class="n">3 cm</span><span class="n">5 cm</span><span class="n">2 lần</span><span class="">luồn vào tĩnh mạch</span><span class="">nếu có máu</span><span class="">bơm thuốc chậm</span><span class="">đặt bông lên chỗ tiêm</span><span class="">cầm máu</span><span class="">tư thế thoải mái</span><span class="">ghi hồ sơ</span></div></div>
-</details>
-<details class="q" style="--c:#6c9cf0"><summary>18. Câu 4. Trình bày nội dung chuẩn bị và kỹ thuật truyền dịch tĩnh mạch?</summary>
-<div class="g"><h4>1) Chuẩn bị</h4><div class="k"><span class="">Chuẩn bị người bệnh</span><span class="">yên tâm, tin tưởng</span><span class="">hợp tác</span><span class="">Chuẩn bị dụng cụ</span><span class="">vô khuẩn</span><span class="">sạch</span><span class="">khác</span></div></div>
-<div class="g"><h4>2) Kỹ thuật</h4><div class="k"><span class="">Rửa tay, đeo khẩu trang</span><span class="n">3 kiểm tra – 5 đối chiếu</span><span class="">Sát khuẩn tay nhanh</span><span class="">sát khuẩn nút chai dịch</span><span class="">khoá lại</span><span class="">½ bầu đếm giọt</span><span class="">đuổi hết khí</span><span class="">găng tay sạch</span><span class="">thẳng, ít di động</span><span class="">tránh khớp và sẹo</span><span class="n">3–5 cm</span><span class="n">2 lần</span><span class="n">30 độ</span><span class="">máu trào vào đốc kim</span><span class="">tháo garot</span><span class="">cố định đốc kim</span><span class="">gạc vô khuẩn</span><span class="">số giọt/phút</span><span class="">Bỏ rác</span><span class="">gọn, ngăn nắp</span><span class="">phiếu truyền dịch</span><span class="">tai biến</span><span class="">Dặn người bệnh</span></div></div>
-</details>
-<details class="q" style="--c:#6c9cf0"><summary>19. Câu 5. Trình bày nội dung chuẩn bị và kỹ thuật thay băng vết thương?</summary>
-<div class="g"><h4>2) Chuẩn bị</h4><div class="k"><span class="">Chuẩn bị người bệnh</span><span class="">Báo trước và giải thích</span><span class="">Tư thế thuận tiện</span><span class="">Chuẩn bị dụng cụ</span><span class="">vô khuẩn</span><span class="">Dụng cụ sạch và thuốc</span><span class="">khác</span></div></div>
-<div class="g"><h4>2) Kỹ thuật</h4><div class="k"><span class="">Rửa tay, đeo khẩu trang</span><span class="">Mang dụng cụ</span><span class="">tấm nylon</span><span class="">thùng rác</span><span class="">Mang găng tay</span><span class="">kìm sạch</span><span class="">khay dung dịch sát khuẩn</span><span class="">khay dụng cụ vô khuẩn</span><span class="">oxy già</span><span class="n">0,9%</span><span class="n">0,9%</span><span class="n">5 cm</span><span class="">gạc vô khuẩn</span><span class="">Povidine (Betadine)</span><span class="n">4%</span><span class="n">10%</span><span class="">khi có y lệnh</span><span class="n">3 cm</span><span class="n">5 cm</span><span class="">găng tay bẩn</span><span class="">băng keo hoặc băng cuộn</span><span class="">tư thế ban đầu</span><span class="">dụng cụ truyền nhiễm</span><span class="">Rửa tay</span><span class="">lau khô</span><span class="">Ghi hồ sơ</span><span class="">Dặn người bệnh</span></div></div>
-</details>
-<details class="q" style="--c:#6c9cf0"><summary>20. Câu 6. Trình bày các bước chuẩn bị và kỹ thuật đo huyết áp động mạch cánh tay?</summary>
-<div class="g"><h4>1. Chuẩn bị</h4><div class="k"><span class="">NB an tâm</span><span class="n">15 phút</span><span class="">Chuẩn bị đầy đủ dụng cụ</span><span class="">HA kế</span><span class="">Ống nghe</span><span class="">Bảng theo dõi</span><span class="">màu đỏ</span></div></div>
-<div class="g"><h4>2. Kỹ thuật</h4><div class="k"><span class="">Vén áo người bệnh tới nách</span><span class="n">3–5 cm</span><span class="">Vặn chặt khoá</span><span class="">nếp khuỷu</span><span class="n">30 mmHg</span><span class="n">200 mmHg</span><span class="">tiếng đập đầu tiên</span><span class="">HA tối đa</span><span class="">HA tối thiểu</span><span class="">Xả hết hơi</span><span class="">gọn, ngăn nắp</span><span class="">hồ sơ</span><span class="">kẻ bảng</span><span class="">người thực hiện</span></div></div>
-</details>
-</details>
-</body></html>
+<script>document.addEventListener('click',e=>{if(e.target.tagName==='MARK'&&document.body.classList.contains('hide'))e.target.classList.toggle('show')})</script></body></html>
