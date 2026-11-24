@@ -251,6 +251,9 @@ function numberedText(text) {
 async function renderFillQuiz(root, App, session) {
   unbindKeys(); stopTimer();
   if (_fillCleanup) _fillCleanup();
+  const outer = root;
+  root = el('div', { class: 'fill-quiz-root' });
+  outer.appendChild(root);
   const head = el('div', { class: 'stage-head' });
   const counter = el('span', { class: 'counter' });
   const subject = el('span', { class: 'subject' });
@@ -337,9 +340,11 @@ async function renderFillQuiz(root, App, session) {
         m.classList.toggle('done', has);
         m.classList.toggle('active', bi === activeIdx);
         // Kéo thả: hiện luôn từ đã điền ngay trong câu (điện thoại ẩn danh sách ô riêng cho gọn)
-        if (session.fillMode === 'drag') m.textContent = has ? String(v) : `⟦${bi + 1}⟧`;
+        m.textContent = has ? String(v) : `⟦${bi + 1}⟧`;
       });
       right.querySelectorAll('.blank-row').forEach((r, bi) => r.classList.toggle('active', bi === activeIdx));
+      const bc = right.querySelector('.blank-counter');
+      if (bc) bc.textContent = `${activeIdx + 1}/${q.blanks.length}`;
     }
     function activate(bi, scroll) {
       activeIdx = bi;
@@ -390,7 +395,15 @@ async function renderFillQuiz(root, App, session) {
     }
 
     const blanksPanel = panel([], { classes: 'fill-blanks-panel' });
-    blanksPanel.appendChild(el('div', { class: 'muted-line', style: { marginBottom: '10px' }, text: `CHỖ TRỐNG CẦN ĐIỀN (${q.blanks.length})` }));
+    const blankCounter = el('span', { class: 'blank-counter' });
+    const bPrev = el('button', { class: 'blank-step', text: '‹', attrs: { type: 'button', 'aria-label': 'Chỗ trống trước' } });
+    const bNext = el('button', { class: 'blank-step', text: '›', attrs: { type: 'button', 'aria-label': 'Chỗ trống sau' } });
+    bPrev.addEventListener('click', () => activate(Math.max(0, activeIdx - 1), true));
+    bNext.addEventListener('click', () => activate(Math.min(q.blanks.length - 1, activeIdx + 1), true));
+    blanksPanel.appendChild(el('div', { class: 'blank-title' }, [
+      el('span', { class: 'muted-line', text: `CHỖ TRỐNG CẦN ĐIỀN (${q.blanks.length})` }),
+      el('span', { class: 'blank-stepper' }, [bPrev, blankCounter, bNext]),
+    ]));
     const blankList = el('div', { class: 'blank-list' });
     q.blanks.forEach((_, bi) => {
       const row = el('div', { class: 'blank-row' });

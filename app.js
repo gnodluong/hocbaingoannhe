@@ -119,7 +119,7 @@ const App = {
     session.studentId = student.id || 'free';
     this.fillSession = session;
     this.setActiveNav(null);
-    this.setChrome(true);
+    this.setChrome(!window.matchMedia('(max-width: 860px)').matches); // điện thoại: làm bài toàn màn hình
     await mountScreen((c) => renderFillQuiz(c, App, session));
   },
 
