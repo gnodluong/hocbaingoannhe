@@ -11,7 +11,7 @@
  */
 'use strict';
 
-const VERSION = '1.1.3-web14';
+const VERSION = '1.1.3-web15';
 const CACHE = `tracnghiem-web-v${VERSION}`;
 
 const SHELL = [
@@ -34,6 +34,7 @@ const SHELL = [
   'screens.banks.js',
   'screens.hub.js',
   'screens.guide.js',
+  'screens.mindmap.js',
   'screens.grades.js',
   'screens.sync.js',
   'admin.js',

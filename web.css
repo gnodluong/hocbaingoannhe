@@ -372,3 +372,24 @@ body { overflow: hidden; }
   .fill-quiz-root .fill-qbar { padding: 4px 3px 4px; }
   .fill-quiz-root .fill-col-blanks, .fill-quiz-root .fill-col-blanks > .panel { width: 100%; box-sizing: border-box; }
 }
+
+/* ===== Mục Mindmap ôn nhanh ===== */
+.mm details { margin: 6px 0; }
+.mm summary { cursor: pointer; padding: 11px 14px; border-radius: 12px; font-weight: 700; list-style: none; }
+.mm summary::-webkit-details-marker { display: none; }
+.mm summary::before { content: "▸ "; opacity: .7; }
+.mm details[open] > summary::before { content: "▾ "; }
+.mm-s > summary { font-size: 17px; background: var(--c); color: #0b1220; }
+.mm-q { margin-left: 4px; }
+.mm-q > summary { background: var(--surface); border: 1px solid var(--border); border-left: 5px solid var(--c); font-size: 15px; line-height: 1.45; }
+.mm-tip { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; margin: 8px 0; font-size: 14px; color: var(--dim); }
+.mm-body { padding: 6px 4px 10px 10px; }
+.mm-h { margin: 12px 0 4px; padding: 5px 10px; border-radius: 8px; background: color-mix(in srgb, var(--accent) 22%, var(--surface)); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .3px; }
+.mm-l { margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.6; font-size: 15px; }
+.mm-l::before { content: "–"; position: absolute; left: 3px; color: var(--muted); }
+.mm-l.sub { margin-left: 20px; } .mm-l.sub::before { content: "+"; }
+.mm-l.note { font-style: italic; color: var(--dim); } .mm-l.note::before { content: ""; }
+.mm mark { background: color-mix(in srgb, var(--ok) 24%, transparent); color: var(--ok-text, var(--ok)); border-radius: 5px; padding: 0 4px; font-weight: 700; }
+.mm mark.n { background: color-mix(in srgb, #f0a93a 26%, transparent); color: #ffd77a; }
+.mm.mm-hide mark { background: var(--surface-3, #243652); color: transparent; cursor: pointer; user-select: none; -webkit-user-select: none; }
+.mm.mm-hide mark.mm-show { background: color-mix(in srgb, var(--ok) 24%, transparent); color: var(--ok-text, var(--ok)); }
